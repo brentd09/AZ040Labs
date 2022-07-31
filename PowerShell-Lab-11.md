@@ -370,4 +370,5 @@ The main tasks for this exercise are:
     </Strong></details> 
 
 ## Congratulations you have finished the lab
-[Go back to first lab](AZ-040-Lab-01.md#_)
+
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#az040labs)
