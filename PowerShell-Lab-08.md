@@ -515,4 +515,4 @@ e:\DiskReport.html
 
 ## Congratulations you have fininshed the lab
 
-[Go to next lab](AZ-040-Lab-09.md#_)
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#az040labs)
