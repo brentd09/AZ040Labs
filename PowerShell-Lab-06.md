@@ -505,4 +505,4 @@ The main task for this exercise is:
     </Strong></details> 
 9. Close the Windows PowerShell prompt.
 
-[Go to next lab](AZ-040-Lab-07.md#_)
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#az040labs)
