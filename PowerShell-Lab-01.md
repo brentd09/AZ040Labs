@@ -386,4 +386,4 @@ The main task for this exercise is:
 
 After completing this exercise, you'll have demonstrated your ability to locate help content in **About** files.
 
-[Back to labs](AZ040Labs#az040labs)
+[Back to labs](/AZ040Labs#az040labs)
