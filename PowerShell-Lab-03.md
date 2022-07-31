@@ -916,4 +916,4 @@ The main tasks for this exercise are:
 
 After completing this exercise, you should have converted Active Directory user objects to different data formats.
 
-[Go to next lab](AZ-040-Lab-04.md#_)
+
