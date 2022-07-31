@@ -339,4 +339,4 @@ The main tasks for this exercise are as follows:
     ```
     </Strong></details> 
 
-[Go to next lab](AZ-040-Lab-06.md#_)
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#az040labs)
