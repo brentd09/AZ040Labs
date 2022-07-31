@@ -568,4 +568,4 @@ https://teams.microsoft.com
 
 ## Congratulations you have finished this lab    
 
-[Go to next lab](AZ-040-Lab-11.md#_)
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#az040labs)
