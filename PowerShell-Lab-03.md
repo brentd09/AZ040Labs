@@ -817,6 +817,8 @@ The main tasks for this exercise are:
       Out-File E:\UserReport.html
     ```
     
+    # OR if you want to include some CSS to make the table look more professional
+    
     ```PowerShell
     $CSS = @'
     <style>
