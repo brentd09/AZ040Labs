@@ -22,6 +22,14 @@ lab:
 
 ###### _
 
+# Fix lab machines before starting labs
+
+## Run this command on the LON-CL1 machine before starting the labs  
+
+ ```PowerShell 
+ Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {Set-NetFirewallProfile -All -Enabled false}
+ ```
+
 # Lab: Configuring Windows PowerShell, and finding and running commands
 
 ## Scenario
