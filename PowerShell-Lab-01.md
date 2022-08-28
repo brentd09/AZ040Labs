@@ -326,7 +326,7 @@ The main tasks for this exercise are:
     </Strong></details>     
     
     </Strong></details> 
-    <details><summary>Click to see the answer (Part 1)</summary><Strong> 
+    <details><summary>Click to see the answer (Part 2)</summary><Strong> 
     Set-Service -Name BITS -StartupType Automatic
     ```
     </Strong></details> 
