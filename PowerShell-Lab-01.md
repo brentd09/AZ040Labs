@@ -327,6 +327,8 @@ The main tasks for this exercise are:
     
     </Strong></details> 
     <details><summary>Click to see the answer (Part 2)</summary><Strong> 
+    
+    ```PowerShell
     Set-Service -Name BITS -StartupType Automatic
     ```
     </Strong></details> 
