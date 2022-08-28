@@ -101,7 +101,7 @@ The main tasks for this exercise are:
     Get-Date | Select-Object -Property DayOfYear
     ```
     </Strong></details> 
-8. Display the results of the previous command on a single line.
+8. Display the results of the previous command with the name of the property and its value on a single line.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
@@ -136,7 +136,7 @@ The main tasks for this exercise are:
 
     ```PowerShell
     Get-Hotfix | Select-Object -Property *
-    # Some Properties may not contain any or the correct data, using the Select object you can see both the Property and its value 
+    # Some Properties may not contain any or the correct data, using the Select-object you can see both the Property and its value 
     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
@@ -149,10 +149,10 @@ The main tasks for this exercise are:
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
-    # When you subtract one date from another you end up with a [TimeSpan] object
+    # When you subtract one date from another you end up with a new object called a [TimeSpan] object
     # [TimeSpan] has its own properties
     New-TimeSpan | Get-Member # This will show you that the TimeSpan has a "Days" property which is excaly what we need
-    # Using ( ) you can tell PS to run the code in the parentheses first 
+    # Useful Tip: Using ( ) tells PowerShell to run the code in the parentheses first, which produces the resulting object/s 
     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
@@ -160,6 +160,7 @@ The main tasks for this exercise are:
     ```PowerShell
     Get-Hotfix | Select-Object -Property HotFixID,@{n='HotFixAge';e={((Get-Date) - $_.InstalledOn).Days}},InstalledBy
     # ( ) Tells PowerShell to run the command/s in the brackets first before running the rest of the line
+    # The inner ( ) runs the code before the outer ( ) runs
     ```
     </Strong></details> 
 
@@ -198,7 +199,7 @@ The main tasks for this exercise are:
     Get-DHCPServerv4Scope -ComputerName LON-DC1
     ```
     </Strong></details> 
-1. Display a list of the available IPv4 DHCP scopes on **LON-DC1**. This time, include only the scope ID, subnet mask, and scope name, and display the data in a single column.
+1. Display a list of the available IPv4 DHCP scopes on **LON-DC1**. This time, include only the scope ID, subnet mask, and scope name, and display the output Property:Data results in a single column down the screen.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
@@ -238,7 +239,7 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    # Look for the Enabled Parameter
+    # Look specifically for the "Enabled" Parameter
     ```
     </Strong></details> 
 6. Display a list of the firewall rules that are enabled.
@@ -252,21 +253,25 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-      Get-NetFirewallRule -Enabled True | Format-Table -wrap
+    Get-NetFirewallRule -Enabled True | Format-Table -Wrap
+    # -Wrap is a [Switch] parameter, which means it does not require any data for the parameter
     ```
     </Strong></details> 
 8. Display a list of the enabled firewall rules. Display only the rules’ display names, the profiles they belong to, their directions, and whether they allow or deny access.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-      Get-NetFirewallRule -Enabled True | Select-Object -Property DisplayName,Profile,Direction,Action
+    Get-NetFirewallRule -Enabled True | Select-Object -Property DisplayName,Profile,Direction,Action
     ```
     </Strong></details> 
 9. Sort the list in alphabetical order first by profile and then by display name, with the results displaying in a separate table for each profile.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Get-NetFirewallRule -Enabled True | Select-Object -Property DisplayName,Profile,Direction,Action | Sort-Object -Property Profile, DisplayName | ft -GroupBy Profile
+    Get-NetFirewallRule -Enabled True | 
+      Select-Object -Property DisplayName,Profile,Direction,Action | 
+      Sort-Object -Property Profile, DisplayName | 
+      Format-Table -GroupBy Profile
     ```
     </Strong></details> 
     
@@ -276,7 +281,7 @@ The main tasks for this exercise are:
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
-    Get-Cpmmand *neighbor*  
+    Get-Command *neighbor*  
     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
@@ -310,7 +315,10 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-      Get-NetNeighbor | Sort-Object -Property State | Select-Object -Property IPAddress,State | Format-Wide -GroupBy State -AutoSize
+      Get-NetNeighbor | 
+        Sort-Object -Property State | 
+        Select-Object -Property IPAddress,State | 
+        Format-Wide -GroupBy State -AutoSize
     ```
     </Strong></details> 
 
@@ -386,7 +394,7 @@ The main tasks for this exercise are:
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
-    Get-Command *user*
+    Get-Command Get*user*
     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
@@ -448,9 +456,9 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Get-EventLog -LogName Security | 
-    Where-Object {$_.EventID -eq 4624} | 
-    Select-Object -Property TimeWritten,EventID,Message -Last 10 | 
-    Format-List
+      Where-Object {$_.EventID -eq 4624} | 
+      Select-Object -Property TimeWritten,EventID,Message -Last 10 | 
+      Format-List
     ```
     </Strong></details> 
 
@@ -483,9 +491,9 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Get-ChildItem -Path CERT: -Recurse | 
-    Where-Object { $_.HasPrivateKey -eq $False } | 
-    Select-Object -Property FriendlyName,Issuer | 
-    Format-List
+      Where-Object { $_.HasPrivateKey -eq $False } | 
+      Select-Object -Property FriendlyName,Issuer | 
+      Format-List
     ```
     </Strong></details>     
     
@@ -501,9 +509,9 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Get-ChildItem -Path CERT: -Recurse | 
-    Where-Object { $_.HasPrivateKey -eq $False -and $_.NotAfter -gt (Get-Date) -and $_.NotBefore -lt (Get-Date) } | 
-    Select-Object -Property NotBefore,NotAfter,FriendlyName,Issuer | 
-    Format-Table -Wrap
+      Where-Object { $_.HasPrivateKey -eq $False -and $_.NotAfter -gt (Get-Date) -and $_.NotBefore -lt (Get-Date) } | 
+      Select-Object -Property NotBefore,NotAfter,FriendlyName,Issuer | 
+      Format-Table -Wrap
     # $False is a system variable that contains a boolean object of False
     # Using ( ) here tells PowerShell to run the Get-Date command and put the result in place of the ( )
     ```
@@ -549,15 +557,15 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Get-Volume | 
-    Where-Object { $_.SizeRemaining -gt 0 -and $_.SizeRemaining / $_.Size -lt .99 }| 
-    Select-Object -Property DriveLetter, @{n='Size';e={[Math]::Round($PSItem.Size / 1MB,3)}}
+      Where-Object { $_.SizeRemaining -gt 0 -and $_.SizeRemaining / $_.Size -lt .99 }| 
+      Select-Object -Property DriveLetter, @{n='Size';e={[Math]::Round($PSItem.Size / 1MB,3)}}
     ```
     <br>
     ```PowerShell
     # This is another option to produce a similar result
     Get-Volume | 
-    Where-Object { $PSItem.SizeRemaining -gt 0 -and $PSItem.SizeRemaining / $PSItem.Size -lt .99 }| 
-    Select-Object DriveLetter, @{n='Size';e={'{0:N3}' -f ($PSItem.Size / 1MB)}}
+      Where-Object { $PSItem.SizeRemaining -gt 0 -and $PSItem.SizeRemaining / $PSItem.Size -lt .99 }| 
+      Select-Object DriveLetter, @{n='Size';e={'{0:N3}' -f ($PSItem.Size / 1MB)}}
     ```
     
     </Strong></details> 
@@ -566,7 +574,7 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Get-Volume | 
-    Where-Object { $_.SizeRemaining -gt 0 -and $_.SizeRemaining / $_.Size -lt .1 }
+      Where-Object { $_.SizeRemaining -gt 0 -and $_.SizeRemaining / $_.Size -lt .1 }
     ```
     </Strong></details> 
 
@@ -611,8 +619,8 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Get-ControlPanelItem -Category 'System and Security' | 
-    Where-Object {$_.Category.Count -eq 1} | 
-    Sort-Object -Property Name
+      Where-Object {$_.Category.Count -eq 1} | 
+      Sort-Object -Property Name
     ```
     </Strong></details> 
 
@@ -756,9 +764,9 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Get-ADUser -Filter * -Properties Department,City | 
-    Where-Object {$_.Department -eq ‘IT’ -and $_.City -eq ‘London’} | 
-    Select-Object -Property Name,Department,City| 
-    Sort-Object -Propperty Name
+      Where-Object {$_.Department -eq ‘IT’ -and $_.City -eq ‘London’} | 
+      Select-Object -Property Name,Department,City| 
+      Sort-Object -Propperty Name
     ```
     </Strong></details> 
 1. Set the **Office** location for all the users to **LON-A/1000**.
@@ -772,8 +780,8 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Get-ADUser -Filter * -Properties Department,City | 
-    Where-Object {$_.Department -eq ‘IT’ -and $_.City -eq ‘London’} | 
-    Set-ADUser -Office ‘LON-A/1000’
+      Where-Object {$_.Department -eq ‘IT’ -and $_.City -eq ‘London’} | 
+      Set-ADUser -Office ‘LON-A/1000’
     ```
     
     </Strong></details> 
@@ -782,9 +790,9 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Get-ADUser -Filter * -Properties Department,City,Office | 
-    Where-Object {$_.Department -eq ‘IT’ -and $_.City -eq ‘London’} | 
-    Select-Object -Property Name,Department,City,Office | 
-    Sort-Object -Property Name
+      Where-Object {$_.Department -eq ‘IT’ -and $_.City -eq ‘London’} | 
+      Select-Object -Property Name,Department,City,Office | 
+      Sort-Object -Property Name
     ```
     </Strong></details> 
 
@@ -802,11 +810,11 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Get-ADUser -Filter * -Properties Department,City,Office | 
-    Where-Object {$_.Department -eq 'IT' -and $_.City -eq 'London'} | 
-    Sort-Object -Property Name | 
-    Select-Object -Property Name,Department,City,Office |
-    ConvertTo-Html -Property Name,Department,City -PreContent Users | 
-    Out-File E:\UserReport.html
+      Where-Object {$_.Department -eq 'IT' -and $_.City -eq 'London'} | 
+      Sort-Object -Property Name | 
+      Select-Object -Property Name,Department,City,Office |
+      ConvertTo-Html -Property Name,Department,City -PreContent Users | 
+      Out-File E:\UserReport.html
     ```
     
     ```PowerShell
@@ -838,11 +846,11 @@ The main tasks for this exercise are:
     '@
     
     Get-ADUser -Filter * -Properties Department,City,Office | 
-    Where-Object {$_.Department -eq 'IT' -and $_.City -eq 'London'} | 
-    Sort-Object -Property Name | 
-    Select-Object -Property Name,Department,City,Office |
-    ConvertTo-Html -Property Name,Department,City -PreContent Users -Head $CSS | 
-    Out-File E:\UserReport.html    
+      Where-Object {$_.Department -eq 'IT' -and $_.City -eq 'London'} | 
+      Sort-Object -Property Name | 
+      Select-Object -Property Name,Department,City,Office |
+      ConvertTo-Html -Property Name,Department,City -PreContent Users -Head $CSS | 
+      Out-File E:\UserReport.html    
     
     ```
     
@@ -866,10 +874,10 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Get-ADUser -Filter * -Properties Department,City,Office | 
-    Where-Object {$_.Department -eq 'IT' -and $_.City -eq 'London'} | 
-    Sort-Object -Property Name | 
-    Select-Object -Property Name,Department,City,Office |
-    Export-Clixml E:\UserReport.xml
+      Where-Object {$_.Department -eq 'IT' -and $_.City -eq 'London'} | 
+      Sort-Object -Property Name | 
+      Select-Object -Property Name,Department,City,Office |
+      Export-Clixml E:\UserReport.xml
     ```
     </Strong></details> 
 1. Use Internet Explorer to review **UserReport.xml**.
@@ -890,10 +898,10 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Get-ADUser -Filter * -Properties Department,City,Office | 
-    Where-Object {$_.Department -eq 'IT' -and $_.City -eq 'London'} | 
-    Sort-Object -Property Name | 
-    Select-Object -Property Name,Department,City,Office |
-    Export-Csv E:\UserReport.csv
+      Where-Object {$_.Department -eq 'IT' -and $_.City -eq 'London'} | 
+      Sort-Object -Property Name | 
+      Select-Object -Property Name,Department,City,Office |
+      Export-Csv E:\UserReport.csv
     ```
     </Strong></details> 
 1. Open the CSV file in Notepad.
