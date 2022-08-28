@@ -26,9 +26,17 @@ lab:
 
 ## Run this command on the LON-CL1 machine before starting the labs  
 
- ```PowerShell 
- Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {Set-NetFirewallProfile -All -Enabled false}
- ```
+- Login to the LON-CL1 machine
+- Start the PowerShell ISE console
+- From the File menu choose New
+- In the Top window pane type the following command and then hit the green 'run script' icon in the toolbar
+
+```PowerShell 
+Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {Set-NetFirewallProfile -All -Enabled false}
+
+
+```
+
 
 # Lab: Configuring Windows PowerShell, and finding and running commands
 
