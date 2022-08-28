@@ -29,8 +29,9 @@ lab:
 - Login to the LON-CL1 machine
 - Start the PowerShell ISE console
 - From the File menu choose New
-- In the Top window pane copy and paste the following command and then hit the green 'run script' icon in the toolbar
-- Moving the mouse to the top right of the code block below, will show a hidden copy button.
+- Moving the mouse to the top right of the code block below, will show a hidden copy button
+- In the Untitled window pane of the PowerShell ISE editor paste the copied command, and then hit the green 'run script' icon in the toolbar
+
 
 ```PowerShell 
 Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {Set-NetFirewallProfile -All -Enabled false}
