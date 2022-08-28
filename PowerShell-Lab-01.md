@@ -26,10 +26,10 @@ lab:
 
 ## Run this command on the LON-CL1 machine before starting the labs  
 
-- Login to the LON-CL1 machine
-- Start the PowerShell ISE console
+- Moving the mouse to the top right of the code block below, will show a hidden copy button, click it to copy the text
+- Now, Login to the LON-CL1 machine
+- Start the "PowerShell ISE" console
 - From the File menu choose New
-- Moving the mouse to the top right of the code block below, will show a hidden copy button
 - In the Untitled window pane of the PowerShell ISE editor paste the copied command, and then hit the green 'run script' icon in the toolbar
 
 
