@@ -357,12 +357,20 @@ The main tasks for this exercise are:
     Get-Command *Eventlog*
     ```
     </Strong></details> 
-    <details><summary>Click to see the answer</summary><Strong> 
+    <details><summary>Click to see the answer (Part 1)</summary><Strong> 
+    
+    ```PowerShell
+    Get-Help Get-EventLog -ShowWindow
+    ```
+    </Strong></details> 
+    
+    <details><summary>Click to see the answer (Part 2)</summary><Strong> 
     
     ```PowerShell
     Get-EventLog -Logname Security -Newest 10
     ```
     </Strong></details> 
+    
 ### Exercise 3 results
 
 After completing this exercise, you'll have demonstrated your ability to find and run Windows PowerShell commands that perform specific tasks.
