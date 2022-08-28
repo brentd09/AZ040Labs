@@ -201,12 +201,21 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Block-SmbShareAccess
+    
+    # You could use Block-FileShareAccess, however this will set 
+    # the block permission at the share and at the file level permissions
+    # at the same time. The Block-SmbShareAccess only sets the block at the 
+    # share level permissions.
     ```
     </Strong></details>   
   - What command would you run to clear your computer’s local **BranchCache** cache?
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
+    Get-Command -Name *cache*
+    
+    # OR
+    
     Get-Command -Module BranchCache
     ```
     </Strong></details> 
@@ -214,6 +223,8 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Clear-BCCache
+    
+    # Notice the BranchCache is denoted by the prefix on the Noun (BC)
     ```
     </Strong></details>   
   - What command would you run to display a list of Windows Firewall rules? What parameter of that command would display only enabled rules?
@@ -238,6 +249,10 @@ The main tasks for this exercise are:
 
     ```PowerShell
     Get-Command *address* 
+    
+    # OR 
+    
+    Get-Command Get*address* 
     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
@@ -281,7 +296,11 @@ The main tasks for this exercise are:
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
-    Get-Help Get-NetIPAddress
+    Get-Help Get-NetIPAddress -ShowWindow
+    
+    # OR 
+    
+    Get-Help Get-NetIPAddress -Full
     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
@@ -299,12 +318,19 @@ The main tasks for this exercise are:
     Get-Command -Noun Service
     ```
     </Strong></details> 
-    <details><summary>Click to see the answer</summary><Strong> 
+    <details><summary>Click to see the answer (Part 1)</summary><Strong> 
     
     ```PowerShell
+    Get-Help Set-Service -ShowWindow
+    ```
+    </Strong></details>     
+    
+    </Strong></details> 
+    <details><summary>Click to see the answer (Part 1)</summary><Strong> 
     Set-Service -Name BITS -StartupType Automatic
     ```
     </Strong></details> 
+    
 5. Test the network connection to **LON-DC1**. Your command should return only a True or False value, without any other output.
     <details><summary>Click for hint</summary><Strong> 
 
