@@ -361,7 +361,7 @@ The main tasks for this exercise are:
 1. Display the DNS client cache. Sort the list by record name, and display only the record name, record type, and Time to Live. Use only one column to display all the data.
     <details><summary>Click to see the answer</summary><Strong> 
     
-    ```
+    ```PowerShell
     Get-DnsClientCache | Select-Object -Property Name,Type,TimeToLive | Sort-Object -Property Name | Format-List
     # Notice that this command does not return the Type property as it was displayed earlier, you will now see the number that is the true value of the Type
     # 1 = A Record
