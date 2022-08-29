@@ -129,6 +129,13 @@ The main tasks for this exercise are:
     Add-ADGroupMember "London Admins" -Members Ty
     ```
     </Strong></details> 
+    <details><summary>Click to see the answer TimeToLiveMembership</summary><Strong> 
+    
+    ```PowerShell
+    Enable-ADOptionalFeature ‘Privileged Access Management Feature’ -Scope ForestOrConfigurationSet -Target 'adatum.com'
+    Add-ADGroupMember "London Admins" -Members Ty -MemberTimeToLive (New-Timespan -Minutes 15)
+    ```
+    </Strong></details> 
 5. Create a computer account for the **LON-CL2** computer.
     <details><summary>Click for hint</summary><Strong> 
 
