@@ -132,6 +132,8 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer TimeToLiveMembership</summary><Strong> 
     
     ```PowerShell
+    # This feature requires Forest Funtional Level 2016, this is why it is not on by default!
+  
     Enable-ADOptionalFeature ‘Privileged Access Management Feature’ -Scope ForestOrConfigurationSet -Target 'adatum.com'
     Add-ADGroupMember "London Admins" -Members Ty -MemberTimeToLive (New-Timespan -Minutes 15)
     ```
