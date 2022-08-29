@@ -176,8 +176,12 @@ The main tasks for this exercise are:
     
     ```PowerShell
     $logFile = "" + $today.Year + "-" + $today.Month + "-" + $today.Day + "-" + $today.Hour + "-" + $today.Minute + ".txt"
+    
     # OR 
     # $logFile = [string]$today.Year + "-" + $today.Month + "-" + $today.Day + "-" + $today.Hour + "-" + $today.Minute + ".txt"
+    
+    # OR
+    # $logFile = get-date -Format 'yyyy\-MM\-dd\-hh\-mm\.\t\x\t'
     ```
     </Strong></details> 
 4. Create a variable `$cutOffDay` that contains the date **30** days before today.
