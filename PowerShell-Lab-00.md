@@ -2,7 +2,7 @@
 
 ## Run this command on the LON-CL1 machine before starting the labs  
 
-- Moving the mouse to the top right of the code block below, will show a hidden copy button, click it to copy the text
+- Copy the PowerShell Command
 - Click the Start menu, and then just type ISE
 - Start the "PowerShell ISE" console
 - From the ISE's File menu choose New
