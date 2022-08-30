@@ -73,21 +73,21 @@ The main tasks for this exercise are:
    - Click Finish
    - Click OK
 2. In the **MMC** console, browse to **Certificates - Current User**.
-  - Expand the Certificates - Current User
-  - Right-Click Personal
-  - Click All Tasks
-  - Click Request New Certificate.
-  - Click Next
-  - Click Next
-  - Select Adatum Code Signing
-  - Click Enroll
-  - Click Finish
+   - Expand the Certificates - Current User
+   - Right-Click Personal
+   - Click All Tasks
+   - Click Request New Certificate.
+   - Click Next
+   - Click Next
+   - Select Adatum Code Signing
+   - Click Enroll
+   - Click Finish
 3. In the **MMC** console, verify that the new code-signing certificate in Personal\Certificates.
 4. Copy the Code Signing Certificate to the Trusted Publishers folder
-  - Right-Click on the Certificate in Personal\Certificates  
-  - Click Copy
-  - Right Click on the Trusted Publishers
-  - Click Paste
+   - Right-Click on the Certificate in Personal\Certificates  
+   - Click Copy
+   - Right Click on the Trusted Publishers
+   - Click Paste
 5. Verify that the code-signing certificate is in Trusted Publishers\Certificates.
 6. Close the **MMC** console.
 
