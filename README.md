@@ -1,4 +1,4 @@
-# AZ040Labs
+# AZ-040Labs
 
 ## We have rearranged the lab order to help your learning of the topics.
 - Lab 2 has been placed toward the end of the week as the commands that you will see here will mostly be covered by other modules
