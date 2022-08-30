@@ -697,7 +697,7 @@ The main tasks for this exercise are:
     Get-Help Get-Random -ShowWindow 
     ```
     </Strong></details> 
-1. Run **1..10** to put 10 numeric objects into the pipeline.
+1. Run **1..10** to put 10 numeric objects into the pipeline to produce 10 random numbers.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
@@ -708,7 +708,7 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    1..10 | ForEach_Object { Get-Random -SetSeed $_ }
+    1..10 | ForEach_Object { Get-Random}
     ```
     </Strong></details> 
 1. Run the command again. For each numeric object, produce a random number that uses the numeric object as the seed.
