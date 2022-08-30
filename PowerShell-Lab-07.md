@@ -72,7 +72,7 @@ The main tasks for this exercise are:
   - Ensure My user account is selected
   - Click Finish
   - Click OK
-3. In the **MMC** console, browse to **Certificates - Current User**.
+2. In the **MMC** console, browse to **Certificates - Current User**.
   - Expand the Certificates - Current User
   - Right-Click Personal
   - Click All Tasks
@@ -82,19 +82,19 @@ The main tasks for this exercise are:
   - Select Adatum Code Signing
   - Click Enroll
   - Click Finish
-1. In the **MMC** console, verify that the new code-signing certificate in Personal\Certificates.
-2. Copy the Code Signing Certificate to the Trusted Publishers folder
+3. In the **MMC** console, verify that the new code-signing certificate in Personal\Certificates.
+4. Copy the Code Signing Certificate to the Trusted Publishers folder
   - Right-Click on the Certificate in Personal\Certificates  
   - Click Copy
   - Right Click on the Trusted Publishers
   - Click Paste
-1. Verify that the code-signing certificate is in Trusted Publishers\Certificates.
-4. Close the **MMC** console.
+5. Verify that the code-signing certificate is in Trusted Publishers\Certificates.
+6. Close the **MMC** console.
 
 ### Task 2: Digitally sign a script
 
 1. Open a Windows PowerShell prompt.
-1. Place the code-signing certificate in **Cert:\CurrentUser\My** into a variable.
+2. Place the code-signing certificate in **Cert:\CurrentUser\My** into a variable.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
@@ -107,7 +107,7 @@ The main tasks for this exercise are:
     $cert = Get-ChildItem Cert:\CurrentUser\My\ -CodeSigningCert
     ```
     </Strong></details> 
-1. In **E:\Mod07\Labfiles**, rename **HelloWorld.txt** to **HelloWorld.ps1**.
+3. In **E:\Mod07\Labfiles**, rename **HelloWorld.txt** to **HelloWorld.ps1**.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
@@ -122,7 +122,7 @@ The main tasks for this exercise are:
     Rename-Item HelloWorld.txt HelloWorld.ps1
     ```
     </Strong></details> 
-1. Use the **Set-Authenticode** cmdlet to apply a digital signature to **HelloWorld.ps1**.
+4. Use the **Set-Authenticode** cmdlet to apply a digital signature to **HelloWorld.ps1**.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
@@ -201,7 +201,7 @@ Adatum Corporation is testing a new Voice over IP (VoIP) and video-conferencing 
 The main tasks for this exercise are:
 
 1. Create a test group.
-1. Create a script to configure the `ipPhone` attribute.
+2. Create a script to configure the `ipPhone` attribute.
 
 ### Task 1: Create a test group
 
@@ -219,7 +219,7 @@ The main tasks for this exercise are:
     # Either Universal or Global group scope would work here 
     ```
     </Strong></details> 
-3. Add the following users as members in the **IPPhoneTest** group:
+2. Add the following users as members in the **IPPhoneTest** group:
 
    - **Abbi Skinner**
    - **Ida Alksne**
