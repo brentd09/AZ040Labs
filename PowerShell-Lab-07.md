@@ -65,16 +65,31 @@ The main tasks for this exercise are:
 
 ### Task 1: Install a code signing certificate
 
-1. On **LON-CL1**, open an **MMC** console, and then add the **Certificates** snap-in focused on **My user account**.
-1. In the **MMC** console, browse to **Certificates - Current User\\Personal**.
-1. Use the context menu of the **Personal** folder and select **Request New Certificate**.
-1. Use the following settings in the **Certificate Enrollment** wizard:
-
-   - **Active Directory Enrollment Policy**
-   - **Adatum Code Signing** template
-
-1. In the **MMC** console, verify that the new code-signing certificate is present.
-1. Close the **MMC** console.
+1. On **LON-CL1**, open an **mmc.exe** console, and then add the **Certificates** snap-in focused on **My user account**.
+  - From the File menu choose Add/Remove Snapin...
+  - Choose Certificates from the available snap-ins
+  - Click Add>
+  - Ensure My user account is selected
+  - Click Finish
+  - Click OK
+3. In the **MMC** console, browse to **Certificates - Current User**.
+  - Expand the Certificates - Current User
+  - Right-Click Personal
+  - Click All Tasks
+  - Click Request New Certificate.
+  - Click Next
+  - Click Next
+  - Select Adatum Code Signing
+  - Click Enroll
+  - Click Finish
+1. In the **MMC** console, verify that the new code-signing certificate in Personal\Certificates.
+2. Copy the Code Signing Certificate to the Trusted Publishers folder
+  - Right-Click on the Certificate in Personal\Certificates  
+  - Click Copy
+  - Right Click on the Trusted Publishers
+  - Click Paste
+1. Verify that the code-signing certificate is in Trusted Publishers\Certificates.
+4. Close the **MMC** console.
 
 ### Task 2: Digitally sign a script
 
