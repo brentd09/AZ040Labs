@@ -819,9 +819,9 @@ The main tasks for this exercise are:
       ConvertTo-Html -Property Name,Department,City -PreContent Users | 
       Out-File E:\UserReport.html
     ```
+    </Strong></details> 
     
-    OR if you want to include some CSS to make the table look more professional
-    
+    <details><summary>Click to see the answer With CSS</summary><Strong> 
     ```PowerShell
     $CSS = @'
     <style>
