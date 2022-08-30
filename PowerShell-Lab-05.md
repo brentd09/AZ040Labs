@@ -93,7 +93,7 @@ The main tasks for this exercise are as follows:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Get-WmiObject -Namespace root\cimv2 -List | Where-Object {$_.Name -like '*operating*'} | Sort-Object -Property Name
+    Get-WmiObject -List | Where-Object {$_.Name -like '*operating*'}
     ```
     </Strong></details> 
 1. Display a list of properties for the class that you discovered in the previous step.
@@ -131,7 +131,7 @@ The main tasks for this exercise are as follows:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Get-WmiObject -Namespace root\cimv2 -List | Where-Object {$_.Name -like '*system*'} | Sort-Object -Property Name 
+    Get-WmiObject -List | Where-Object {$_.Name -like '*system*'}
     ```
     </Strong></details> 
 1. Display a list of properties and property values for the class that you discovered in the previous step.
@@ -141,11 +141,11 @@ The main tasks for this exercise are as follows:
     Get-WmiObject -Class Win32_ComputerSystem | Select-Object -Property *
     ```
     </Strong></details> 
-1. Using the list of properties and a WMI command, display the local computer’s manufacturer, model, and total physical memory. Label the column for total physical memory **RAM**.
+1. Using the list of properties and a WMI command, display the local computer’s manufacturer, model, and total physical memory.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Get-WmiObject -Class Win32_ComputerSystem | Select-Object -Property Manufacturer,Model,@{n='RAM';e={$PSItem.TotalPhysicalMemory}}
+    Get-WmiObject -Class Win32_ComputerSystem | Select-Object -Property Manufacturer,Model,TotalPhysicalMemory
     ```
     </Strong></details> 
 
@@ -155,7 +155,7 @@ The main tasks for this exercise are as follows:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Get-WmiObject -Namespace root\cimv2 -List | Where-Object {$_.Name -like '*service*'} | Sort-Object -Property Name 
+    Get-WmiObject -List | Where-Object {$_.Name -like '*service*'}
     ```
     </Strong></details> 
 1. Display a list of properties and property values for the class that you discovered in the previous step.
@@ -209,6 +209,7 @@ The main tasks for this exercise are as follows:
     
     ```PowerShell
     Get-CimInstance -Class Win32_UserAccount | Get-Member
+    # With the CIM command you will not be able to find the methods using Get-Member
     ```
     </Strong></details> 
 1. Using a CIM command and the property list, display a list of user accounts in a table. Include columns for the account caption, domain, security ID, full name, and name. The full name column might be blank for some or all accounts.
