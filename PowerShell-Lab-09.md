@@ -106,19 +106,6 @@ The main tasks for this exercise are:
     $PSVersionTable.PSVersion
     ```
     </Strong></details> 
-5. Set the execution policy to **RemoteSigned** for the current user.
-    <details><summary>Click for hint</summary><Strong> 
-
-    ```PowerShell
-    Get-Help Set-ExecutionPolicy -ShowWindow
-    ```
-    </Strong></details> 
-    <details><summary>Click to see the answer</summary><Strong> 
-    
-    ```PowerShell
-    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-    ```
-    </Strong></details> 
 7. From the PowerShell Gallery, install the Az module for the current user by using the **Install-Module** command.
     > This will take some time to install, wait until the installation of all of the AZ modules have fininshed
    
