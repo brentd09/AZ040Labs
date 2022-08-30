@@ -675,7 +675,7 @@ The main tasks for this exercise are:
     ```
     </Strong></details> 
 
-### Task 2: Use enumeration to produce 100 random numbers
+### Task 2: Use enumeration to produce 10 random numbers
 
 1. Using a keyword such as **random**, find a command that produces random numbers.
     <details><summary>Click for hint</summary><Strong> 
