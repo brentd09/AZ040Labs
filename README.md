@@ -3,6 +3,7 @@
 ### PowerShell Labs
 - PowerShell Labs 
 
+  [Fix LON-SVR1 Firewall](PowerShell-Lab-00.md)<br>
   [PowerShell Lab  1](PowerShell-Lab-01.md)<br>
   [PowerShell Lab  3](PowerShell-Lab-03.md)<br>
   [PowerShell Lab  4](PowerShell-Lab-04.md)<br>
