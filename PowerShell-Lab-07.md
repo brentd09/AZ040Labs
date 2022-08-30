@@ -66,12 +66,12 @@ The main tasks for this exercise are:
 ### Task 1: Install a code signing certificate
 
 1. On **LON-CL1**, open an **mmc.exe** console, and then add the **Certificates** snap-in focused on **My user account**.
-  - From the File menu choose Add/Remove Snapin...
-  - Choose Certificates from the available snap-ins
-  - Click Add>
-  - Ensure My user account is selected
-  - Click Finish
-  - Click OK
+   - From the File menu choose Add/Remove Snapin...
+   - Choose Certificates from the available snap-ins
+   - Click Add>
+   - Ensure My user account is selected
+   - Click Finish
+   - Click OK
 2. In the **MMC** console, browse to **Certificates - Current User**.
   - Expand the Certificates - Current User
   - Right-Click Personal
