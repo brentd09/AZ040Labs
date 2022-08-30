@@ -822,7 +822,9 @@ The main tasks for this exercise are:
     </Strong></details> 
     
     <details><summary>Click to see the answer With CSS</summary><Strong> 
+    
     ```PowerShell
+    
     $CSS = @'
     <style>
       table {
