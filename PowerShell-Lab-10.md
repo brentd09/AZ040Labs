@@ -110,7 +110,7 @@ lab:
 
 
 1. Think of a **Strong** password that you want to use for a new user and make a note of it so that you don't forget. In the next step, replace `<password>` with the password you thought of.
-1.Set the password property of the password profile object:
+1. Set the password property of the password profile object:
 
    <details><summary>Click to see the answer</summary><Strong> 
     
