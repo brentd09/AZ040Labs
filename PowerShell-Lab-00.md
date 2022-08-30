@@ -2,7 +2,7 @@
 
 ## Run this command on the LON-CL1 machine before starting the labs  
 
-- Copy the PowerShell Command
+- Copy the PowerShell Command below
 - Click the Start menu, and then just type ISE
 - Start the "PowerShell ISE" console
 - From the ISE's File menu choose New
@@ -10,6 +10,8 @@
 
 
 ```PowerShell 
+
+
 Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {Set-NetFirewallProfile -All -Enabled false}
 
 
