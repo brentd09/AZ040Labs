@@ -595,7 +595,7 @@ The main tasks for this exercise are:
     Get-ControlPanelItem 
     ```
     </Strong></details> 
-1. Display the names and descriptions, sorted by name, of the Control Panel items in the **System and Security** category.
+1. Display the Name and Category, sorted by Name, of the Control Panel items in the **System and Security** category.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
@@ -605,7 +605,9 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Get-ControlPanelItem -Category 'System and Security' | Sort-Object Name
+    Get-ControlPanelItem -Category 'System and Security' | 
+      Sort-Object Name |
+      Select-Object -Property Name, Category
     ```
     </Strong></details> 
 1. Display the same list, excluding any Control Panel items that exist in more than one category. Make sure the command performance is optimized.
@@ -620,7 +622,8 @@ The main tasks for this exercise are:
     ```PowerShell
     Get-ControlPanelItem -Category 'System and Security' | 
       Where-Object {$_.Category.Count -eq 1} | 
-      Sort-Object -Property Name
+      Sort-Object -Property Name |
+      Select-Object Name,Category
     ```
     </Strong></details> 
 
