@@ -82,22 +82,12 @@ The main tasks for this exercise are:
 
 1. On **LON-CL1**, start the PowerShell 7.1 environment.
 
-
-    ```PowerShell
-    # this is powershell 7 not Windows PowerShell
-    ```
-
     
     ```PowerShell
     pwsh.exe
     ```
 
 3. Check your version of PowerShell by using `$PSVersionTable.PSVersion`.
-
-
-    ```PowerShell
-    $PSVersionTable
-    ```
 
     
     ```PowerShell
@@ -108,21 +98,12 @@ The main tasks for this exercise are:
     > This will take some time to install, wait until the installation of all of the AZ modules have fininshed
    
 
-
-    ```PowerShell
-    Get-Help Install-Module -ShowWindow
-    ```
-
     
     ```PowerShell
     Install-Module AZ -Verbose -Force
     ```
 
 9. Use **Connect-AzAccount** to sign in to your Azure subscription.
-
-    ```PowerShell
-    Get-Help Connect-AzAccount -ShowWindow
-    ```
 
     
     ```PowerShell
@@ -201,13 +182,13 @@ The main task for this exercise is:
 
    ```PowerShell
    $vmParams = @{
-     ResourceGroupName = 'ResourceGroup1'
-     Name = 'TestVM1'
-     Location = 'eastus'
-     ImageName = 'Win2016Datacenter'
+     ResourceGroupName   = 'ResourceGroup1'
+     Name                = 'TestVM1'
+     Location            = 'eastus'
+     ImageName           = 'Win2016Datacenter'
      PublicIpAddressName = 'TestPublicIp'
-     Credential = $cred
-     OpenPorts = 3389
+     Credential          = $cred
+     OpenPorts           = 3389
    }
    ```
 
