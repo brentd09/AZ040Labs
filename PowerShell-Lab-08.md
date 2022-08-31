@@ -175,32 +175,6 @@ The main tasks for this exercise are:
     ```
     </Strong></details> 
 
-### Task 3: Observe remoting limitations
-
-1. Establish a one-to-one remoting connection to **LON-CL1** using the computer name **localhost**. This is your local computer, but this new connection creates a second user session for you on the computer.
-    <details><summary>Click to see the answer</summary><Strong> 
-    
-    ```PowerShell
-    Enter-PSSession -ComputerName localhost
-    ```
-    </Strong></details> 
-1. Use Windows PowerShell to start a new instance of Notepad. What happens, and why?
-    <details><summary>Click to see the answer</summary><Strong> 
-    
-    ```PowerShell
-    Notepad.exe
-    ```
-    </Strong></details> 
-1. Close Notepad.exe using Ctrl-C. This may take some time to quit.   
-
-1. Close the connection.
-    <details><summary>Click to see the answer</summary><Strong> 
-    
-    ```PowerShell
-    Exit-PSSession
-    ```
-    </Strong></details> 
-
 ## Exercise 3: Performing one-to-many remoting
 
 In this exercise, you'll run commands against multiple computers. One of those will be the client computer, although you'll be establishing a second sign-in to it for the duration of each command.
