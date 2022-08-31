@@ -81,61 +81,56 @@ The main tasks for this exercise are:
 ### Task 2: Install the Azure Az module for PowerShell
 
 1. On **LON-CL1**, start the PowerShell 7.1 environment.
-    <details><summary>Click for hint</summary><Strong> 
+
 
     ```PowerShell
     # this is powershell 7 not Windows PowerShell
     ```
-    </Strong></details> 
-    <details><summary>Click to see the answer</summary><Strong> 
+
     
     ```PowerShell
     pwsh.exe
     ```
-    </Strong></details> 
+
 3. Check your version of PowerShell by using `$PSVersionTable.PSVersion`.
-    <details><summary>Click for hint</summary><Strong> 
+
 
     ```PowerShell
     $PSVersionTable
     ```
-    </Strong></details> 
-    <details><summary>Click to see the answer</summary><Strong> 
+
     
     ```PowerShell
     $PSVersionTable.PSVersion
     ```
-    </Strong></details> 
+
 7. From the PowerShell Gallery, install the Az module for the current user by using the **Install-Module** command.
     > This will take some time to install, wait until the installation of all of the AZ modules have fininshed
    
-    <details><summary>Click for hint</summary><Strong> 
+
 
     ```PowerShell
     Get-Help Install-Module -ShowWindow
     ```
-    </Strong></details> 
-    <details><summary>Click to see the answer</summary><Strong> 
+
     
     ```PowerShell
     Install-Module AZ -Verbose -Force
     ```
-    </Strong></details> 
+
 9. Use **Connect-AzAccount** to sign in to your Azure subscription.
-    <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
     Get-Help Connect-AzAccount -ShowWindow
     ```
-    </Strong></details> 
-    <details><summary>Click to see the answer</summary><Strong> 
+
     
     ```PowerShell
     # When you run this command it will show website asking you to sign in
     # Sign in with your Username you found in the Resourses tab of the lab instructions
     Connect-AzAccount
     ```
-    </Strong></details> 
+
 
 ## Exercise 2: Using Azure Cloud Shell
 
@@ -170,97 +165,86 @@ The main task for this exercise is:
    > When your storage account is created, the Cloud Shell console should open, and you should get a prompt in the format PS /home/user1-21764973>.
 
 3. At the PowerShell prompt, Enter 
-```PowerShell
-Get-AzSubscription
-
-```
+   ```PowerShell
+   Get-AzSubscription
+   ```
 5. Enter 
-```PowerShell
-Get-AzResourceGroup to review the resource group information.
-```
+   ```PowerShell
+   Get-AzResourceGroup to review the resource group information.
+   ```
 7. On the Cloud Shell window Use the drop-down list to switch from PowerShell to the "Bash shell" and confirm your choice.
 8. At the Bash shell prompt, Enter 
-  ```PowerShell
-  az account list
-  
-  ```
+   ```PowerShell
+   az account list
+   ```
   
 3. Enter az resource list to review the resource group information.
 
     > Switch back to the PowerShell interface.
 
 3. In the PowerShell console, enter the following command to create a new Resource Group
-  ```PowerShell
-  New-AzResourceGroup -Name ResourceGroup1 -Location eastus
-  
-  ```
+   ```PowerShell
+   New-AzResourceGroup -Name ResourceGroup1 -Location eastus
+   ```
 
 ### Task 1: Use Azure Cloud Shell to create a Virtual Machine
 
 1. In the Windows PowerShell window, enter the following command to define the admin credentials for the VM you want to create in Azure:
 
-```PowerShell
-$cred = Get-Credential -Message "Enter a username and password for the virtual machine."
-
-```
+   ```PowerShell
+   $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
+   ```
 
 > When prompted, choose the username and password that you want to use as admin credentials for the new VM. Do not use name Admin for administrator.
 
 2. In the Windows PowerShell window, enter the following command to define the VM parameters, and then select Enter. Replace yourname with your real name:
 
-```PowerShell
-$vmParams = @{
- ResourceGroupName = 'ResourceGroup1'
- Name = 'TestVM1'
- Location = 'eastus'
- ImageName = 'Win2016Datacenter'
- PublicIpAddressName = 'TestPublicIp'
- Credential = $cred
- OpenPorts = 3389
-}
-
-```
+   ```PowerShell
+   $vmParams = @{
+     ResourceGroupName = 'ResourceGroup1'
+     Name = 'TestVM1'
+     Location = 'eastus'
+     ImageName = 'Win2016Datacenter'
+     PublicIpAddressName = 'TestPublicIp'
+     Credential = $cred
+     OpenPorts = 3389
+   }
+   ```
 
 3. To create a new VM based on these parameters and store it in the newVM1 variable, enter the following command, and then select Enter:
 
-```PowerShell
-$newVM1 = New-AzVM @vmParams
-
-```
+   ```PowerShell
+   $newVM1 = New-AzVM @vmParams
+   ```
 
 > Note: Wait until the Azure VM is created.
 
 4. To check the parameters on the new VM, enter the following commands, and then select Enter:
 
-```PowerShell
-$NewVM1
-
-```
-```PowerShell
-$newVM1.OSProfile | Select-Object ComputerName,AdminUserName
-
-```
-```PowerShell
-$newVM1 | Get-AzNetworkInterface | Select-Object -ExpandProperty IpConfigurations | Select-Object Name,PrivateIpAddress
-
-```
+   ```PowerShell
+   $NewVM1
+   ```
+   ```PowerShell
+   $newVM1.OSProfile | Select-Object ComputerName,AdminUserName
+   ```
+   ```PowerShell
+   $newVM1 | Get-AzNetworkInterface | Select-Object -ExpandProperty IpConfigurations | Select-Object Name,PrivateIpAddress
+   ```
 
 5. To find a public IP address on the Azure VM you created so you can connect to it, enter the following commands, and then select Enter:
 > **Do steps 5 & 6 on the lab machine's PowerShell 7 window**
-```PowerShell
-$publicIp = Get-AzPublicIpAddress -Name TestPublicIp -ResourceGroupName ResourceGroup1
-$publicIp | Select-Object Name,IpAddress,@{label='FQDN';expression={$_.DnsSettings.Fqdn}}
-
-```
-
+   ```PowerShell
+   $publicIp = Get-AzPublicIpAddress -Name TestPublicIp -ResourceGroupName ResourceGroup1
+   $publicIp | Select-Object Name,IpAddress,@{label='FQDN';expression={$_.DnsSettings.Fqdn}}
+   ```
+  
 > Note the value of IPAddress in the table output.
 
 6. Enter the following command, and then select Enter to connect to the VM:
 
-```PowerShell
-mstsc.exe /v $PublicIP.IPAddress
-
-```
+   ```PowerShell
+   mstsc.exe /v $PublicIP.IPAddress
+   ```
 
 > When prompted, sign in with the credentials you provided for this VM. Ensure that you're connected to the Windows Server 2016 VM. Check the VM functionality and then shut it down.
 
@@ -272,14 +256,14 @@ mstsc.exe /v $PublicIP.IPAddress
 5. On the Overview page, check the parameters of the VM you created. Select Disk. Ensure that only one disk is created (Os disk).
 6. To create a data disk for the existing VM, in the Windows PowerShell window, enter the following commands, and select Enter after each:
 
-```powershell
-$VirtualMachine = Get-AzVM -ResourceGroupName "ResourceGroup1" -Name "TestVM1"
+   ```powershell
+   $VirtualMachine = Get-AzVM -ResourceGroupName "ResourceGroup1" -Name "TestVM1"
 
-Add-AzVMDataDisk -VM $VirtualMachine -Name "disk1" -LUN 0 -Caching ReadOnly -DiskSizeinGB 1 -CreateOption Empty
+   Add-AzVMDataDisk -VM $VirtualMachine -Name "disk1" -LUN 0 -Caching ReadOnly -DiskSizeinGB 1 -CreateOption Empty
 
-Update-AzVM -ResourceGroupName "ResourceGroup1" -VM $VirtualMachine
+   Update-AzVM -ResourceGroupName "ResourceGroup1" -VM $VirtualMachine
 
-```
+   ```
 > This will take some time to complete and update the Azure virtual machine
 5. Switch to the Azure portal and refresh the Disks page. You should be able to notice a new disk called disk1 in the Data disks section.
 
