@@ -1,6 +1,6 @@
 # AZ-040Labs
 
-## We have rearranged the lab order to help your learning of the topics.
+## Rearranged the lab order to help your learning of the topics.
 - Lab 2 has been placed toward the end of the week as the commands that you will see here will mostly be covered by other modules
 - Labs 9 and 10 are relating to Microsoft 365 and Azure and are best dealt with after all of the on-prem coding is finished 
 
