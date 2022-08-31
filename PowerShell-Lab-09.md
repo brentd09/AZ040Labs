@@ -64,9 +64,9 @@ The main tasks for this exercise are:
 1. On **LON-CL1**, open Microsoft Edge browser.
 3. In the address bar type the following:
 
-    ```PowerShell
-    https://portal.azure.com
-    ```
+   ```PowerShell
+   https://portal.azure.com
+   ```
     
 3. Use the Username and Password in the Resources tab of the lab instructions
    - The username will be very long and be similar format to: User1-21764458@LODSPRODMCA.onmicrosoft.com
@@ -83,34 +83,34 @@ The main tasks for this exercise are:
 1. On **LON-CL1**, start the PowerShell 7.1 environment.
 
     
-    ```PowerShell
-    pwsh.exe
-    ```
+   ```PowerShell
+   pwsh.exe
+   ```
 
 3. Check your version of PowerShell by using `$PSVersionTable.PSVersion`.
 
     
-    ```PowerShell
-    $PSVersionTable.PSVersion
-    ```
+   ```PowerShell
+   $PSVersionTable.PSVersion
+   ```
 
 7. From the PowerShell Gallery, install the Az module for the current user by using the **Install-Module** command.
     > This will take some time to install, wait until the installation of all of the AZ modules have fininshed
    
 
     
-    ```PowerShell
-    Install-Module AZ -Verbose -Force
-    ```
+   ```PowerShell
+   Install-Module AZ -Verbose -Force
+   ```
 
 9. Use **Connect-AzAccount** to sign in to your Azure subscription.
 
     
-    ```PowerShell
-    # When you run this command it will show website asking you to sign in
-    # Sign in with your Username you found in the Resourses tab of the lab instructions
-    Connect-AzAccount
-    ```
+   ```PowerShell
+   # When you run this command it will show website asking you to sign in
+   # Sign in with your Username you found in the Resourses tab of the lab instructions
+   Connect-AzAccount
+   ```
 
 
 ## Exercise 2: Using Azure Cloud Shell
@@ -132,9 +132,9 @@ The main task for this exercise is:
 
 1. On the AZ-040T00A-LON-CL1 computer, open the Edge browser window and go to 
   
-  ```PowerShell
-  portal.azure.com
-  ```
+   ```PowerShell
+   portal.azure.com
+   ```
 
 1. On the Microsoft Azure portal click the hamburger menu on the top left of the portal to find the following:
 2. On the menu choose "Virtual Machines" and ensure that no virtual machines (VMs) are created. 
