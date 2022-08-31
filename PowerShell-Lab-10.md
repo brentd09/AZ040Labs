@@ -31,95 +31,57 @@ lab:
 1. On **LON-CL1**, right click **Start**, and then choose **Windows PowerShell (Admin)**.
 1. Install the **AzureAD** module from PowerShell Gallery:
    
-    <details><summary>Click for hint</summary><Strong> 
-
-    ```PowerShell
-    Get-Command *install*
-    ```
-    </Strong></details> 
-    <details><summary>Click to see the answer</summary><Strong> 
     
    ```PowerShell
    Install-Module AzureAD -Verbose -Force
    ```
-    </Strong></details> 
-   
+
 
 1. Type "Y"  for yes on the "NuGet Provider is required to continue" dialog box and hit ENTER
 2. Import the AzureAD module 
 
-    <details><summary>Click to see the answer</summary><Strong> 
-    
+  
     ```PowerShell
     Import-Module AzureAD
     ```
-    </Strong></details> 
+
 
 
 4. Find and execute a PowerShell cmdlet that will connect to AzureAD and sign in
 
-    <details><summary>Click for hint</summary><Strong> 
-
-    ```PowerShell
-    Get-Command Connect*
-    ```
-    </Strong></details> 
-    <details><summary>Click to see the answer</summary><Strong> 
-    
     ```PowerShell
     Connect-AzureAD
     ```
-    </Strong></details> 
-
 
 1. In the **Sign in to your account** window, enter your username that is included in the Resources tab of the lab instructions, and then select **Next**.
 1. At the **Enter password** prompt, enter the password provided in the Resource tab, and then select **Sign in**.
 1. Find and execute a commant to find the users in AzureAD:
 
-    <details><summary>Click for hint</summary><Strong> 
-
-    ```PowerShell
-    Get-Command Get*AzureAD*
-    ```
-    </Strong></details> 
-    <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
     Get-AzureADUser
     ```
-    </Strong></details>
 
 
 ### Task 2: Create a new administrative user
 
 1. Create a **PasswordProfile** object:
 
-    <details><summary>Click for hint</summary><Strong> 
-    
-    ```PowerShell
-    Get-Help New-AzureADUser -Online
-    # In the help document look for PasswordProfile
-    ```
-    </Strong></details> 
-    <details><summary>Click to see the answer</summary><Strong> 
-    
+   
     ```PowerShell
     $PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
     ```
-    </Strong></details>
+
 
 
 1. Think of a **Strong** password that you want to use for a new user and make a note of it so that you don't forget. In the next step, replace `<password>` with the password you thought of.
 1. Set the password property of the password profile object:
 
-   <details><summary>Click to see the answer</summary><Strong> 
-    
+   
    ```PowerShell
    $PasswordProfile.Password = "<password>"
    ```
-   </Strong></details>
-
-
+  
 1. Create a new AzureAD User using the following command
 
     
@@ -376,13 +338,13 @@ lab:
 
 1. On **LON-CL1**, on the taskbar, select **Microsoft Edge**.
 1. In Microsoft Edge, in the address bar, enter 
-```
-https://outlook.office.com
-```
+   ```
+   https://outlook.office.com
+   ```
 1. Sign in as Allan Woo 
-```
-allan@<Enter Your Tenant Name Here>  
-```    
+   ```
+   allan@<Enter Your Tenant Name Here>  
+   ```    
   > The Tenant name is provided in the instructions for the lab under the Resources tab Allan's singin name should be in this format **allan@LODSA682165.onmicrosoft.com**
   > change your password as instructed. 
   >  Be sure to note the password so that you can remember it for later exercises.
@@ -557,9 +519,9 @@ allan@<Enter Your Tenant Name Here>
 
 1. On **LON-CL1**, on the taskbar, select **Microsoft Edge**.
 1. In Microsoft Edge, in the address bar, enter 
-```
-https://teams.microsoft.com
-```    
+   ```
+   https://teams.microsoft.com
+   ```    
 1. Sign in as Allan Yoo.
 1. If prompted to stay signed in, select **No**.
 1. Close the **Bring your team together** window, and then verify that **Sales Team** is listed.
