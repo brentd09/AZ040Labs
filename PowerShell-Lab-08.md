@@ -467,7 +467,7 @@ The main tasks for this exercise are:
     ```PowerShell
     Invoke-Command -Session $computers -ScriptBlock { Get-Volume | Where-Object {$_.DriveType -eq 'Fixed'} } | Get-Member
     ```
-    <br>
+
     ```PowerShell
     Invoke-Command -Session $computers -ScriptBlock {Get-Volume | Where-Object {$_.DriveType -eq 'Fixed'} } | Select-Object *
     # Compare the two results to discover which properties you will need for this report
