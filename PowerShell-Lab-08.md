@@ -451,31 +451,35 @@ The main tasks for this exercise are:
     ```
     </Strong></details> 
 
-### Task 3: Create and display an HTML report that displays local disk information from the two computers
+### Task 3: Create and display an HTML report that displays disk volume information from the two computers
 
-1. As a test, use **Get-WmiObject** to display a list of local hard drives (the **Win32_LogicalDisk** class, filtered to include only those drives with a drive type of **3**).
+1. As a test, use **Get-Volume** to display a list of local hard drives, make sure you filter the volumes to see only Fixed volumes.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Get-WmiObject -Class Win32_LogicalDisk -Filter "DriveType=3"
+    Get-Volume | Where-Object {$_.DriveType -eq 'Fixed'}
     ```
     </Strong></details> 
-3. Use remoting to run the **Get-WmiObject** command against both **LON-DC1** and **LON-SVR1**. Don't add a **–ComputerName** parameter to the **Get-WmiObject** command. Your HTML report must include each computer’s name, each drive’s letter, and its free space and total size in bytes.
+3. Use one-many remoting to run the pipeline you discovered in the previous step on both **LON-DC1** and **LON-SVR1**.  
+4. Create the HTML showing the computer’s name, each drive’s letter, and its free space and total size in bytes.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
-    Invoke-Command -Session $computers -ScriptBlock { Get-WmiObject -Class Win32_LogicalDisk -Filter "DriveType=3" } | Get-Member
+    Invoke-Command -Session $computers -ScriptBlock { Get-Volume | Where-Object {$_.DriveType -eq 'Fixed'} } | Get-Member
     ```
     <br>
     ```PowerShell
-    Invoke-Command -Session $computers -ScriptBlock { Get-WmiObject -Class Win32_LogicalDisk -Filter "DriveType=3" } | Select-Object
+    Invoke-Command -Session $computers -ScriptBlock {Get-Volume | Where-Object {$_.DriveType -eq 'Fixed'} } | Select-Object *
     # Compare the two results to discover which properties you will need for this report
     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Invoke-Command -Session $computers -ScriptBlock { Get-WmiObject -Class Win32_LogicalDisk -Filter "DriveType=3" } | Select-Object PSComputerName,DeviceID,FreeSpace | ConvertTo-Html | Out-File e:\DiskReport.html
+    Invoke-Command -Session $computers -ScriptBlock { Get-Volume | Where-Object {$_.DriveType -eq 'Fixed'} } | 
+      Select-Object PSComputerName,DriveLetter,SizeRemaining,Size | 
+      ConvertTo-Html | 
+      Out-File e:\DiskReport.html
     ```
     </Strong></details> 
 
@@ -483,9 +487,9 @@ The main tasks for this exercise are:
 ### Task 4: Test the HTML report
 
 - Open Internet Explorer and type the following into the address bar
-```PowerShell
-e:\DiskReport.html
-```
+   ```
+   e:\DiskReport.html
+   ```
 
 ## Congratulations you have fininshed the lab
 
