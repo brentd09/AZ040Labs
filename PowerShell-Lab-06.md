@@ -65,7 +65,7 @@ The main tasks for this exercise are:
 ### Task 1: Use string variables
 
 1. On **LON-CL1**, open Windows PowerShell.
-1. Create a variable `$logPath` that contains **C:\logs\**.
+1. Create a variable `$logPath` that contains **C:\logs\**
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
