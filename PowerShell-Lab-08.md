@@ -451,28 +451,24 @@ The main tasks for this exercise are:
     ```
     </Strong></details> 
 
-### Task 3: Create and display an HTML report that displays disk volume information from the two computers
+### Task 3: Create an HTML report that shows disk volume information from two computers using the session $Computers created earlier
 
-1. As a test, use **Get-Volume** to display a list of local hard drives, make sure you filter the volumes to see only Fixed volumes.
+1. As a test, use **Get-Volume** to display a list of local hard drives, make sure you filter the volumes to see only fixed drive types.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
     Get-Volume | Where-Object {$_.DriveType -eq 'Fixed'}
     ```
     </Strong></details> 
-3. Use one-many remoting to run the pipeline you discovered in the previous step on both **LON-DC1** and **LON-SVR1**.  
-4. Create the HTML showing the computer’s name, each drive’s letter, and its free space and total size in bytes.
-    <details><summary>Click for hint</summary><Strong> 
+3. Use one-many remoting to run the pipeline you discovered in the previous step on **LON-DC1** and **LON-SVR1** using the session variable $Computers.
+    <details><summary>Click to See the answer</summary><Strong> 
 
     ```PowerShell
-    Invoke-Command -Session $computers -ScriptBlock { Get-Volume | Where-Object {$_.DriveType -eq 'Fixed'} } | Get-Member
+    Invoke-Command -Session $computers -ScriptBlock { Get-Volume | Where-Object {$_.DriveType -eq 'Fixed'} } 
     ```
+    </Strong></details>   
+5. Create the HTML showing the computer’s name, each drive’s letter, free space and total size in bytes.
 
-    ```PowerShell
-    Invoke-Command -Session $computers -ScriptBlock {Get-Volume | Where-Object {$_.DriveType -eq 'Fixed'} } | Select-Object *
-    # Compare the two results to discover which properties you will need for this report
-    ```
-    </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
