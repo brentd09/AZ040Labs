@@ -162,7 +162,10 @@ The main tasks for this exercise are:
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
-    # Use Out-File with the Append parameter to modify the file
+    # Make chnages to the HelloWorld.ps1 file 
+    
+    # An easy way to do that is to use Out-File with the -Append parameter to modify the file
+    # OR just edit the file manually
     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
