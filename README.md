@@ -6,7 +6,7 @@
 
 ### PowerShell Labs
 - PowerShell Labs 
-- Run the fix command below before running the labs<br> 
+- Run the fix command below on LON-CL1 before running the labs<br> 
    ```PowerShell 
    Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {Set-NetFirewallProfile -All -Enabled false}
    ```
