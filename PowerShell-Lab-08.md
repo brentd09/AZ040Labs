@@ -467,7 +467,7 @@ The main tasks for this exercise are:
     Invoke-Command -Session $computers -ScriptBlock { Get-Volume | Where-Object {$_.DriveType -eq 'Fixed'} } 
     ```
     </Strong></details>   
-5. Create the HTML showing the computer’s name, each drive’s letter, free space and total size in bytes.
+5. Create the HTML report showing the computer’s name, each drive’s letter, free space and total size in bytes.
 
     <details><summary>Click to see the answer</summary><Strong> 
     
