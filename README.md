@@ -6,7 +6,7 @@
 
 ### PowerShell Labs
 - PowerShell Labs 
-- Run the fix command below before running the labs 
+- Run the fix command below before running the labs<br> 
   [Fix LON-SVR1 Firewall](PowerShell-Lab-00.md)<br>
   
 - Labs for learning PowerShell  
