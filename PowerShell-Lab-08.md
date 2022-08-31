@@ -424,7 +424,7 @@ The main tasks for this exercise are:
     Get-NetFirewallRule
     ```
     </Strong></details> 
-1. Use a single command line to list all enabled firewall rules on both **LON-SVR1** and **LON-DC1**.
+1. Using one-many remoting, list all enabled firewall rules on both **LON-SVR1** and **LON-DC1**.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
