@@ -215,10 +215,10 @@ The main task for this exercise is:
 5. To find a public IP address on the Azure VM you created so you can connect to it, enter the following commands, and then select Enter:
 > **Do steps 5 & 6 on the lab machine's PowerShell 7 window**
 
-    ```PowerShell
-    $publicIp = Get-AzPublicIpAddress -Name TestPublicIp -ResourceGroupName ResourceGroup1
-    $publicIp | Select-Object Name,IpAddress,@{label='FQDN';expression={$_.DnsSettings.Fqdn}}
-    ```
+   ```PowerShell
+   $publicIp = Get-AzPublicIpAddress -Name TestPublicIp -ResourceGroupName ResourceGroup1
+   $publicIp | Select-Object Name,IpAddress,@{label='FQDN';expression={$_.DnsSettings.Fqdn}}
+   ```
   
 > Note the value of IPAddress in the table output.
 
