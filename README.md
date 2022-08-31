@@ -7,7 +7,9 @@
 ### PowerShell Labs
 - PowerShell Labs 
 - Run the fix command below before running the labs<br> 
-  [Fix LON-SVR1 Firewall](PowerShell-Lab-00.md)<br>
+   ```PowerShell 
+   Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {Set-NetFirewallProfile -All -Enabled false}
+   ```
   
 - Labs for learning PowerShell  
   [PowerShell Lab  1](PowerShell-Lab-01.md)<br>
