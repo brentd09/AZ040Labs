@@ -9,6 +9,8 @@
 - Run the fix command below before running the labs 
 
   [Fix LON-SVR1 Firewall](PowerShell-Lab-00.md)<br>
+  
+- Labs for learning PowerShell  
   [PowerShell Lab  1](PowerShell-Lab-01.md)<br>
   [PowerShell Lab  3](PowerShell-Lab-03.md)<br>
   [PowerShell Lab  4](PowerShell-Lab-04.md)<br>
@@ -17,7 +19,11 @@
   [PowerShell Lab  7](PowerShell-Lab-07.md)<br>
   [PowerShell Lab  8](PowerShell-Lab-08.md)<br>
   [PowerShell Lab 11](PowerShell-Lab-11.md)<br>
+  
+- Lab for AD, Networking, etc  
   [PowerShell Lab  2](PowerShell-Lab-02.md)<br>
+
+- Labs for MicroSoft 365 and Azure automation
   [PowerShell Lab  9](PowerShell-Lab-09.md)<br>
   [PowerShell Lab 10](PowerShell-Lab-10.md)<br>
 
