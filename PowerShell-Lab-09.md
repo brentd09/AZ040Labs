@@ -168,7 +168,7 @@ The main task for this exercise is:
    New-AzResourceGroup -Name ResourceGroup1 -Location eastus
    ```
 
-### Task 1: Use Azure Cloud Shell to create a Virtual Machine
+### Task 2: Use Azure Cloud Shell to create a Virtual Machine
 
 1. In the Windows PowerShell window, enter the following command to define the admin credentials for the VM you want to create in Azure:
 
@@ -230,7 +230,7 @@ The main task for this exercise is:
 
 > When prompted, sign in with the credentials you provided for this VM. Ensure that you're connected to the Windows Server 2016 VM. Check the VM functionality and then shut it down.
 
-### Task 2: Add a disk to the Azure VM by using PowerShell
+### Task 3: Add a disk to the Azure VM by using PowerShell
 1. Switch to the Microsoft Edge window, where you have the Azure portal open. 
 2. From the Search bar type Virtual Machines, and select Virtual Machines from the menu.
 3. Ensure that TestVM1 is listed. If not refresh the Virtual Machines page
