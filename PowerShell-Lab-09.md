@@ -213,17 +213,16 @@ The main task for this exercise is:
    ```
 
 5. To find a public IP address on the Azure VM you created so you can connect to it, enter the following commands, and then select Enter:
-> **Do steps 5 & 6 on the lab machine's PowerShell 7 window**
+> Note the value of IPAddress in the table output.
 
    ```PowerShell
    $publicIp = Get-AzPublicIpAddress -Name TestPublicIp -ResourceGroupName ResourceGroup1
    $publicIp | Select-Object Name,IpAddress,@{label='FQDN';expression={$_.DnsSettings.Fqdn}}
    ```
-  
-> Note the value of IPAddress in the table output.
 
 6. Enter the following command, and then select Enter to connect to the VM:
-
+> **Do this step (6) on the lab machine's PowerShell 7 window (not the Cloud Shell)**
+> 
    ```PowerShell
    mstsc.exe /v $PublicIP.IPAddress
    ```
@@ -249,6 +248,6 @@ The main task for this exercise is:
 > This will take some time to complete and update the Azure virtual machine
 5. Switch to the Azure portal and refresh the Disks page. You should be able to notice a new disk called disk1 in the Data disks section.
 
-## You have successfully completed this Lab. Click End to end the lab.
+## You have successfully completed this Lab
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#az040labs)
