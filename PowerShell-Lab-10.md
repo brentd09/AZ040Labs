@@ -337,11 +337,11 @@ lab:
 ### Task 3: Verify room resource booking
 
 1. On **LON-CL1**, on the taskbar, select **Microsoft Edge**.
-1. In Microsoft Edge, in the address bar, enter 
+1. In Microsoft Edge, open a "Private Browser" window and in the address bar, enter 
    ```
    https://outlook.office.com
    ```
-1. Sign in as Allan Woo 
+1. Sign in as Allan Woo  (you can use the TenantName from the lab instructions to automatically add the tenant name)
    ```
    allan@<Enter Your Tenant Name Here>  
    ```    
