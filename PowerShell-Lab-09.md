@@ -176,7 +176,9 @@ The main task for this exercise is:
    $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
    ```
 
-> When prompted, choose the username and password that you want to use as admin credentials for the new VM. Do not use name Admin for administrator.
+> When prompted, create a username and password that you want to use as admin credentials for the new VM. 
+> Do not use name Admin for administrator.
+> The username could be: admin1234 and make sure the password is long and is a complex one like: Azure1234Pa$$
 
 2. In the Windows PowerShell window, enter the following command to define the VM parameters, and then select Enter. Replace yourname with your real name:
 
