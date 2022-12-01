@@ -54,7 +54,7 @@ lab:
     ```
 
 1. In the **Sign in to your account** window, enter your username that is included in the Resources tab of the lab instructions, and then select **Next**.
-1. At the **Enter password** prompt, enter the password provided in the Resource tab, and then select **Sign in**.
+1. At the **Enter password** prompt, enter the password provided in the Resource tab of the right hand lab instructions bar, the username will look something like 	admin@LODSA020229.onmicrosoft.com, and then select **Sign in**.
 1. Find and execute a commant to find the users in AzureAD:
 
     
