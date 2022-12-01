@@ -69,7 +69,7 @@ The main tasks for this exercise are:
    ```
     
 3. Use the Username and Password in the Resources tab of the lab instructions
-   - The username will be very long and be similar format to: User1-21764458@LODSPRODMCA.onmicrosoft.com
+   - The username is the new outlook.com email that you built for your Azure Pass
 4. In the Azure portal choose "Maybe Later" on the "Welcome to Microsoft Azure dialog box"
 5. In the search bar at the top of the portal type "Subscriptions"
 6. Choose Subscriptions from the drop down menu
@@ -180,7 +180,7 @@ The main task for this exercise is:
 > Do not use name Admin for administrator.
 > The username could be: admin1234 and make sure the password is long and is a complex one like: Azure1234Pa$$
 
-2. In the Windows PowerShell window, enter the following command to define the VM parameters, and then select Enter. Replace yourname with your real name:
+2. In the Windows PowerShell window, enter the following command to define the VM parameters, and then select Enter:
 
    ```PowerShell
    $vmParams = @{
