@@ -252,4 +252,4 @@ The main task for this exercise is:
 
 ## You have successfully completed this Lab
 
-[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#az040labs)
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
