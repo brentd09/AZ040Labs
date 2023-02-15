@@ -424,4 +424,5 @@ The main task for this exercise is:
 
 After completing this exercise, you'll have demonstrated your ability to locate help content in **About** files.
 
-[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#az040labs)
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
+
