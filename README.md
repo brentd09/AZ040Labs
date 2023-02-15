@@ -4,13 +4,14 @@
 - Lab 2 has been placed toward the end of the week as the commands that you will see here will mostly be covered by other modules
 - Labs 9 and 10 are relating to Microsoft 365 and Azure and are best dealt with after all of the on-prem coding is finished 
 
-### PowerShell Labs
-- PowerShell Labs 
+## Prepare labs before starting
 - Run the fix command below on LON-CL1 before running the labs<br> 
    ```PowerShell 
    Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {Set-NetFirewallProfile -All -Enabled false}
    ```
-  
+
+## PowerShell Labs
+
 - Labs for learning PowerShell  
   [PowerShell Lab  1](PowerShell-Lab-01.md)<br>
   [PowerShell Lab  3](PowerShell-Lab-03.md)<br>
