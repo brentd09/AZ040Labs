@@ -931,4 +931,5 @@ The main tasks for this exercise are:
 
 After completing this exercise, you should have converted Active Directory user objects to different data formats.
 
-[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#az040labs)
+
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
