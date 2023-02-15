@@ -350,7 +350,7 @@ The main tasks for this exercise are:
     ```
     </Strong></details> 
 
-### Task 2: Create a folder on the server for the website files
+### Task 2: Create a folder and file on the server for the website files
 
 - On **LON-SVR1**, use PowerShell to create a folder named **London** under **C:\inetpub\wwwroot** for the website files.
     <details><summary>Click for hint</summary><Strong> 
@@ -365,7 +365,13 @@ The main tasks for this exercise are:
     New-Item C:\inetpub\wwwroot\London -Type directory
     ```
     </Strong></details> 
-
+    
+- On **LON-SVR1**, use PowerShell to create a file named **index.html** under **C:\inetpub\wwwroot\london** as the website file using the following command. 
+    
+    ```PowerShell
+    New-Item -Path 'C:\inetpub\wwwroot\London' -Name 'index.html -ItemType File -Value '<html><head></head> <body><h1>LAB WEBSITE</h1></body> </html>'
+    ```
+        
 ### Task 3: Create the IIS website
 
 1. On **LON-SVR1**, use PowerShell to create the IIS website by using the following configuration:
@@ -386,7 +392,7 @@ The main tasks for this exercise are:
     ```
     </Strong></details> 
 
-1. Open the website in Internet Explorer by using the IP address and port **8080**, and then verify that the site is using the provided settings. Internet Explorer will display an error message that a document hasn't been configured for the URL. The error message details give the physical path of the site, which should be **C:\\inetpub\\wwwroot\\london**.
+1. Open the website in Internet Explorer by using the IP address and port **8080**, and then verify that the site is using the provided settings. Internet Explorer will display the **LAB WEBSITE**
 
 ### Exercise 3 results
 
