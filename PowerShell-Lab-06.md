@@ -407,11 +407,11 @@ The main task for this exercise is:
 
 ### Task 1: Use a hash table
 
-1. Create a hash table named `$mailList` with the following users and email addresses:
+1. Create a hash table named `$EmployeeDetails` with the following Information:
 
-   - User **Frank** with the email address **Frank@fabrikam.com**
-   - User **Libby** with the email address **LHayward@contoso.com**
-   - User **Matej** with the email address **MStojanov@tailspintoys.com**
+   - **Name** as the key and **Simon Parks** as its value
+   - **Address** as the key and **20 Green Street** as its value
+   - **Postcode** as the key and **2000** as its value
    <br>
     <details><summary>Click for hint</summary><Strong> 
 
@@ -429,32 +429,32 @@ The main task for this exercise is:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    $mailList = @{
-      Frank="Frank@fabriakm.com"
-      Libby="LHayward@contso.com"
-      Matej="MSTaojanov@tailspintoys.com"
+    $EmployeeDetails = @{
+      Name='Simon Parks'
+      Address='20 Green Street'
+      Postcode='2000'
     }
     ```
     
     ```PowerShell
-    $mailList = [ordered]@{
-      Frank="Frank@fabriakm.com"
-      Libby="LHayward@contso.com"
-      Matej="MSTaojanov@tailspintoys.com"
+    $EmployeeDetails = [ordered]@{
+      Name='Simon Parks'
+      Address='20 Green Street'
+      Postcode='2000'
     }
     # The difference is this creates an ordered set of values, whereas the previous may be reordered by PowerShell 
     ```
     
     </Strong></details> 
 
-2. Display the contents of `$mailList`.
+2. Display the contents of `$EmployeeDetails`.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    $mailList
+    $EmployeeDetails
     ```
     </Strong></details> 
-3. Display the email address for **Libby**.
+3. Display the address for the employee.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
@@ -464,10 +464,10 @@ The main task for this exercise is:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    $mailList.Libby
+    $EmployeeDetails.Address
     ```
     </Strong></details> 
-4. Update the email address for **Libby** to **Libby.Hayward@contoso.com**.
+4. Update the address to "3421 George St".
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
@@ -478,10 +478,10 @@ The main task for this exercise is:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    $mailList.Libby="Libby.Hayward@contoso.com"
+    $EmployeeDetails.Address='3421 George St'
     ```
     </Strong></details> 
-5. Add a new email address for **Stela**: **Stela.Sahiti@treyresearch.net**.
+5. Add **City** as **Sydney** to the EmployeeDetails.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
@@ -491,22 +491,22 @@ The main task for this exercise is:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    $mailList.Add("Stela","Stela.Sahiti")
+    $EmployeeDetails.Add("City","Sydney")
     ```
     </Strong></details> 
-7. Remove **Frank** from `$mailList`.
+7. Remove **postcode** from EmployeeDetails.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    $mailList.Remove("Frank")
+    $EmployeeDetails.Remove("Postcode")
     ```
     </Strong></details> 
-8. Verify that **Frank** is removed.
+8. Verify that **Postcode** is removed.
 
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    $mailList
+    $EmployeeDetails
     ```
     </Strong></details> 
 9. Close the Windows PowerShell prompt.
