@@ -319,7 +319,7 @@ The main tasks for this exercise are:
 ### Task 2: Create a script that starts stopped services
 
 1. Create a new script **E:\\StartServices.ps1**.
-2. Get the servicenames from the **services.txt** file and store them in a variable.
+2. Get the service names from the **services.txt** file and store them in a variable.
 3. Use a **ForEach** loop to process each service:
 
    - If the service isn't running, start it, and then enter text to the screen indicating that the service was started.
