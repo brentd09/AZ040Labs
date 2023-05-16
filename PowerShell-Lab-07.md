@@ -107,7 +107,7 @@ The main tasks for this exercise are:
     $cert = Get-ChildItem Cert:\CurrentUser\My\ -CodeSigningCert
     ```
     </Strong></details> 
-3. In **E:\Mod07\Labfiles**, rename **HelloWorld.txt** to **HelloWorld.ps1**.
+3. Create a new script called E:\HelloWorld.ps1 with this command **Write-Host Hello world**
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
@@ -118,8 +118,7 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Set-Location E:\Mod07\Labfiles
-    Rename-Item HelloWorld.txt HelloWorld.ps1
+    New-Item -Path e:\ -Name HelloWorld.ps1 -Value "Write-Host Hello world"
     ```
     </Strong></details> 
 4. Use the **Set-Authenticode** cmdlet to apply a digital signature to **HelloWorld.ps1**.
@@ -132,7 +131,7 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Set-AuthenticodeSignature -FilePath HelloWorld.ps1 -Certificate $cert
+    Set-AuthenticodeSignature -FilePath e:\HelloWorld.ps1 -Certificate $cert
     ```
     </Strong></details> 
 
@@ -162,7 +161,7 @@ The main tasks for this exercise are:
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
-    # Make chnages to the HelloWorld.ps1 file 
+    # Make some changes to the HelloWorld.ps1 file 
     
     # An easy way to do that is to use Out-File with the -Append parameter to modify the file
     # OR just edit the file manually
@@ -171,7 +170,7 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    "Unauthorized edit" | Out-File -Append -FilePath .\HelloWorld.ps1
+    "Unauthorized edit" | Out-File -Append -FilePath E:\HelloWorld.ps1
     ```
     </Strong></details> 
 4. Attempt to run the unauthorized script.
@@ -187,7 +186,7 @@ The main tasks for this exercise are:
     .\HelloWorld.ps1
     ```
     </Strong></details>     
-6. Set the execution policy to **Unrestricted**.
+6. Set the execution policy to **Unrestricted** so we can complete the other labs in this course.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
@@ -243,7 +242,7 @@ The main tasks for this exercise are:
 
 ### Task 2: Create a script to configure the ipPhone attribute
 
-1. Create a script named **E:\\Mod07\\Labfiles\\ipPhone.ps1**, and then open it in the Windows PowerShell ISE.
+1. Create a script named **E:\\ipPhone.ps1**, and then open it in the Windows PowerShell ISE.
 2. Use **Get-ADGroupMember** to create a query to obtain the membership of the **IPPhoneTest** group.
 3. Create a **ForEach** loop that processes the users that are members of **IPPhoneTest**.
 4. In the loop:
@@ -319,8 +318,8 @@ The main tasks for this exercise are:
 
 ### Task 2: Create a script that starts stopped services
 
-1. Create a new script **E:\\Mod07\\Labfiles\\StartServices.ps1**.
-2. Retrieve the service names from **services.txt** and place them in a variable.
+1. Create a new script **E:\\StartServices.ps1**.
+2. Get the servicenames from the **services.txt** file and store them in a variable.
 3. Use a **ForEach** loop to process each service:
 
    - If the service isn't running, start it, and then enter text to the screen indicating that the service was started.
@@ -335,7 +334,7 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    $ServiceNames = Get-Content E:\Mod07\Labfiles\services.txt
+    $ServiceNames = Get-Content E:\services.txt
     foreach ($ServiceName in $ServiceNames) {
       $ServiceInfo = Get-Service -Name $ServiceName
       if ($ServiceInfo.Status -ne 'Running') {
@@ -363,7 +362,7 @@ The main task for this exercise is:
 
 ### Task 1: Create AD DS users from a CSV file
 
-1. Create a new script named **E:\\Mod07\\Labfiles\\CreateUsers.ps1**.
+1. Create a new script named **E:\\CreateUsers.ps1**.
 1. Import **users.csv** and store the objects in a variable.
 1. Create a **ForEach** loop that processes the data in the variable to create user accounts:
 
@@ -459,7 +458,7 @@ The main task for this exercise is:
     Get-Ciminstance -ClassName Win32_LogicalDisk | Where-Object {$_.DriveType -eq 3}
     ```
     </Strong></details> 
-5. Create a new script **E:\\Mod07\\QueryDisk.ps1**.
+5. Create a new script **E:\\QueryDisk.ps1**.
 6. Add a **param()** block to the script that accepts a computer name and prompts for a computer name if one isn't provided.
 7. Verify that the script correctly queries disk information from **LON-DC1**.
     <details><summary>Click for hint</summary><Strong> 
@@ -496,7 +495,7 @@ The main task for this exercise is:
 
 ### Task 1: Update the script to use alternate credentials
 
-1. Open **E:\\Mod07\\QueryDisk.ps1** for editing.
+1. Open **E:\\QueryDisk.ps1** for editing.
 1. Update the **param()** block to include a switch that indicates alternate credentials will be used.
 1. Add an **If** statement that evaluates the switch.
 
