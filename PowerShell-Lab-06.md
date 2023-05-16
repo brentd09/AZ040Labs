@@ -418,10 +418,10 @@ The main task for this exercise is:
     ```PowerShell
     # Hash tables are created with this construct @{Key = Value;...}: 
     # For Example
-    # @{
-    #    Name1 = 'Value'
-    #    Name2 = 'Value'
-    # }
+    @{
+      Name1 = 'Value'
+      Name2 = 'Value'
+    }
     #
     # Hashtables must have unique key names
     ```
