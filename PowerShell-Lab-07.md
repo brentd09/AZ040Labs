@@ -34,9 +34,9 @@ After completing this lab, you'll be able to:
 - Digitally sign a script.
 - Process an array by using ForEach.
 - Process items by using If statements.
-- Create user accounts based on a CSV file.
-- Query disk information from remote computers.
-- Update a script to use alternate credentials.
+- Create user accounts based on a CSV file using Splatting.
+- (Optional) Query disk information from remote computers.
+- (Optional) BONUS Update a script to use alternate credentials.
 
 ## Estimated time: 150 minutes
 
