@@ -481,7 +481,7 @@ The main task for this exercise is:
     $EmployeeDetails.Address='3421 George St'
     ```
     </Strong></details> 
-5. Add **City** as **Sydney** to the EmployeeDetails.
+5. Add **City** as a key with **Sydney** it's value to the EmployeeDetails.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
