@@ -363,7 +363,7 @@ The main task for this exercise is:
 ### Task 1: Create AD DS users from a CSV file
 
 1. Create a new script named **E:\\CreateUsers.ps1**.
-1. Import **users.csv** and store the objects in a variable.
+1. Import **users.csv** and store the objects in a variable, you will find this file in **e:\\Mod07\\Labfiles**.
 1. Create a **ForEach** loop that processes the data in the variable to create user accounts:
 
    - Create a variable that contains the Lightweight Directory Access Protocol (LDAP) name of the organizational unit for the user. For example: OU=IT,DC=Adatum,DC=com
