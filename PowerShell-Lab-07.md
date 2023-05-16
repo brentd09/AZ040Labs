@@ -365,21 +365,26 @@ The main task for this exercise is:
 1. Create a new script named **E:\\CreateUsers.ps1**.
 1. Import **users.csv** and store the objects in a variable, you will find this file in **e:\\Mod07\\Labfiles**.
 1. Create a **ForEach** loop that processes the data in the variable to create user accounts:
+1. Use Splatting to create each users set of information for use with the New-ADUser command.
 
-   - Create a variable that contains the Lightweight Directory Access Protocol (LDAP) name of the organizational unit for the user. For example: OU=IT,DC=Adatum,DC=com
-   - Create a variable that contains the user principal name for the new user. This should be in the format **UserID@adatum.com**.
-   - Create a variable that contains the display name for the new user. This should be in the format *FirstName LastName*.
-   - Enter a status message to the screen indicating which user is being created and where.
-   - Create the new user and be sure to set the following:
-
-      - **GivenName**
-      - **Surname**
-      - **Name**
-      - **DisplayName**
-      - **SamAccountName**
-      - **UserPrincipalName**
-      - **Path**
-      - **Department**
+  - The Splat Hash Table should include
+    - the users given name
+    - the users surname
+    - the users full name
+    - a display name (that will be the same format as the full name)
+    - the users samAccountName (this is the userID) 
+    - the user principal name for the new user. This should be in the format **UserID@adatum.com**.
+    - the Lightweight Directory Access Protocol (LDAP) name of the organizational unit for the user. For example: OU=IT,DC=Adatum,DC=com
+    
+  - Create the new users with the Splat Hash Table and be sure to use the following:
+    - **GivenName**
+    - **Surname**
+    - **Name** 
+    - **DisplayName** 
+    - **SamAccountName** 
+    - **UserPrincipalName** 
+    - **Path** 
+    - **Department**
 
     <details><summary>Click for hint</summary><Strong> 
 
@@ -409,7 +414,9 @@ The main task for this exercise is:
     ```
     </Strong></details> 
 
-## Exercise 5: Querying disk information from remote computers
+---
+## Bonus Exercises (if there is time) 
+## Querying disk information from remote computers
 
 ### Exercise scenario 5
 
