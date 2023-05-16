@@ -302,7 +302,7 @@ The main tasks for this exercise are:
     New-Item -Path e:\ -Name services.txt -ItemType File
     ```
     </Strong></details> 
-3. Add the names of two services to the file using PowerShell, the names are **spooler** **w32time** each on a new line in the file.
+3. Add the names of two services to the file using PowerShell, the names are **spooler** and **w32time** each on a new line in the file.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
