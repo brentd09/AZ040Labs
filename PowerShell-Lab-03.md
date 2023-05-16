@@ -640,14 +640,14 @@ In this exercise, you'll create commands that manipulate multiple objects in the
 The main tasks for this exercise are:
 
 1. Display a list of all files on drive **E** of your computer.
-1. Use enumeration to produce 10 random numbers.
-1. Run a method of a Windows Management Instrumentation (WMI) object.
+2. Use enumeration to produce 10 random numbers.
+
 
 
 ### Task 1: Display a list of files on drive E of your computer
 
 1. On **LON-CL1**, open **Windows PowerShell** as an administrator.
-1. Display a directory listing of all the items on drive **E**. Include subfolders in the list.
+2. Display a directory listing of all the items on drive **E**. Include subfolders in the list.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
