@@ -303,24 +303,18 @@ The main tasks for this exercise are:
     New-Item services.txt -ItemType File
     ```
     </Strong></details> 
-3. Identify the name for the **Print Spooler** service and add it to **services.txt**.
+3. Add the names of two services to the file using PowerShell, the names are **spooler** **w32time** each on a new line in the file.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
-    Get-Help Out-File -ShowWindow
+    Get-Help About_Redirection
     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Get-Service "Print Spooler" | Select -ExpandProperty Name | Out-File services.txt -Append
-    ```
-    </Strong></details> 
-4. Identify the correct name for the **Windows Time** service and add it to **services.txt**.
-    <details><summary>Click to see the answer</summary><Strong> 
-    
-    ```PowerShell
-    Get-Service "Windows Time" | Select -ExpandProperty Name | Out-File services.txt -Append
+    'Spooler' | Out-File services.txt -Append
+    'w32time' | Out-File services.txt -Append
     ```
     </Strong></details> 
 
