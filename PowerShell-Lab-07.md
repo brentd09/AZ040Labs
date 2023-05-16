@@ -294,13 +294,12 @@ The main tasks for this exercise are:
 ### Task 1: Create services.txt with service names
 
 1. On **LON-CL1**, open Windows PowerShell.
-2. Create a new file **E:\\Mod07\\Labfiles\\services.txt**.
+2. Create a new file **E:\\services.txt**.
 
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Set-Location E:\Mod07\Labfiles
-    New-Item services.txt -ItemType File
+    New-Item -Path e:\ -Name services.txt -ItemType File
     ```
     </Strong></details> 
 3. Add the names of two services to the file using PowerShell, the names are **spooler** **w32time** each on a new line in the file.
