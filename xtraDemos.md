@@ -16,6 +16,15 @@
 
 ### Foreach Demo
 
+```PowerShell
+$Computers = 'LON-Cl1','LON-DC1','LON-SVR1','LON-SVR2'
+foreach  ($Computer in $Computers) {
+  $ComputerResponded = Test-NetConnection -ComputerName $Computer
+  Write-Host "Computer $Computer responded: $ComputerResponded" 
+}
+```
+
+
 ### If Demo
 
 ### SWitch Demo
