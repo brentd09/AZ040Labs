@@ -45,6 +45,7 @@ foreach  ($Number in $Numbers) {
 ### Switch Demo
 
 ```PowerShell
+Clear-Host
 Write-Host Menu
 Write-Host ----
 Write-Host 
