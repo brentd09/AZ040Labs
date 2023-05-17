@@ -80,8 +80,8 @@ switch ($Choice) {
 ### Until Demo
 
 ```PowerShell
+Clear-Host
 do {
-  Clear-Host
   Write-Host Menu
   Write-Host ----
   Write-Host 
@@ -105,7 +105,7 @@ do {
     3 {break}
     Default {Write-Host 'This was not a valid choice'}
   }
-until ($Choice -eq 3)  
+} until ($Choice -eq 3)  
 ```
 
 
