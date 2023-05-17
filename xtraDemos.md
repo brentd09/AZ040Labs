@@ -65,6 +65,18 @@ for ($Count = 1; $Count -le 10; $Count++) {
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 ### While Demo
 
+```PowerShell
+# Guessing Game
+Clear-Host
+$HiddenNumber = 1..100 | Get-Random
+do {
+  [int]$Guess = Read-Host -Prompt 'Enter a number from 1 to 100'
+  if ($Guess -gt $HiddenNumber) {Write-Host 'Your Guess was too high'}
+  elseif ($Guess -lt $HiddenNumber) {Write-Host 'Your Guess was too low'}
+  else {Write-Host 'You guessed the right number'}
+} while ($HiddenNumber -ne $Guess)
+```
+
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 ### Until Demo
 
