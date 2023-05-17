@@ -130,6 +130,7 @@ do {
 
 ```PowerShell
 # Find Prime Numbers
+Write-Host "Prime Numbers"
 $MaxNumber = 40
 $Numbers = 1..$MaxNumber
 $DivideBys = 2..$MaxNumber
