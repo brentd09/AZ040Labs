@@ -79,6 +79,36 @@ switch ($Choice) {
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 ### Until Demo
 
+```PowerShell
+do {
+  Clear-Host
+  Write-Host Menu
+  Write-Host ----
+  Write-Host 
+  Write-Host 1...Add two numbers 
+  Write-Host 2...Multiply two numbers
+  Write-Host 3...Exit
+  Write-Host 
+  $Choice = Read-Host -Prompt 'Choose a menu number'
+  switch ($Choice) {
+    1 {
+      [double]$num1 = Read-Host -Prompt 'Enter the first number'
+      [double]$num2 = Read-Host -Prompt 'Enter the second number'
+      $num1 + $num2 
+    }
+    2 {
+      [double]$num1 = Read-Host -Prompt 'Enter the first number'
+      [double]$num2 = Read-Host -Prompt 'Enter the second number'
+      $num1 * $num2 
+    
+    }
+    3 {break}
+    Default {Write-Host 'This was not a valid choice'}
+  }
+until ($Choice -eq 3)  
+```
+
+
 ### Break and Continue Demo
 
 ```PowerShell
