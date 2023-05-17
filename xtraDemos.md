@@ -42,7 +42,7 @@ foreach  ($Number in $Numbers) {
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### SWitch Demo
+### Switch Demo
 
 ```PowerShell
 Write-Host Menu
@@ -57,12 +57,12 @@ switch ($Choice) {
     1 {
       [double]$num1 = Read-Host -Prompt 'Enter the first number'
       [double]$num2 = Read-Host -Prompt 'Enter the second number'
-      $num1 + $num1 
+      $num1 + $num2 
     }
     2 {
       [double]$num1 = Read-Host -Prompt 'Enter the first number'
       [double]$num2 = Read-Host -Prompt 'Enter the second number'
-      $num1 * $num1 
+      $num1 * $num2 
     
     }
     3 {break}
