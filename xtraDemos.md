@@ -25,6 +25,7 @@ do {
   $RightPos = 0
   do {
     [int[]]$Guess = (Read-Host -Prompt 'enter 4 numbers 1-6 with commas to separate').split(',')
+    $Guess = $Guess | Select-Object -Unique
   } until ($Guess.count -eq 4)
   foreach ($Index in 0..3) {
     if ($Guess[$Index] -eq $HiddenNumbers[$Index]) {$RightPos++}
