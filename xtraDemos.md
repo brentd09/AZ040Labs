@@ -1,23 +1,5 @@
 # Demo code
 
-## Module 01
-
-[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-## Module 02
-
-[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-## Module 03
-
-[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-## Module 04
-
-[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-## Module 05
-
-[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-## Module 06
-
-[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 ## Module 07
 
 ### Foreach Demo
@@ -72,6 +54,14 @@ switch ($Choice) {
 ```
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 ### For Demo
+
+```PowerShell
+$Number = 345
+for ($Count = 1; $Count -le 10; $Count++) {
+  $Div = $Number / $Count
+  Write-Host "$Number / $Count = $Div"
+}
+```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 ### While Demo
@@ -129,8 +119,4 @@ foreach  ($Number in $Numbers) {
   if ($IsPrime -eq $true) {$Number}
 }
 ```
-## Module 08
 
-## Module 09
-
-## Module 11
