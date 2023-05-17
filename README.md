@@ -27,5 +27,5 @@
   [PowerShell Lab  9](PowerShell-Lab-09.md)<br>
   [PowerShell Lab 10](PowerShell-Lab-10.md)<br>
   
-- Demo Code
-  [Demos](xtraDemos.md#demo-code) <br?  
+- Demo Code<br>
+  [Demos](xtraDemos.md#demo-code) <br>  
