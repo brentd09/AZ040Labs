@@ -5,6 +5,7 @@
 ### Foreach Demo
 
 ```PowerShell
+# Report Which Computers Respond
 $Computers = 'LON-Cl1','LON-DC1','LON-SVR1','LON-SVR2'
 foreach  ($Computer in $Computers) {
   $ComputerResponded = Test-NetConnection -ComputerName $Computer -InformationLevel Quiet -WarningAction SilentlyContinue
@@ -16,17 +17,14 @@ foreach  ($Computer in $Computers) {
 ### If Demo
 
 ```PowerShell
-$Numbers = 1..40
-foreach  ($Number in $Numbers) {
-  $ComputerResponded = Test-NetConnection -ComputerName $Computer -InformationLevel Quiet -WarningAction SilentlyContinue
-  Write-Host "Computer $Computer responded: $ComputerResponded" 
-}
+# 
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 ### Switch Demo
 
 ```PowerShell
+# Menu Script
 Clear-Host
 Write-Host Menu
 Write-Host ----
@@ -56,6 +54,7 @@ switch ($Choice) {
 ### For Demo
 
 ```PowerShell
+# Divide by a series of numbers
 $Number = 345
 for ($Count = 1; $Count -le 10; $Count++) {
   $Div = $Number / $Count
@@ -70,6 +69,7 @@ for ($Count = 1; $Count -le 10; $Count++) {
 ### Until Demo
 
 ```PowerShell
+# Looping Menu Script
 Clear-Host
 do {
   Write-Host Menu
@@ -102,7 +102,7 @@ do {
 ### Break and Continue Demo
 
 ```PowerShell
-$Numbers = 1..40
+# Find Prime Numbers
 $MaxNumber = 140
 $Numbers = 1..$MaxNumber
 $DivideBys = 2..$MaxNumber
