@@ -130,7 +130,7 @@ do {
 
 ```PowerShell
 # Find Prime Numbers
-$MaxNumber = 140
+$MaxNumber = 40
 $Numbers = 1..$MaxNumber
 $DivideBys = 2..$MaxNumber
 foreach  ($Number in $Numbers) {
