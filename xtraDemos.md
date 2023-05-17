@@ -17,7 +17,19 @@ foreach  ($Computer in $Computers) {
 ### If Demo
 
 ```PowerShell
-# 
+# MasterMind Game
+Clear-Host
+$HiddenNumbers = 1..6 | Get-Random -Count 4
+do {
+  $WrongPos = 0
+  $RightPos = 0
+  [int[]]$Guess = (Read-Host -Prompt 'enter 4 numbers 1-6 with commas to separate').split(',')
+  foreach ($Index in 0..3) {
+    if ($Guess[$Index] -eq $HiddenNumbers[0]) {$RightPos++}
+    elseif ($Guess[$Index] -in $HiddenNumbers) {$WrongPos++}
+  }
+  Write-Host "$Guess - RightPosition=$RightPos WrongPosition=$WrongPos"
+} until ($RightPos -eq 4)
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
