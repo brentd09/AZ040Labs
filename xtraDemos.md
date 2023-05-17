@@ -25,7 +25,7 @@
 ```PowerShell
 $Computers = 'LON-Cl1','LON-DC1','LON-SVR1','LON-SVR2'
 foreach  ($Computer in $Computers) {
-  $ComputerResponded = Test-NetConnection -ComputerName $Computer
+  $ComputerResponded = Test-NetConnection -ComputerName $Computer -InformationLevel Quiet -WarningAction SilentlyContinue
   Write-Host "Computer $Computer responded: $ComputerResponded" 
 }
 ```
