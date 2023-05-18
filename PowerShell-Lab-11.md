@@ -148,7 +148,7 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Start-Job -Name LocalSecurity -ScriptBlock {Get-EventLog -Logname Secuity} 
+    Start-Job -Name LocalSecurity -ScriptBlock {Get-WinEvent -Logname Secuity} 
     ```
     </Strong></details> 
 
@@ -323,7 +323,7 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Register-ScheduledJob -Name LocalSecurityLog -MaxResultCount 5 -Trigger $Trigger1 -ScheduledJobOption $Option -ScriptBlock {Get-EventLog -LogName Security} 
+    Register-ScheduledJob -Name LocalSecurityLog -MaxResultCount 5 -Trigger $Trigger1 -ScheduledJobOption $Option -ScriptBlock {Get-winEvent -LogName Security} 
     ```
     </Strong></details> 
 
