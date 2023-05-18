@@ -158,7 +158,7 @@ $Primes
 ### Function and Param
 
 ```PowerShell
-function Get-Primes {
+function Get-Prime {
   [cmdletbinding()]
   param (
      [int]$MaxNumber = 50
