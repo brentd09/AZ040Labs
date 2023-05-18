@@ -130,7 +130,7 @@ do {
 } until ($Choice -eq 3)  
 ```
 
-
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 ### Break and Continue Demo
 
 ```PowerShell
@@ -154,7 +154,7 @@ foreach  ($Number in $Numbers) {
 }
 $Primes
 ```
-
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 ### Function and Param
 
 ```PowerShell
