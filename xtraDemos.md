@@ -131,13 +131,14 @@ do {
 
 ```PowerShell
 # Find Prime Numbers
+[System.Collections.ArrayList]$Primes = @()
 Write-Host "Prime Numbers"
-$MaxNumber = 40
+$MaxNumber = 50
 $Numbers = 1..$MaxNumber
-$DivideBys = 2..$MaxNumber
 foreach  ($Number in $Numbers) {
-  $IsPrime = $true
   if ($Number -eq 1 ) {continue}
+  $DivideBys = 2..$Number
+  $IsPrime = $true
   foreach ($DivideBy in $DivideBys) {
     $Remainder = $Number % $DivideBy
     if ($Remainder -eq 0 -and $Number -ne $DivideBy) {
