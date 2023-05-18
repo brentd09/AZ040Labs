@@ -146,7 +146,8 @@ foreach  ($Number in $Numbers) {
       break
     }
   }
-  if ($IsPrime -eq $true) {$Number}
+  if ($IsPrime -eq $true) {$Primes += $Number}
 }
+$Primes
 ```
 
