@@ -10,6 +10,7 @@
    Invoke-Command -ComputerName LON-SVR1,LON-DC1 -ScriptBlock {Set-NetFirewallProfile -All -Enabled false}
    Set-NetFirewallProfile -All -Enabled false
    ```
+- **Get-EventLog** command is a legacy, use **Get-WinEvent** instead when accessing event log information especially on remote machines
 
 ## PowerShell Labs
 
