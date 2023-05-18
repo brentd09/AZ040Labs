@@ -182,7 +182,7 @@ function Get-Primes {
   }
 }
 
-$PrimeData = Get-Primes -MaxNumber 45
+$PrimeData = Get-Primes -MaxNumber 10
 $PrimeData
 ```
 
