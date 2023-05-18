@@ -437,7 +437,7 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    (Get-EventLog -LogName Security | Where-Object {$_.EventID -eq 4624}).Count
+    (Get-WinEvent -LogName Security | Where-Object {$_.ID -eq 4624}).Count
     # By using ( ) we are telling PowerShell to produce the resulting collection of objects
     # and then to count the nuber of objects
     ```
@@ -446,18 +446,18 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Get-EventLog -LogName Security | 
-    Where-Object {$_.EventID -eq 4624} | 
-    Select-Object -Property TimeWritten,EventID,Message
+    Get-WinEvent -LogName Security | 
+    Where-Object {$_.ID -eq 4624} | 
+    Select-Object -Property TimeCreated,ID,Message
     ```
     </Strong></details> 
 1. Display only the 10 oldest entries in a format that lets you review the message details.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Get-EventLog -LogName Security | 
-      Where-Object {$_.EventID -eq 4624} | 
-      Select-Object -Property TimeWritten,EventID,Message -Last 10 | 
+    Get-WinEvent -LogName Security | 
+      Where-Object {$_.ID -eq 4624} | 
+      Select-Object -Property TimeCreated,ID,Message -Last 10 | 
       Format-List
     ```
     </Strong></details> 
