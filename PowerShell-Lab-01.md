@@ -352,24 +352,25 @@ The main tasks for this exercise are:
     Test-NetConnection -ComputerName LON-DC1 -InformationLevel Quiet
     ```
     </Strong></details> 
-6. Display the newest 10 entries from the local Security event log.
+6. Display the 10 entries from the local Security event log.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
-    Get-Command *Eventlog*
+    Get-Command *Event*
+    # Use WinEvent as EventLog fails to access remote logs
     ```
     </Strong></details> 
     <details><summary>Click to see the answer (Part 1)</summary><Strong> 
     
     ```PowerShell
-    Get-Help Get-EventLog -ShowWindow
+    Get-Help Get-WinEvent -ShowWindow
     ```
     </Strong></details> 
     
     <details><summary>Click to see the answer (Part 2)</summary><Strong> 
     
     ```PowerShell
-    Get-EventLog -Logname Security -Newest 10
+    Get-WinEvent -Logname Security -MaxEvents 10
     ```
     </Strong></details> 
     
