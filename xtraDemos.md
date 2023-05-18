@@ -84,12 +84,16 @@ for ($Count = 1; $Count -le 10; $Count++) {
 ```PowerShell
 # Guessing Game
 Clear-Host
+$Turns = 0
 $HiddenNumber = 1..100 | Get-Random
 do {
   [int]$Guess = Read-Host -Prompt 'Enter a number from 1 to 100'
-  if ($Guess -gt $HiddenNumber) {Write-Host 'Your Guess was too high'}
-  elseif ($Guess -lt $HiddenNumber) {Write-Host 'Your Guess was too low'}
-  else {Write-Host 'You guessed the right number'}
+  $Turns++
+  switch ($Guess) {
+    {$_ -gt $HiddenNumber} {Write-Host 'Your Guess was too high'}
+    {$_ -lt $HiddenNumber} {Write-Host 'Your Guess was too low'}
+    default {Write-Host "You Guessed the number correctly, it took you $Turns turns"}
+  }
 } while ($HiddenNumber -ne $Guess)
 ```
 
