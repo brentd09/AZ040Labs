@@ -151,3 +151,33 @@ foreach  ($Number in $Numbers) {
 $Primes
 ```
 
+### Function and Param
+
+```PowerShell
+function Get-Primes {
+  [cmdletbinding()]
+  param (
+     [int]$MaxNumber = 50
+  )
+  # Find Prime Numbers
+  [System.Collections.ArrayList]$Primes = @()
+  $Numbers = 1..$MaxNumber
+  foreach  ($Number in $Numbers) {
+    if ($Number -eq 1 ) {continue}
+    $DivideBys = 2..$Number
+    $IsPrime = $true
+    foreach ($DivideBy in $DivideBys) {
+      $Remainder = $Number % $DivideBy
+      if ($Remainder -eq 0 -and $Number -ne $DivideBy) {
+        $IsPrime = $false
+        break
+      }
+    }
+    if ($IsPrime -eq $true) {$Primes += $Number}
+  }
+  return $Primes
+}
+
+Get-Primes -MaxNumber 45
+```
+
