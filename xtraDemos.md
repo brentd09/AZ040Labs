@@ -190,3 +190,4 @@ $PrimeData = Get-Prime -MaxNumber 10
 $PrimeData
 ```
 
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
