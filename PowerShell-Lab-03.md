@@ -442,7 +442,7 @@ The main tasks for this exercise are:
     # and then to count the nuber of objects
     ```
     </Strong></details> 
-1. Display the full list of the **Security** event log entries that have the event ID **4624**, and display only the time written, event ID, and message.
+1. Display the full list of the **Security** event log entries that have the event ID **4624**, and display only the time created, event ID, and message.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
