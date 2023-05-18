@@ -24,7 +24,7 @@ do {
   $WrongPos = 0
   $RightPos = 0
   do {
-    [int[]]$Guess = (Read-Host -Prompt '         Enter 4 numbers 1-6 with commas to separate').split(',')
+    [int[]]$Guess = (Read-Host -Prompt 'Enter 4 numbers 1-6 with commas to separate').split(',')
     $Guess = $Guess | Select-Object -Unique
     $HighestNumber = ($Guess | Sort-Object -Descending)[0] 
   } until ($Guess.count -eq 4 -and $HighestNumber -le 6 )
@@ -32,7 +32,7 @@ do {
     if ($Guess[$Index] -eq $HiddenNumbers[$Index]) {$RightPos++}
     elseif ($Guess[$Index] -in $HiddenNumbers) {$WrongPos++}
   }
-  Write-Host -ForegroundColor Yellow "$Guess -   RightPosition = $RightPos    WrongPosition = $WrongPos"
+  Write-Host -ForegroundColor Yellow "$Guess -   RightPosition = $RightPos    WrongPosition = $WrongPos   " 
 } until ($RightPos -eq 4)
 ```
 
