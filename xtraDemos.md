@@ -175,9 +175,14 @@ function Get-Primes {
     }
     if ($IsPrime -eq $true) {$Primes += $Number}
   }
-  return $Primes
+  return [PSCustomObject]@{
+    Primes     = $Primes
+    MaxPrime   = $Primes[-1]
+    PrimeCount = $Primes.count
+  }
 }
 
-Get-Primes -MaxNumber 45
+$PrimeData = Get-Primes -MaxNumber 45
+$PrimeData
 ```
 
