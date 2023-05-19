@@ -14,7 +14,7 @@ foreach  ($Computer in $Computers) {
 ```
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
-### If Demo
+### Demo if, do..until, nested loops
 
 ```PowerShell
 # MasterMind Game
@@ -79,7 +79,7 @@ for ($Count = 1; $Count -le 10; $Count++) {
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### While Demo
+### Demo While, Switch 
 
 ```PowerShell
 # Guessing Game
@@ -98,7 +98,7 @@ do {
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### Until Demo
+### Demo Do..While, Switch, Break
 
 ```PowerShell
 # Looping Menu Script
@@ -127,11 +127,11 @@ do {
     3 {break}
     Default {Write-Host 'This was not a valid choice'}
   }
-} until ($Choice -eq 3)  
+} while ($Choice -ne 3)  
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### Break and Continue Demo
+### Demo Break, Continue, Foreach, ArrayList 
 
 ```PowerShell
 # Find Prime Numbers
@@ -155,7 +155,7 @@ foreach  ($Number in $Numbers) {
 $Primes
 ```
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### Function and Param
+### Demo Break, Continue, Foreach, ArrayList, Function, Param, PSCustomObject
 
 ```PowerShell
 function Get-Prime {
