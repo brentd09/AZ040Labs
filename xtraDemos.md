@@ -1,7 +1,5 @@
 # Demo code
-<details><summary><h2>Module 7</h2></summary><Strong> 
-
-## Module 07
+<details><summary><h2>Module 07</h2></summary><Strong> 
 
 ### Demo Foreach 
 
