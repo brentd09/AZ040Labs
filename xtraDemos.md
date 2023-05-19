@@ -1,5 +1,5 @@
 # Demo code
-<details><summary>Module 7</summary><Strong> 
+<details><summary><h2>Module 7</h2></summary><Strong> 
 
 ## Module 07
 
