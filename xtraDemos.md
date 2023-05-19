@@ -2,7 +2,7 @@
 
 ## Module 07
 
-### Foreach Demo
+### Demo Foreach 
 
 ```PowerShell
 # Report Which Computers Respond
@@ -37,7 +37,7 @@ do {
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### Switch Demo
+### Demo Switch
 
 ```PowerShell
 # Menu Script
@@ -67,7 +67,7 @@ switch ($Choice) {
 }
 ```
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### For Demo
+### Demo For
 
 ```PowerShell
 # Divide by a series of numbers
