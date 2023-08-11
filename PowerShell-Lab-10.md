@@ -381,7 +381,8 @@ lab:
 
    
    ```PowerShell
-   $SPODomain = $AzureADDomain.Name -Replace '\..*$','-admin.sharepoint.com'    
+   $SPODomain = $AzureADDomain.Name -Replace '\..*$','-admin.sharepoint.com'
+   
    Connect-SPOService -Url https://$($SPODomain)
    ```
 
@@ -405,7 +406,8 @@ lab:
 
     
    ```powershell
-   $SPODomainForNewSite = $AzureADDomain.Name -Replace '\..*$','.sharepoint.com'    
+   $SPODomainForNewSite = $AzureADDomain.Name -Replace '\..*$','.sharepoint.com'
+   
    New-SPOSite -Url https://$($SPODomainForNewSite)/sites/Sales -Owner noreen@$($AzureADDomain.Name) -StorageQuota 256 -Template EHS#1 -NoWait
    ```
 
