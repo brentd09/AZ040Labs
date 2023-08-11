@@ -87,6 +87,7 @@ lab:
     
    ```PowerShell
    $AzureADDomain = Get-AzureADDomain
+   
    New-AzureADUser -DisplayName "Noreen Riggs" -UserPrincipalName Noreen@$($AzureADDomain.Name) -AccountEnabled $true -PasswordProfile $PasswordProfile -MailNickName Noreen
    ```
 
