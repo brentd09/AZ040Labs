@@ -1,23 +1,18 @@
 # Demo code
-<details><summary><h2>Module 01</h2></summary><Strong> 
+<h2>Module 01</h2>
 
-</Strong></details>  
-<details><summary><h2>Module 02</h2></summary><Strong> 
+<h2>Module 02</h2>
 
-</Strong></details>  
-<details><summary><h2>Module 03</h2></summary><Strong>   
+<h2>Module 03</h2>   
 
-</Strong></details>  
-<details><summary><h2>Module 04</h2></summary><Strong> 
 
-</Strong></details>  
-<details><summary><h2>Module 05</h2></summary><Strong> 
+<h2>Module 04</h2>
 
-</Strong></details>  
-<details><summary><h2>Module 06</h2></summary><Strong> 
+<h2>Module 05</h2>
 
-</Strong></details>  
-<details><summary><h2>Module 07</h2></summary><Strong> 
+<h2>Module 06</h2> 
+
+<h2>Module 07</h2>
 
 ### Demo Foreach 
 
@@ -209,16 +204,13 @@ $PrimeData
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
-</Strong></details> 
-<details><summary><h2>Module 08</h2></summary><Strong> 
+<h2>Module 08</h2>
 
-</Strong></details>
-<details><summary><h2>Module 09</h2></summary><Strong> 
+<h2>Module 09</h2>
 
-</Strong></details>
-<details><summary><h2>Module 10</h2></summary><Strong> 
+<h2>Module 10</h2>
 
-</Strong></details>
-<details><summary><h2>Module 11</h2></summary><Strong> 
+<h2>Module 11</h2>
+
 
 </Strong></details>
