@@ -13,8 +13,8 @@
   ```PowerShell
   Install-Module -Name PipelineDemo -Force                     # Install this before trying any of these examples
   ```
-  # Get-OpenTCPPortByVal
-  ## Try ByValue pipeline
+  ### Get-OpenTCPPortByVal
+  #### Try ByValue pipeline
 
   ```PowerShell
   # ByValue Pipeline
@@ -27,12 +27,12 @@
   #                                 |        -TcpPort [int]
   #                                 |         Pipeline=False
   ```
-  ## ByValue pipeline succeeds
+  #### ByValue pipeline succeeds
   
   
   
-  # Get-OpenTCPPortByPN
-  ## Always try ByValue pipeline first
+  ### Get-OpenTCPPortByPN
+  #### Always try ByValue pipeline first
   
   ```PowerShell
   Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
@@ -46,10 +46,10 @@
   #                                 |        -TcpPort [int]
   #                                 |         Pipeline=False
   ```
-  ## ByValue pipeline failed
+  #### ByValue pipeline failed
   
-  # Get-OpenTCPPortByPN  
-  ## Resorting to ByPropertyName pipeline
+  ### Get-OpenTCPPortByPN  
+  #### Resorting to ByPropertyName pipeline
   
   ```PowerShell
   Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
@@ -68,7 +68,7 @@
   #  SID               [SID]        |
   #  UserPrincipalName [String]     |
   ```
-  ## ByPropertyName succeeds
+  #### ByPropertyName succeeds
   
 </Strong></details> 
 
