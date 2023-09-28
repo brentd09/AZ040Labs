@@ -22,7 +22,8 @@ Get-ADComputer -Filter *          |        Get-OpenTCPPortByVal
                                   |         Pipeline=False
 ______________________________________________________________________________
 
-# ByPropertyName Pipeline
+# Always try ByValue pipeline first
+
 Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
 # This command produces           |        This command does NOT accept 
 # an [ADComputer] object          |        [ADComputer] objects ByValue
