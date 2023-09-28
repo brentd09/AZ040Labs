@@ -8,6 +8,36 @@
 
 <h2>Module 04</h2>
 
+```PowerShell
+Install-Module -Name PipelineDemo
+
+# ByValue Pipeline
+Get-ADComputer -Filter *          |        Get-OpenTCPPortByVal
+# This command produces           |        This command accepts [ADComputer] 
+# an [ADComputer] Object          |        objects via the -Computer parameter
+
+______________________________________________________________________________
+
+# ByPropertyName Pipeline
+Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
+# This command produces           |        This command does not accespt 
+# an [ADComputer] object          |        [ADComputer] objects ByValue
+
+# Unpacking the [ADComputer]      |        This command has the following
+# Object there are these          |        parameters:
+# properties:                     |
+
+#  DistinguishedName [String]     |   ---> -Name [string]  
+#  DNSHostName       [String]     |  /      pipeline=True  ByPropertyName
+#  Enabled           [Boolean]    | /
+#  Name              [String]---->|/       -TcpPort <Int32>
+#  ObjectClass       [String]     |         Pipeline=False
+#  ObjectGUID        [Guid]       |
+#  SamAccountName    [String]     |
+#  SID               [SID]        |
+#  UserPrincipalName [String]     |
+```
+
 <h2>Module 05</h2>
 
 <h2>Module 06</h2> 
