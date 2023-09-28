@@ -21,9 +21,9 @@ Get-ADComputer -Filter *          |        Get-OpenTCPPortByVal
 # Get-Member shows type                    Get-Help shows:
 # of [ADComputer] --------------> |----->  -Computer [ADComputer]
 #                                 |         Pipeline=True (ByValue)
-                                  |
-                                  |        -TcpPort [int]
-                                  |         Pipeline=False
+#                                 |
+#                                 |        -TcpPort [int]
+#                                 |         Pipeline=False
 ```
 ## ByValue pipeline succeeds
 
@@ -39,9 +39,9 @@ Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
 # Get-Member shows type                    Get-Help shows:
 # of [ADComputer]                 |        -Name [String]
 #                                 |         Pipeline=True (ByPropertyName)
-                                  |
-                                  |        -TcpPort [int]
-                                  |         Pipeline=False
+#                                 |
+#                                 |        -TcpPort [int]
+#                                 |         Pipeline=False
 ```
 ## ByValue pipeline failed
 
