@@ -10,8 +10,6 @@
 
 <details><summary><h2>Module 04</h2></summary><Strong> 
 
-</Strong></details> 
-
   ```PowerShell
   Install-Module -Name PipelineDemo -Force                     # Install this before trying any of these examples
   ```
