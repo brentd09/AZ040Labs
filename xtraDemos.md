@@ -12,66 +12,66 @@
 
 </Strong></details> 
 
-```PowerShell
-Install-Module -Name PipelineDemo -Force                     # Install this before trying any of these examples
-```
-# Get-OpenTCPPortByVal
-## Try ByValue pipeline
+  ```PowerShell
+  Install-Module -Name PipelineDemo -Force                     # Install this before trying any of these examples
+  ```
+  # Get-OpenTCPPortByVal
+  ## Try ByValue pipeline
 
-```PowerShell
-# ByValue Pipeline
-Get-ADComputer -Filter *          |        Get-OpenTCPPortByVal
-#
-# Get-Member shows type                    Get-Help shows:
-# of [ADComputer] --------------> |----->  -Computer [ADComputer]
-#                                 |         Pipeline=True (ByValue)
-#                                 |
-#                                 |        -TcpPort [int]
-#                                 |         Pipeline=False
-```
-## ByValue pipeline succeeds
-
----
-
-# Get-OpenTCPPortByPN
-## Always try ByValue pipeline first
-
-```PowerShell
-Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
-# This command produces           |        This command does NOT accept 
-# an [ADComputer] object          |        [ADComputer] objects ByValue
-
-# Get-Member shows type                    Get-Help shows:
-# of [ADComputer] ------------> X | X      -Name [String]
-#                                 |         Pipeline=True (ByPropertyName)
-#                                 |
-#                                 |        -TcpPort [int]
-#                                 |         Pipeline=False
-```
-## ByValue pipeline failed
-
-# Get-OpenTCPPortByPN
-## Resorting to ByPropertyName pipeline
-
-```PowerShell
-Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
-# Unpacking the [ADComputer]      |        This command has the following
-# Object there are these          |        parameters:
-# properties:                     |
-
-# Get-Member shows:                        Get-Help shows:
-#  Name              [String] --->|----->  -Name [string]  
-#  DNSHostName       [String]     |         pipeline=True  ByPropertyName
-#  Enabled           [Boolean]    |  
-#  DistinguishedName [String]     |        -TcpPort <Int32>
-#  ObjectClass       [String]     |         Pipeline=False
-#  ObjectGUID        [Guid]       |
-#  SamAccountName    [String]     |
-#  SID               [SID]        |
-#  UserPrincipalName [String]     |
-```
-## ByPropertyName succeeds
-
+  ```PowerShell
+  # ByValue Pipeline
+  Get-ADComputer -Filter *          |        Get-OpenTCPPortByVal
+  #
+  # Get-Member shows type                    Get-Help shows:   
+  # of [ADComputer] --------------> |----->  -Computer [ADComputer]
+  #                                 |         Pipeline=True (ByValue)
+  #                                 |
+  #                                 |        -TcpPort [int]
+  #                                 |         Pipeline=False
+  ```
+  ## ByValue pipeline succeeds
+  
+  
+  
+  # Get-OpenTCPPortByPN
+  ## Always try ByValue pipeline first
+  
+  ```PowerShell
+  Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
+  # This command produces           |        This command does NOT accept 
+  # an [ADComputer] object          |        [ADComputer] objects ByValue
+  
+  # Get-Member shows type                    Get-Help shows:
+  # of [ADComputer] ------------> X | X      -Name [String]
+  #                                 |         Pipeline=True (ByPropertyName)
+  #                                 |
+  #                                 |        -TcpPort [int]
+  #                                 |         Pipeline=False
+  ```
+  ## ByValue pipeline failed
+  
+  # Get-OpenTCPPortByPN  
+  ## Resorting to ByPropertyName pipeline
+  
+  ```PowerShell
+  Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
+  # Unpacking the [ADComputer]      |        This command has the following
+  # Object there are these          |        parameters:
+  # properties:                     |
+  
+  # Get-Member shows:                        Get-Help shows:
+  #  Name              [String] --->|----->  -Name [string]  
+  #  DNSHostName       [String]     |         pipeline=True  ByPropertyName
+  #  Enabled           [Boolean]    |  
+  #  DistinguishedName [String]     |        -TcpPort <Int32>
+  #  ObjectClass       [String]     |         Pipeline=False
+  #  ObjectGUID        [Guid]       |
+  #  SamAccountName    [String]     |
+  #  SID               [SID]        |
+  #  UserPrincipalName [String]     |
+  ```
+  ## ByPropertyName succeeds
+  
 </Strong></details> 
 
 <h2>Module 05</h2>
