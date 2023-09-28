@@ -18,8 +18,8 @@ Install-Module -Name PipelineDemo -Force                     # Install this befo
 # ByValue Pipeline
 Get-ADComputer -Filter *          |        Get-OpenTCPPortByVal
 #
-# Get-Member shows type                   Get-Help shows:
-# of [ADComputer] --------------> |-----> -Computer [ADComputer]
+# Get-Member shows type                    Get-Help shows:
+# of [ADComputer] --------------> |----->  -Computer [ADComputer]
 #                                 |         Pipeline=True (ByValue)
                                   |
                                   |        -TcpPort [int]
@@ -36,8 +36,8 @@ Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
 # This command produces           |        This command does NOT accept 
 # an [ADComputer] object          |        [ADComputer] objects ByValue
 
-# Get-Member shows type                   Get-Help shows:
-# of [ADComputer]                 |       -Name [String]
+# Get-Member shows type                    Get-Help shows:
+# of [ADComputer]                 |        -Name [String]
 #                                 |         Pipeline=True (ByPropertyName)
                                   |
                                   |        -TcpPort [int]
@@ -52,8 +52,8 @@ Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
 # Object there are these          |        parameters:
 # properties:                     |
 
-# Get-Member shows:                       Get-Help shows:
-#  Name              [String] --->|-----> -Name [string]  
+# Get-Member shows:                        Get-Help shows:
+#  Name              [String] --->|----->  -Name [string]  
 #  DNSHostName       [String]     |         pipeline=True  ByPropertyName
 #  Enabled           [Boolean]    |  
 #  DistinguishedName [String]     |        -TcpPort <Int32>
