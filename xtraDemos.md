@@ -47,7 +47,7 @@ Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
 ## ByValue pipeline failed
 
 # Get-OpenTCPPortByPN
-## Resorting to pipeline ByPropertyName
+## Resorting to ByPropertyName pipeline
 
 ```PowerShell
 Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
