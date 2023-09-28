@@ -76,7 +76,8 @@
 
 <h2>Module 06</h2> 
 
-<h2>Module 07</h2>
+<details><summary><h2>Module 07</h2></summary><Strong> 
+
 
 ### Demo Foreach 
 
@@ -267,6 +268,8 @@ $PrimeData
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
+
+</Strong></details> 
 
 <h2>Module 08</h2>
 
