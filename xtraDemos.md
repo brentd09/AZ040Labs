@@ -24,8 +24,10 @@ ______________________________________________________________________________
 
 # ByPropertyName Pipeline
 Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
-# This command produces           |        This command does not accespt 
+# This command produces           |        This command does NOT accept 
 # an [ADComputer] object          |        [ADComputer] objects ByValue
+
+# Resorting to pipeline ByPropertyName
 
 # Unpacking the [ADComputer]      |        This command has the following
 # Object there are these          |        parameters:
