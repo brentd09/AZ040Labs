@@ -37,7 +37,7 @@ Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
 # an [ADComputer] object          |        [ADComputer] objects ByValue
 
 # Get-Member shows type                    Get-Help shows:
-# of [ADComputer]                 |        -Name [String]
+# of [ADComputer] ------------> X | X      -Name [String]
 #                                 |         Pipeline=True (ByPropertyName)
 #                                 |
 #                                 |        -TcpPort [int]
