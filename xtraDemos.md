@@ -6,7 +6,11 @@
 <h2>Module 03</h2>   
 
 
-<h2>Module 04</h2>
+
+
+<details><summary><h2>Module 04</h2></summary><Strong> 
+
+</Strong></details> 
 
 ```PowerShell
 Install-Module -Name PipelineDemo -Force                     # Install this before trying any of these examples
@@ -67,6 +71,8 @@ Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
 #  UserPrincipalName [String]     |
 ```
 ## ByPropertyName succeeds
+
+</Strong></details> 
 
 <h2>Module 05</h2>
 
