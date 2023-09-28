@@ -33,6 +33,13 @@ Get-ADComputer -Filter *          |        Get-OpenTCPPortByVal
 Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
 # This command produces           |        This command does NOT accept 
 # an [ADComputer] object          |        [ADComputer] objects ByValue
+
+# Get-Member shows type
+# of [ADComputer]                 |       -Name [String]
+#                                 |         Pipeline=True (ByPropertyName)
+                                  |
+                                  |        -TcpPort [int]
+                                  |         Pipeline=False
 ```
 ## ByValue pipeline failed
 
@@ -43,10 +50,10 @@ Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
 # Object there are these          |        parameters:
 # properties:                     |
 
-#  DistinguishedName [String]     |   ---> -Name [string]  
-#  DNSHostName       [String]     |  /      pipeline=True  ByPropertyName
-#  Enabled           [Boolean]    | /
-#  Name              [String]---->|/       -TcpPort <Int32>
+#  Name              [String] --->|-----> -Name [string]  
+#  DNSHostName       [String]     |         pipeline=True  ByPropertyName
+#  Enabled           [Boolean]    |  
+#  DistinguishedName [String]     |        -TcpPort <Int32>
 #  ObjectClass       [String]     |         Pipeline=False
 #  ObjectGUID        [Guid]       |
 #  SamAccountName    [String]     |
