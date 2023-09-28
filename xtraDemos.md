@@ -8,6 +8,8 @@
 
 <h2>Module 04</h2>
 
+# Try ByValue pipeline
+
 ```PowerShell
 Install-Module -Name PipelineDemo
 
@@ -20,16 +22,23 @@ Get-ADComputer -Filter *          |        Get-OpenTCPPortByVal
                                   |
                                   |        -TcpPort [int]
                                   |         Pipeline=False
-______________________________________________________________________________
+```
+## ByValue pipeline succeeds
+
+---
 
 # Always try ByValue pipeline first
 
+```PowerShell
 Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
 # This command produces           |        This command does NOT accept 
 # an [ADComputer] object          |        [ADComputer] objects ByValue
+```
+## ByValue pipeline failed
 
 # Resorting to pipeline ByPropertyName
 
+```PowerShell
 # Unpacking the [ADComputer]      |        This command has the following
 # Object there are these          |        parameters:
 # properties:                     |
@@ -44,6 +53,7 @@ Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
 #  SID               [SID]        |
 #  UserPrincipalName [String]     |
 ```
+## ByPropertyName succeeds
 
 <h2>Module 05</h2>
 
