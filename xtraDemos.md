@@ -15,7 +15,12 @@ Install-Module -Name PipelineDemo
 Get-ADComputer -Filter *          |        Get-OpenTCPPortByVal
 # This command produces           |        This command accepts [ADComputer] 
 # an [ADComputer] Object          |        objects via the -Computer parameter
-
+#
+# Get-Member shows type           |        -Computer <ADComputer[]>
+# of [ADComputer]                 |         Pipeline=True (ByValue)
+                                  |
+                                  |        -TcpPort [int]
+                                  |         Pipeline=False
 ______________________________________________________________________________
 
 # ByPropertyName Pipeline
