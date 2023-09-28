@@ -81,7 +81,7 @@
 <details><summary><h2>Module 07</h2></summary><Strong> 
 
 
-### Demo Foreach 
+### Demo: Foreach 
 
 ```PowerShell
 # Report Which Computers Respond
@@ -93,7 +93,7 @@ foreach  ($Computer in $Computers) {
 ```
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
-### Demo if, do..until, nested loops
+### Demo: if, do..until, nested loops
 
 ```PowerShell
 # MasterMind Game
@@ -116,7 +116,7 @@ do {
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### Demo Switch
+### Demo: Switch
 
 ```PowerShell
 # Menu Script
@@ -146,7 +146,7 @@ switch ($Choice) {
 }
 ```
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### Demo For
+### Demo: For
 
 ```PowerShell
 # Divide by a series of numbers
@@ -158,7 +158,7 @@ for ($Count = 1; $Count -le 10; $Count++) {
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### Demo While, Switch 
+### Demo: Do..While, If 
 
 ```PowerShell
 # Guessing Game
@@ -168,16 +168,15 @@ $HiddenNumber = 1..100 | Get-Random
 do {
   [int]$Guess = Read-Host -Prompt 'Enter a number from 1 to 100'
   $Turns++
-  switch ($Guess) {
-    {$_ -gt $HiddenNumber} {Write-Host 'Your Guess was too high'}
-    {$_ -lt $HiddenNumber} {Write-Host 'Your Guess was too low'}
-    default {Write-Host "You Guessed the number correctly, it took you $Turns turns"}
+  if ($Guess -gt $HiddenNumber) {Write-Host 'Your Guess was too high'}
+  elseif ($Guess -lt $HiddenNumber) {Write-Host 'Your Guess was too low'}
+  else {Write-Host "You Guessed the number correctly, it took you $Turns turns"}
   }
 } while ($HiddenNumber -ne $Guess)
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### Demo Do..While, Switch, Break
+### Demo: Do..While, Switch, Break
 
 ```PowerShell
 # Looping Menu Script
@@ -210,7 +209,7 @@ do {
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### Demo Break, Continue, Foreach, ArrayList 
+### Demo: Break, Continue, Foreach, ArrayList 
 
 ```PowerShell
 # Find Prime Numbers
@@ -234,7 +233,7 @@ foreach  ($Number in $Numbers) {
 $Primes
 ```
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### Demo Break, Continue, Foreach, ArrayList, Function, Param, PSCustomObject
+### Demo: Break, Continue, Foreach, ArrayList, Function, Param, PSCustomObject
 
 ```PowerShell
 function Get-Prime {
