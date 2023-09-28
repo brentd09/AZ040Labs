@@ -8,11 +8,13 @@
 
 <h2>Module 04</h2>
 
+```PowerShell
+Install-Module -Name PipelineDemo -Force                     # Install this before trying any of these examples
+```
+
 # Try ByValue pipeline
 
 ```PowerShell
-Install-Module -Name PipelineDemo
-
 # ByValue Pipeline
 Get-ADComputer -Filter *          |        Get-OpenTCPPortByVal
 #
