@@ -48,6 +48,7 @@ Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
 # Resorting to pipeline ByPropertyName
 
 ```PowerShell
+Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
 # Unpacking the [ADComputer]      |        This command has the following
 # Object there are these          |        parameters:
 # properties:                     |
