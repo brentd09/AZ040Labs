@@ -29,7 +29,7 @@
   ```
   #### ByValue pipeline succeeds
   
-  
+  ---
   
   ### Get-OpenTCPPortByPN
   #### Always try ByValue pipeline first
@@ -47,6 +47,8 @@
   #                                 |         Pipeline=False
   ```
   #### ByValue pipeline failed
+
+  ---
   
   ### Get-OpenTCPPortByPN  
   #### Resorting to ByPropertyName pipeline
