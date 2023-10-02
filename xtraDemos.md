@@ -237,40 +237,7 @@ foreach  ($Number in $Numbers) {
 $Primes
 ```
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### Demo: Break, Continue, Foreach, ArrayList, Function, Param, PSCustomObject
 
-```PowerShell
-function Get-Prime {
-  [cmdletbinding()]
-  param (
-     [int]$MaxNumber = 50
-  )
-  # Find Prime Numbers
-  [System.Collections.ArrayList]$Primes = @()
-  $Numbers = 1..$MaxNumber
-  foreach  ($Number in $Numbers) {
-    if ($Number -eq 1 ) {continue}
-    $DivideBys = 2..$Number
-    $IsPrime = $true
-    foreach ($DivideBy in $DivideBys) {
-      $Remainder = $Number % $DivideBy
-      if ($Remainder -eq 0 -and $Number -ne $DivideBy) {
-        $IsPrime = $false
-        break
-      }
-    }
-    if ($IsPrime -eq $true) {$Primes += $Number}
-  }
-  return [PSCustomObject]@{
-    Primes     = $Primes
-    MaxPrime   = $Primes[-1]
-    PrimeCount = $Primes.count
-  }
-}
-
-$PrimeData = Get-Prime -MaxNumber 10
-$PrimeData
-```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
@@ -323,5 +290,44 @@ Get-IpConfig
 # Get-IpConfig -All
 
 ```
+
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
+
+### Demo: Break, Continue, Foreach, ArrayList, Function, Param, PSCustomObject
+
+```PowerShell
+function Get-Prime {
+  [cmdletbinding()]
+  param (
+     [int]$MaxNumber = 50
+  )
+  # Find Prime Numbers
+  [System.Collections.ArrayList]$Primes = @()
+  $Numbers = 1..$MaxNumber
+  foreach  ($Number in $Numbers) {
+    if ($Number -eq 1 ) {continue}
+    $DivideBys = 2..$Number
+    $IsPrime = $true
+    foreach ($DivideBy in $DivideBys) {
+      $Remainder = $Number % $DivideBy
+      if ($Remainder -eq 0 -and $Number -ne $DivideBy) {
+        $IsPrime = $false
+        break
+      }
+    }
+    if ($IsPrime -eq $true) {$Primes += $Number}
+  }
+  return [PSCustomObject]@{
+    Primes     = $Primes
+    MaxPrime   = $Primes[-1]
+    PrimeCount = $Primes.count
+  }
+}
+
+$PrimeData = Get-Prime -MaxNumber 10
+$PrimeData
+```
+
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
 </Strong></details>
