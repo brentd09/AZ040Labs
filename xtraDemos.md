@@ -284,5 +284,44 @@ $PrimeData
 
 <h2>Module 11</h2>
 
+<details><summary><h2>Advanced Concepts</h2></summary><Strong> 
+### Demo: Function, Param, PSCustomObject 
+ 
+```PowerShell
+function Get-IpConfig {
+  [cmdletbinding()]
+  Param(
+    [switch]$All
+  )
+  $LiveAdapter = Get-NetAdapter -Physical | Where-Object {$_.status -eq 'up'}
+  $IP4 = Get-NetIPAddress -AddressFamily IPv4 | where-Object {$_.ifIndex -eq $LiveAdapter.ifIndex}
+  $DNSAddr = Get-DnsClientServerAddress -AddressFamily IPv4| where-Object {$_.InterfaceIndex -eq $LiveAdapter.ifIndex}
+  $IPConfig = Get-NetIPInterface -InterfaceIndex 5 -AddressFamily IPv4
+  $Routes = Get-NetRoute -AddressFamily IPv4
+  if ($All -eq $true){
+    return [PSCustomObject][ordered]@{
+      InterfaceAlias = $LiveAdapter.ifAlias
+      InterfaceIndex = $LiveAdapter.ifIndex
+      MACAddress     = $LiveAdapter.LinkLayerAddress
+      IPV4Address    = $IP4.IPAddress
+      IPV4MaskLength = $IP4.PrefixLength
+      DNSServer      = $DNSAddr.Address
+      DHCPEnabled    = $IPConfig.Dhcp
+      DefaultGateway = ($Routes | Where-Object {$_.DestinationPrefix -match '0.0.0.0' -and $_.IfIndex -eq $LiveAdapter.ifIndex}).NextHop
+    }
+  }
+  else { 
+    return [PSCustomObject][ordered]@{
+      InterfaceAlias = $LiveAdapter.ifAlias
+      IPV4Address    = $IP4.IPAddress
+      IPV4MaskLength = $IP4.PrefixLength
+    }
+  }
+}
+
+Get-IpConfig
+# Get-IpConfig -All
+
+```
 
 </Strong></details>
