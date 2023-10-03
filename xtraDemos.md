@@ -30,7 +30,7 @@
 
   # We can pipe the entire [ADComputer] object to Get-OpenTCPPortByVal
   # because of these two reasons:
-  #   1. The Computer parameter (from Get-OpenTCPPortByVal) can accept pipeline using ByValue {pipeline=True  ByValue}
+  #   1. The -Computer parameter (from Get-OpenTCPPortByVal) can accept pipeline using ByValue {pipeline=True  ByValue}
   #   2. The type for the parameter -Computer matches the object produced by
   #      the "Get-ADComputer -Filter *" command {[ADComputer] = [ADComputer]} 
   ```
@@ -83,9 +83,9 @@
   #  SID               [SID]        |
   #  UserPrincipalName [String]     |
 
-  # We can pipe the value the contents of the Name property to Get-OpenTCPPortByPN
+  # We can pipe the value of the contents of the Name property to Get-OpenTCPPortByPN
   # because of these three reasons:
-  #   1. The Name parameter (from Get-OpenTCPPortByPN) can accept pipeline using ByPropertyName {pipeline=True  ByPropertyName}
+  #   1. The -Name parameter (from Get-OpenTCPPortByPN) can accept pipeline using ByPropertyName {pipeline=True  ByPropertyName}
   #   2. The property and parameter and property names are spelt exactly the same {Name = Name}
   #   3. The types for both of the property and parameter are the same {[string] = [string]} 
   ```
