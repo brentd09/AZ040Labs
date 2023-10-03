@@ -26,8 +26,14 @@
   #                                 |
   #                                 |        -TcpPort [int]
   #                                 |         Pipeline=False
+
+  # We can pipe the entire [ADComputer] object to Get-OpenTCPPortByVal
+  # because of two reasons:
+  #   1. The Computer parameter (from the Get-OpenTCPPortByVal command) can accept pipeline using ByValue {pipeline=True  ByValue}
+  #   2. The type for the parameter -Computer matches the object produced by are the "Get-ADComputer -Filter *" command {[ADComputer] = [ADComputer]} 
   ```
   #### ByValue pipeline succeeds
+  
   
   ---
   
@@ -45,8 +51,11 @@
   #                                 |
   #                                 |        -TcpPort [int]
   #                                 |         Pipeline=False
+
+  # This fails because there are no parameters in the Get-OpenTCPPortByPN command
+  # that accept pipeline using ByValue that also have the type [ADComputer]
   ```
-  #### ByValue pipeline failed
+  #### ByValue pipeline failed --> PowerShell now tries the ByPropertyName pipeline
 
   ---
   
@@ -55,8 +64,8 @@
   
   ```PowerShell
   Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
-  # Unpacking the [ADComputer]      |        This command has the following
-  # Object there are these          |        parameters:
+  # When Unpacking the [ADComputer] |        This command has the following
+  # object we find these            |        parameters:
   # properties:                     |
   
   # Get-Member shows:                        Get-Help shows:
@@ -69,6 +78,12 @@
   #  SamAccountName    [String]     |
   #  SID               [SID]        |
   #  UserPrincipalName [String]     |
+
+  # We can pipe the value the contents of the Name property to Get-OpenTCPPortByPN
+  # because of these three reasons:
+  #   1. The Name parameter (from the Get-OpenTCPPortByPN command) can accept pipeline using ByPropertyName {pipeline=True  ByPropertyName}
+  #   2. The property and parameter and property names are spelt exactly the same {Name = Name}
+  #   3. The types for both of the property and parameter are the same {[string] = [string]} 
   ```
   #### ByPropertyName succeeds
 
