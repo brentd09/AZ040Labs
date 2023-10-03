@@ -248,7 +248,7 @@ foreach  ($Number in $Numbers) {
     $Remainder = $Number % $DivideBy
     if ($Remainder -eq 0 -and $Number -ne $DivideBy) {
       $IsPrime = $false
-      break
+      break # We already know this is not a prime now so no use going through the rest of the loop
     }
   }
   if ($IsPrime -eq $true) {$Primes += $Number}
