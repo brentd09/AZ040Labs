@@ -19,6 +19,7 @@
   ```PowerShell
   # ByValue Pipeline
   Get-ADComputer -Filter *          |        Get-OpenTCPPortByVal
+
   #
   # Get-Member shows type                    Get-Help shows:   
   # of [ADComputer] --------------> |----->  -Computer [ADComputer]
@@ -43,6 +44,7 @@
   
   ```PowerShell
   Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
+
   # This command produces           |        This command does NOT accept 
   # an [ADComputer] object          |        [ADComputer] objects ByValue
   
@@ -65,6 +67,7 @@
   
   ```PowerShell
   Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
+
   # When Unpacking the [ADComputer] |        This command has the following
   # object we find these            |        parameters:
   # properties:                     |
