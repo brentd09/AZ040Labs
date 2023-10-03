@@ -28,7 +28,7 @@
   #                                 |         Pipeline=False
 
   # We can pipe the entire [ADComputer] object to Get-OpenTCPPortByVal
-  # because of two reasons:
+  # because of these two reasons:
   #   1. The Computer parameter (from the Get-OpenTCPPortByVal command) can accept pipeline using ByValue {pipeline=True  ByValue}
   #   2. The type for the parameter -Computer matches the object produced by are the "Get-ADComputer -Filter *" command {[ADComputer] = [ADComputer]} 
   ```
