@@ -84,24 +84,7 @@ The main tasks for this exercise are:
 2. From the **Colors** tab, select alternate display colors for the primary text and background.
 3. From the **Layout** tab, size the window to fit on the screen and remove any horizontal scroll bar.
 
-### Task 3: Start a shell transcript
 
-1. In the Windows PowerShell console, start a transcript:
-    <details><summary>Click for hint</summary><Strong> 
-
-    ```PowerShell 
-    Get-Command *Transcript*
-    ```
-    </Strong></details> 
-    <details><summary>Click to see the answer</summary><Strong> 
-    
-    ```PowerShell
-    Start-Transcript e:\DayOne.txt
-    ```
-    </Strong></details> 
-
-
-> **Note:** You've now started a transcript of your Windows PowerShell session. It'll save all commands that you enter and the command output to a text file until you run **Stop‑Transcript** or close the Windows PowerShell window. You can review the transcript's contents at any time by opening **C:\DayOne.txt**.
 
 ### Exercise 1 results
 
@@ -372,7 +355,37 @@ The main tasks for this exercise are:
     ```PowerShell
     Get-WinEvent -Logname Security -MaxEvents 10
     ```
+    </Strong></details>
+
+7. Find a command that can create a transcript of the input and output of PowerShell commands.
+  - Try creating a transcript by starting a transcript, and then run these commands:
+    - Get-Service
+    - Get-Process
+    - Get-Banana (This will produce an error, this is expected)
+  - Stop the transcript and open it in Notepad to discover what was captured  
+ 
+    <details><summary>Click for hint</summary><Strong> 
+
+    ```PowerShell 
+    Get-Command *Transcript*
+    ```
     </Strong></details> 
+    <details><summary>Click to see the answer</summary><Strong> 
+    
+    ```PowerShell
+    Start-Transcript
+    Get-Service
+    Get-Process
+    Get-Banana
+    Stop-Transcript
+    ```
+    </Strong></details> 
+
+
+> **Note:** Transcripts of your Windows PowerShell session will save all commands that you enter and the command output to a text file until you stop the transcript 
+
+
+   
     
 ### Exercise 3 results
 
