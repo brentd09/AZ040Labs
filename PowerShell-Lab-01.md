@@ -36,8 +36,8 @@ You're also preparing to complete several administrative tasks by using Windows 
 
 After completing this lab, you'll be able to:
 
-- Open and configure the Windows PowerShell console application.
-- Open and configure the Windows PowerShell ISE application.
+- **OPTIONAL** Open and configure the Windows PowerShell console application.
+- **OPTIONAL** Open and configure the Windows PowerShell ISE application.
 - Find and run Windows PowerShell commands.
 - Use Windows PowerShell Help and About topics to learn new shell concepts and techniques.
 
@@ -61,7 +61,7 @@ Password: **Pa55w.rd**
 
 1. Repeat these steps for **LON-CL1**.
 
-## Exercise 1: Configuring the Windows PowerShell console application
+## \[OPTIONAL] Exercise 1: Configuring the Windows PowerShell console application
 
 ### Exercise scenario 1
 
@@ -107,7 +107,7 @@ The main tasks for this exercise are:
 
 After completing this exercise, you'll have opened and configured the Windows PowerShell console application and its appearance and layout.
 
-## Exercise 2: Configuring the Windows PowerShell ISE application
+## \[OPTIONAL] Exercise 2: Configuring the Windows PowerShell ISE application
 
 ### Exercise Scenario 2
 
