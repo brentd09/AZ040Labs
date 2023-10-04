@@ -236,7 +236,7 @@ do {
 
 ```PowerShell
 # Find Prime Numbers
-function Find-Primes {
+function Find-Prime {
   Param (
     [int]$MaxNumber = 70
   )
@@ -335,10 +335,11 @@ function Get-Prime {
     $DivideBys = 2..$Number
     $IsPrime = $true
     foreach ($DivideBy in $DivideBys) {
+      if ($DivideBy -gt ($Number / 2 + 1)) {break} # we only need to try half of the numbers 
       $Remainder = $Number % $DivideBy
       if ($Remainder -eq 0 -and $Number -ne $DivideBy) {
         $IsPrime = $false
-        break
+        break # We already know this is not a prime now so no use going through the rest of the loop
       }
     }
     if ($IsPrime -eq $true) {$Primes += $Number}
