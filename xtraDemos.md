@@ -236,24 +236,33 @@ do {
 
 ```PowerShell
 # Find Prime Numbers
-[System.Collections.ArrayList]$Primes = @()
-Write-Host "Prime Numbers"
-$MaxNumber = 50
-$Numbers = 1..$MaxNumber
-foreach  ($Number in $Numbers) {
-  if ($Number -eq 1 ) {continue}
-  $DivideBys = 2..$Number
-  $IsPrime = $true
-  foreach ($DivideBy in $DivideBys) {
-    $Remainder = $Number % $DivideBy
-    if ($Remainder -eq 0 -and $Number -ne $DivideBy) {
-      $IsPrime = $false
-      break # We already know this is not a prime now so no use going through the rest of the loop
+function Find-Primes {
+  Param (
+    [int]$MaxNumber = 70
+  )
+  # Find Prime Numbers
+  [System.Collections.ArrayList]$Primes = @()
+  $Numbers = 1..$MaxNumber
+  foreach  ($Number in $Numbers) {
+    if ($Number -eq 1 ) {continue}
+    $DivideBys = 2..$Number
+    $IsPrime = $true
+    foreach ($DivideBy in $DivideBys) {
+      if ($DivideBy -gt ($Number / 2 + 1)) {break} # we only need to try half of the numbers 
+      $Remainder = $Number % $DivideBy
+      if ($Remainder -eq 0 -and $Number -ne $DivideBy) {
+        $IsPrime = $false
+        break # We already know this is not a prime now so no use going through the rest of the loop
+      }
     }
+    if ($IsPrime -eq $true) {$Primes += $Number}
   }
-  if ($IsPrime -eq $true) {$Primes += $Number}
+  
+  Write-Progress -Activity Calculating Primes -Id 1 -Completed
+  return $Primes
 }
-$Primes
+
+Find-Primes 
 ```
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
