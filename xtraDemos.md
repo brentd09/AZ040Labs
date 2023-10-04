@@ -308,7 +308,7 @@ foreach  ($Computer in $Computers) {
 ```
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
-### Demo: if, do..until, nested loops, function, verbose
+### Demo: if, do..until, nested loops, function, verbose, Newline Char
 
 ```PowerShell
 # MasterMind Game
@@ -330,7 +330,7 @@ function Start-MasterMind {
       if ($Guess[$Index] -eq $HiddenNumbers[$Index]) {$RightPos++}
       elseif ($Guess[$Index] -in $HiddenNumbers) {$WrongPos++}
     }
-    Write-Host -ForegroundColor Yellow "$Guess -   RightPosition = $RightPos    WrongPosition = $WrongPos   " 
+    Write-Host -ForegroundColor Yellow "$Guess -   RightPosition = $RightPos    WrongPosition = $WrongPos   `n" 
   } until ($RightPos -eq 4)
 }
 
