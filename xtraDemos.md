@@ -31,7 +31,7 @@
   # We can pipe the entire [ADComputer] object to Get-OpenTCPPortByVal
   # because of these two reasons:
   #   1. The -Computer parameter (from Get-OpenTCPPortByVal) can accept pipeline using ByValue {pipeline=True  ByValue}
-  #   2. The type for the parameter -Computer matches the object produced by
+  #   2. The type for the parameter -Computer matches the object type produced by
   #      the "Get-ADComputer -Filter *" command {[ADComputer] = [ADComputer]} 
   ```
   #### ByValue pipeline succeeds
@@ -56,12 +56,12 @@
   #                                 |         Pipeline=False
 
   # This fails because there are no parameters in the Get-OpenTCPPortByPN command
-  # that accept pipeline using ByValue that also have the type [ADComputer]
+  # that:
+  #  1. Accept pipeline using ByValue and
+  #  2. Have their type matching [ADComputer]
   ```
   #### ByValue pipeline failed --> PowerShell now tries the ByPropertyName pipeline
-
-  ---
-  
+   
   ### Get-OpenTCPPortByPN  
   #### Resorting to ByPropertyName pipeline
   
