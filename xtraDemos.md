@@ -308,26 +308,33 @@ foreach  ($Computer in $Computers) {
 ```
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
-### Demo: if, do..until, nested loops
+### Demo: if, do..until, nested loops, function, verbose
 
 ```PowerShell
 # MasterMind Game
-Clear-Host
-$HiddenNumbers = 1..6 | Get-Random -Count 4
-do {
-  $WrongPos = 0
-  $RightPos = 0
+function Start-MasterMind {
+  [CmdletBinding()]
+  Param()
+  Clear-Host
+  $HiddenNumbers = 1..6 | Get-Random -Count 4
+  write-verbose "$HiddenNumbers"
   do {
-    [int[]]$Guess = (Read-Host -Prompt 'Enter 4 numbers 1-6 with commas to separate').split(',')
-    $Guess = $Guess | Select-Object -Unique
-    $HighestNumber = ($Guess | Sort-Object -Descending)[0] 
-  } until ($Guess.count -eq 4 -and $HighestNumber -le 6 )
-  foreach ($Index in 0..3) {
-    if ($Guess[$Index] -eq $HiddenNumbers[$Index]) {$RightPos++}
-    elseif ($Guess[$Index] -in $HiddenNumbers) {$WrongPos++}
-  }
-  Write-Host -ForegroundColor Yellow "$Guess -   RightPosition = $RightPos    WrongPosition = $WrongPos   " 
-} until ($RightPos -eq 4)
+    $WrongPos = 0
+    $RightPos = 0
+    do {
+      [int[]]$Guess = (Read-Host -Prompt 'Enter 4 numbers 1-6 with commas to separate').split(',')
+      $Guess = $Guess | Select-Object -Unique
+      $HighestNumber = ($Guess | Sort-Object -Descending)[0] 
+    } until ($Guess.count -eq 4 -and $HighestNumber -le 6 )
+    foreach ($Index in 0..3) {
+      if ($Guess[$Index] -eq $HiddenNumbers[$Index]) {$RightPos++}
+      elseif ($Guess[$Index] -in $HiddenNumbers) {$WrongPos++}
+    }
+    Write-Host -ForegroundColor Yellow "$Guess -   RightPosition = $RightPos    WrongPosition = $WrongPos   " 
+  } until ($RightPos -eq 4)
+}
+
+Start-MasterMind -Verbose
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
