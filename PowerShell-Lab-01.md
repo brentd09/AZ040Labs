@@ -358,11 +358,11 @@ The main tasks for this exercise are:
     </Strong></details>
 
 7. Find a command that can create a transcript of the input and output of PowerShell commands.
-    - Try creating a transcript by starting a transcript, and then run these commands:
+    -Start a transcript, and then run these commands:
       - Get-Service
       - Get-Process
       - Get-Banana (This will produce an error, this is expected)
-    - Stop the transcript and open it in Notepad to discover what was captured  
+    - Stop the transcript and open the file it produces in Notepad to discover what was captured.  
  
     <details><summary>Click for hint</summary><Strong> 
 
