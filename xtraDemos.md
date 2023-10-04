@@ -123,7 +123,7 @@ $Person.Address
 
 ```
 
-### Demo: HashTables in ArrayLists
+### Demo: HashTables, ArrayLists, Nested HashTables 
 
 ```PowerShell
 [System.Collections.ArrayList]$People = @()
