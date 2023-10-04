@@ -166,7 +166,7 @@ $Person4 = @{
   Name = 'Jill'
   Age  = 18
   Address = [ordered]@{
-    Street  = '51 Main Street      
+    Street  = '51 Main Street'      
     City    = 'Brisbane'
     State   = 'QLD'
     Country = 'Australia'
@@ -184,7 +184,74 @@ foreach ($Person in $People) {
 
 ```
 
+### Demo: HashTables, List, Nested HashTables 
 
+```Powershell
+# This uses a more modern non-fixed size array called [List]
+# Please note [ArrayList] is old, and not recommended anymore. See website below:
+# https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist?view=net-7.0
+
+# Despite what the PowerShell training manual instructs [List] arrays are more capable and are more modern.
+# To use a list you must declare what type of information is in the list, however, you can use
+# [PSObject] or [object] to mean any generic object or you can declare a specific type like [int].
+
+
+[System.Collections.Generic.List[PSObject]]$People = @()
+
+
+$Person1 = @{
+  Name = 'Kevin'
+  Age  = 36
+  Address = [ordered]@{
+    Street  = '2351 State Road'      
+    City    = 'Austin'
+    State   = 'TX'
+    Country = 'USA'
+  }
+}
+
+$Person2 = @{
+  Name = 'Brian'
+  Age  = 23
+  Address = [ordered]@{
+    Street  = '211 Mountian Road'      
+    City    = 'Denver'
+    State   = 'CO'
+    Country = 'USA'
+  }
+}
+
+$Person3 = @{
+  Name = 'Diane'
+  Age  = 59
+  Address = [ordered]@{
+    Street  = '33 Banks Road'      
+    City    = 'Sydney'
+    State   = 'NSW'
+    Country = 'Australia'
+  }
+}
+
+$Person4 = @{
+  Name = 'Jill'
+  Age  = 18
+  Address = [ordered]@{
+    Street  = '51 Main Street'      
+    City    = 'Brisbane'
+    State   = 'QLD'
+    Country = 'Australia'
+  }
+}
+
+$People.Add($Person1)
+$People.Add($Person2)
+$People.Add($Person3)
+$People.Add($Person4)
+
+foreach ($Person in $People) {
+  Write-Host "$($Person.Name) is $($Person.Age) years old and lives at $($Person.Address.Street), $($Person.Address.City) $($Person.Address.State), $($Person.Address.Country) "
+}
+```
 
 </Strong></details>
 
