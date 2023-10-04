@@ -1,8 +1,8 @@
 # AZ-040Labs
 
 ## Rearranged the lab order to help your learning of the topics.
-- Lab 2 has been placed toward the end of the week as the commands that you will see here will mostly be covered by other modules
-- Labs 9 and 10 are relating to Microsoft 365 and Azure and are best dealt with after all of the non-cloud modules are completed. 
+- Lab 2 has been placed toward the end of the week as it is a much better placement for this module
+- Labs 9 and 10 are related to Microsoft 365 and Azure and are best dealt with after all of the non-cloud modules are completed. 
 
 ## Prepare labs before starting
 - Run the fix commands below from the LON-CL1 lab machine, before running the labs.<br> 
@@ -10,24 +10,25 @@
    Invoke-Command -ComputerName LON-SVR1,LON-DC1 -ScriptBlock {Set-NetFirewallProfile -All -Enabled false}
    Set-NetFirewallProfile -All -Enabled false
    ```
-- **Get-EventLog** command is a legacy command, use **Get-WinEvent** instead when accessing event log information especially on remote machines
+- if using PowerShell 7.x **Get-EventLog** command is a now a legacy command
+  - use **Get-WinEvent** instead when accessing event log information, especially on remote machines
 
 ## PowerShell Labs
 
 - Labs for learning PowerShell  
-  [PowerShell Lab  1](PowerShell-Lab-01.md)<br>
-  [PowerShell Lab  3](PowerShell-Lab-03.md)<br>
-  [PowerShell Lab  4](PowerShell-Lab-04.md)<br>
-  [PowerShell Lab  5](PowerShell-Lab-05.md)<br>
-  [PowerShell Lab  6](PowerShell-Lab-06.md)<br>
-  [PowerShell Lab  7](PowerShell-Lab-07.md)<br>
-  [PowerShell Lab  8](PowerShell-Lab-08.md)<br>
-  [PowerShell Lab  2](PowerShell-Lab-02.md)<br>
-  [PowerShell Lab 11](PowerShell-Lab-11.md)<br>
+  [Lab for Module 1](PowerShell-Lab-01.md)<br>
+  [Lab for Module 3](PowerShell-Lab-03.md)<br>
+  [Lab for Module 4](PowerShell-Lab-04.md)<br>
+  [Lab for Module 5](PowerShell-Lab-05.md)<br>
+  [Lab for Module 6](PowerShell-Lab-06.md)<br>
+  [Lab for Module 7](PowerShell-Lab-07.md)<br>
+  [Lab for Module 8](PowerShell-Lab-08.md)<br>
+  [Lab for Module 2](PowerShell-Lab-02.md)<br>
+  [Lab for Module 11](PowerShell-Lab-11.md)<br>
 
 - Labs for Microsoft 365 and Azure automation<br>
-  [PowerShell Lab  9](PowerShell-Lab-09.md)<br>
-  [PowerShell Lab 10](PowerShell-Lab-10.md)<br>
+  [Lab for Module 9](PowerShell-Lab-09.md)<br>
+  [Lab for Module 10](PowerShell-Lab-10.md)<br>
   
-- Demo Code<br>
+- Extra Demo Code<br>
   [Demos](xtraDemos.md#demo-code) <br>  
