@@ -90,6 +90,39 @@
   ```
   #### ByPropertyName succeeds
 
+  ### Parameter Overrides Pipeline
+  #### Prevents PowerShell from Piping Data
+  
+  ```PowerShell
+  Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN -Name 'LON-DC1'
+
+  # When Unpacking the [ADComputer] |        This command has the following
+  # object we find these            |        parameters:
+  # properties:                     |
+  
+  # Get-Member shows:                        Get-Help shows:
+  #  Name              [String] --->|  XXXX  -Name [string]  
+  #  DNSHostName       [String]     |         pipeline=True  ByPropertyName
+  #  Enabled           [Boolean]    |  
+  #  DistinguishedName [String]     |        -TcpPort <Int32>
+  #  ObjectClass       [String]     |         Pipeline=False
+  #  ObjectGUID        [Guid]       |
+  #  SamAccountName    [String]     |
+  #  SID               [SID]        |
+  #  UserPrincipalName [String]     |
+
+  # We would normally be able to pipe the value of the contents of the Name property to Get-OpenTCPPortByPN
+  # because of these three reasons:
+  #   1. The -Name parameter (from Get-OpenTCPPortByPN) can accept pipeline using ByPropertyName {pipeline=True  ByPropertyName}
+  #   2. The property and parameter and property names are spelt exactly the same {Name = Name}
+  #   3. The types for both of the property and parameter are the same {[string] = [string]}
+
+  # HOWEVER, because the -Name parameter was used on the command line, the pipeline is NOT
+  # permitted to pipe data to this -Name parameter. Thus using the parameter on the second command
+  # overrides the pipeline's ability to pipe data to that parameter.
+  ```
+
+
   <br>
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
