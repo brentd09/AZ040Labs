@@ -123,7 +123,7 @@ $Person.Address
 
 ```
 
-### Demo: HashTables, ArrayLists, Nested HashTables 
+### Demo: HashTables, ArrayLists, Nested HashTables, Ordered HashTables  
 
 ```PowerShell
 [System.Collections.ArrayList]$People = @()
@@ -184,7 +184,7 @@ foreach ($Person in $People) {
 
 ```
 
-### Demo: HashTables, List, Nested HashTables 
+### Demo: HashTables, List, Nested HashTables, Ordered HashTables 
 
 ```Powershell
 # This uses a more modern non-fixed size array called [List]
