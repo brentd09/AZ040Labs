@@ -358,6 +358,7 @@ The main tasks for this exercise are:
     </Strong></details>
 
 7. Find a command that can create a transcript of the input and output of PowerShell commands.
+
     -Start a transcript, and then run these commands:
       - Get-Service
       - Get-Process
