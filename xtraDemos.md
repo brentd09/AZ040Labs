@@ -99,7 +99,94 @@
 
 <h2>Module 05</h2>
 
-<h2>Module 06</h2> 
+<details><summary><h2>Module 06</h2> </summary><Strong> 
+
+### Demo: Hashtable, Nested Hashtable
+
+```PowerShell
+# Nesting HashTables
+$Person = @{
+  Name = 'Kevin'
+  Age  = 36
+  Address = [ordered]@{
+    Street  = '2351 State Road'      
+    City    = 'Austin'
+    State   = 'TX'
+    Country = 'USA'
+  }
+}
+
+$Person.Name
+$Person.Address.Street
+$Person.Address
+
+
+```
+
+### Demo: HashTables in ArrayLists
+
+```PowerShell
+[System.Collections.ArrayList]$People = @()
+
+
+$Person1 = @{
+  Name = 'Kevin'
+  Age  = 36
+  Address = [ordered]@{
+    Street  = '2351 State Road'      
+    City    = 'Austin'
+    State   = 'TX'
+    Country = 'USA'
+  }
+}
+
+$Person2 = @{
+  Name = 'Brian'
+  Age  = 23
+  Address = [ordered]@{
+    Street  = '211 Mountian Road'      
+    City    = 'Denver'
+    State   = 'CO'
+    Country = 'USA'
+  }
+}
+
+$Person3 = @{
+  Name = 'Diane'
+  Age  = 59
+  Address = [ordered]@{
+    Street  = '33 Banks Road'      
+    City    = 'Sydney'
+    State   = 'NSW'
+    Country = 'Australia'
+  }
+}
+
+$Person4 = @{
+  Name = 'Jill'
+  Age  = 18
+  Address = [ordered]@{
+    Street  = '51 Main Street      
+    City    = 'Brisbane'
+    State   = 'QLD'
+    Country = 'Australia'
+  }
+}
+
+$People.Add($Person1)
+$People.Add($Person2)
+$People.Add($Person3)
+$People.Add($Person4)
+
+foreach ($Person in $People) {
+  Write-Host "$($Person.Name) is $($Person.Age) years old and lives at $($Person.Address.Street), $($Person.Address.City) $($Person.Address.State), $($Person.Address.Country) "
+}
+
+```
+
+
+
+</Strong></details>
 
 <details><summary><h2>Module 07</h2></summary><Strong> 
 
