@@ -157,6 +157,7 @@ $Person.Address
 
 
 ```
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
 ### Demo: HashTables, ArrayLists, Nested HashTables, Ordered HashTables  
 
@@ -218,6 +219,8 @@ foreach ($Person in $People) {
 }
 
 ```
+
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
 ### Demo: HashTables, List, Nested HashTables, Ordered HashTables 
 
@@ -290,6 +293,8 @@ foreach ($Person in $People) {
   Write-Host "$($Person.Name) is $($Person.Age) years old and lives at $($Person.Address.Street), $($Person.Address.City) $($Person.Address.State), $($Person.Address.Country) "
 }
 ```
+
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
 </Strong></details>
 
