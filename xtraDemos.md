@@ -62,7 +62,6 @@
   ```
   #### ByValue pipeline failed --> PowerShell now tries the ByPropertyName pipeline
    
-  ### Get-OpenTCPPortByPN  
   #### Resorting to ByPropertyName pipeline
   
   ```PowerShell
