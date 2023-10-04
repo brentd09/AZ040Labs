@@ -188,12 +188,15 @@ foreach ($Person in $People) {
 
 ```Powershell
 # This uses a more modern non-fixed size array called [List]
-# Please note [ArrayList] is old, and not recommended anymore. See website below:
+# Please note [ArrayList] is old, and not recommended anymore. See the website below:
 # https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist?view=net-7.0
 
-# Despite what the PowerShell training manual instructs [List] arrays are more capable and are more modern.
-# To use a list you must declare what type of information is in the list, however, you can use
-# [PSObject] or [object] to mean any generic object or you can declare a specific type like [int].
+# Despite what the PowerShell training manual instructs regarding using [ArrayList],
+# the [List] arrays are more capable and are more modern.
+
+# To use a list you must declare what type of data is in the list, however, you can use
+# [PSObject] or [object] to mean any generic objects of any type or you can declare a
+# specific type like [int] or [string] etc.
 
 
 [System.Collections.Generic.List[PSObject]]$People = @()
