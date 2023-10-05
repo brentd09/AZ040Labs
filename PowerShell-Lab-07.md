@@ -236,7 +236,7 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Add-ADGroupMember -Identity IPPhoneTest -Members Abbi,Ida,Parsa,Tonia
+    Add-ADGroupMember -Identity IPPhoneTest -Members Abbi, Ida, Parsa, Tonia
     ```
     </Strong></details> 
 
@@ -276,7 +276,7 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Get-ADUser -Identity Ida -Properties ipPhone
-    # Check to see if the ipPhone attibute is set for Ida
+    # Check to see if the ipPhone attribute is set for Ida
     ```
     </Strong></details> 
 
@@ -322,8 +322,8 @@ The main tasks for this exercise are:
 2. Get the service names from the **services.txt** file and store them in a variable.
 3. Use a **ForEach** loop to process each service:
 
-   - If the service isn't running, start it, and then enter text to the screen indicating that the service was started.
-   - If the service is running, do nothing, and then enter text to the screen indicating that no action was required.
+   - If the service isn't running, start the service, and then write a message to the screen indicating that the service was started.
+   - If the service is running, just write a message to the screen indicating that no action was required.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
@@ -365,12 +365,12 @@ The main task for this exercise is:
 1. Create a new script named **E:\\CreateUsers.ps1**.
 1. Import **users.csv** and store the objects in a variable, you will find this file in **e:\\Mod07\\Labfiles**.
 1. Create a **ForEach** loop that processes the data in the variable to create user accounts:
-1. Use Splatting to create each users set of information for use with the New-ADUser command.
+1. Use Splatting to create each user's set of information for use with the New-ADUser command.
 
   - The Splat Hash Table should include
-    - the users given name
-    - the users surname
-    - the users full name
+    - the given name
+    - the surname
+    - the full name
     - a display name (that will be the same format as the full name)
     - the users samAccountName (this is the userID) 
     - the user principal name for the new user. This should be in the format **UserID@adatum.com**.
@@ -390,7 +390,7 @@ The main task for this exercise is:
 
     ```PowerShell
     Get-Help about_Splatting
-    # Splatting allow you to collect all of the information for the parameters 
+    # Splatting allows you to collect all of the information for the parameters 
     # in a hash table and then use the hash table instead of individual parameters 
     ```
     </Strong></details> 
@@ -401,7 +401,7 @@ The main task for this exercise is:
     foreach ($User in $UserInfoFromCSV) {
       $UserSplat = @{
         GivenName           = $User.First
-        SurName             = $USer.Last
+        Surname             = $USer.Last
         Name                = $User.First + ' ' + $User.Last
         DisplayName         = $User.First + ' ' + $User.Last
         SamAccountname      = $User.UserID
@@ -510,14 +510,14 @@ The main task for this exercise is:
    - If the switch is false, run the existing query.
 
 1. For new code, you must:
-   - Get the credential from the user.
+   - Get the credentials from the user.
    - Open a remote session using that credential.
    - Send the query using that session.
 
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
-    # The answer below show the script 
+    # The answer below shows the script 
     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
