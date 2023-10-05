@@ -53,7 +53,7 @@ For this lab, you'll use the available virtual machine (VM) environment. Before 
 
 ## Exercise 1: Starting and managing jobs
 
-### Exercise scenario 1
+### Exercise Scenario 1
 
 In this exercise, you'll start jobs using two of the basic job types.
 
@@ -77,7 +77,7 @@ The main tasks for this exercise are:
 
     ```PowerShell
     # However when you are asked to create a background job for the local computer it may be better to use the Start-Job cmdlet
-    # Especially if the background job need a specific name
+    # Especially if the background job needs a specific name
     Get-Help -ShowWindow Start-Job
     ```
 
@@ -107,7 +107,7 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Invoke-Command -AsJob -JobName RemoteShares -ComputerName LON-DC1,LON-SVR1 -ScriptBlock {Get-SmbShare}  
+    Invoke-Command -AsJob -JobName RemoteShares -ComputerName LON-DC1, LON-SVR1 -ScriptBlock {Get-SmbShare}  
     ```
     </Strong></details> 
 5. Start a Windows PowerShell remote job that retrieves all instances of the **Win32_Volume** Common Information Model (CIM) class from every computer in Active Directory Domain Services (AD DS). Name the job **RemoteDisks**. Because some domain computers might not start, some child jobs might fail.
@@ -140,7 +140,7 @@ The main tasks for this exercise are:
 
     ```PowerShell
     # However when you are asked to create a background job for the local computer it may be better to use the Start-Job cmdlet
-    # Especially if the background job need a specific name
+    # Especially if the background job needs a specific name
     Get-Help -ShowWindow Start-Job
     ```
     
@@ -246,7 +246,7 @@ The main tasks for this exercise are:
     ```
     </Strong></details>
 
-> **Note:** You must start by querying the parent job and include the child jobs . Filter the child jobs so that just the **LON-DC1** job remains, and then receive the results from that job. You'll use a total of three commands to complete this step.
+> **Note:** You must start by querying the parent job and include the child jobs. Filter the child jobs so that just the **LON-DC1** job remains, and then receive the results from that job. You'll use a total of three commands to complete this step.
 
 ## Exercise 2: Creating a scheduled job
 
@@ -263,7 +263,7 @@ The main tasks for this exercise are:
 ### Task 1: Create job options and job triggers
 
 1. Ensure that you're signed into **LON-CL1** as **Adatum\\Administrator** with the password **Pa55w.rd**.
-2. Click START button and type "ISE"
+2. Click the START button and type "ISE"
 3. Select "Windows PowerShell ISE" from the menu
 4. Create the scheduled job commands below within the ISE script pane
 5. Create a job option object and store it in `$option`. Configure the job object so the job will:
