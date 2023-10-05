@@ -85,7 +85,7 @@
   # We can pipe the value of the contents of the Name property to Get-OpenTCPPortByPN
   # because of these three reasons:
   #   1. The -Name parameter (from Get-OpenTCPPortByPN) can accept pipeline using ByPropertyName {pipeline=True  ByPropertyName}
-  #   2. The property and parameter and property names are spelt exactly the same {Name = Name}
+  #   2. The property and parameter names are spelt exactly the same {Name = Name}
   #   3. The types for both of the property and parameter are the same {[string] = [string]} 
   ```
   #### ByPropertyName succeeds
