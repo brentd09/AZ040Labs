@@ -132,8 +132,8 @@
   ```PowerShell
   Get-OpenTCPPortByPN -Name (Get-ADComputer -Filter *).Name 
 
-  # (Get-ADComputer -Filter *).Name This command creates [ADComputer] objects and then extracts the Name property value
-  # as the Name property contains a [string] and the -Name parameter accepts a string the computer Name data will be
+  # (Get-ADComputer -Filter *).Name This command creates [ADComputer] objects and then extracts the Name property value from each computer.
+  # As the Name property contains a [string] and the -Name parameter accepts a string the Name property data will be
   # acccepted by the -Name parameter.
 
   # Get-ADComputer -Filter *                 Get-OpenTCPPortByPN
