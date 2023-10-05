@@ -164,7 +164,7 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Enter-PSSession -ComputerName LON-SVR1
-    # this connection will fail because of the muti-hop rule in PowerShell
+    # This connection will fail because of the muti-hop rule in PowerShell
     ```
     </Strong></details> 
 1. Close the connection.
@@ -248,9 +248,9 @@ The main tasks for this exercise are:
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
-    # The remote command will have the follow differences:
+    # The remote command will have the following differences:
     # The TypeName will specify that it is Deserialized
-    # The methods that appeared in step 1 will be missing from the remote command in step 2
+    # The methods that appeared in Step 1 will be missing from the remote command in Step 2
     ```
     </Strong></details> 
 
@@ -354,7 +354,7 @@ The main tasks for this exercise are as follows:
 
     ```PowerShell
     # The local command is still available without the prefix
-    # Running the normal SMBShare cammands will autoload the module locally
+    # Running the normal SMBShare commands will autoload the module locally
     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
@@ -374,12 +374,12 @@ In this exercise, you'll perform several management tasks against multiple compu
 
 The main tasks for this exercise are:
 
-1. Create PSSessions to two computers.
+1. Create PSSessions on two computers.
 1. Create a report that displays Windows Firewall rules from two computers.
 1. Create and display an HTML report that displays local disk information from two computers.
 1. Close all open PSSessions.
 
-### Task 1: Create PSSessions to two computers
+### Task 1: Create PSSessions on two computers
 
 1. In the **Windows PowerShell** console, create PSSessions to both **LON-SVR1** and **LON-DC1** and Save both PSSession objects in the variable $computers.
     <details><summary>Click to see the answer</summary><Strong> 
@@ -473,7 +473,7 @@ The main tasks for this exercise are:
     
     ```PowerShell
     Invoke-Command -Session $computers -ScriptBlock { Get-Volume | Where-Object {$_.DriveType -eq 'Fixed'} } | 
-      Select-Object PSComputerName,DriveLetter,SizeRemaining,Size | 
+      Select-Object PSComputerName, DriveLetter, SizeRemaining, Size | 
       ConvertTo-Html | 
       Out-File e:\DiskReport.html
     ```
@@ -487,7 +487,7 @@ The main tasks for this exercise are:
    e:\DiskReport.html
    ```
 
-## Congratulations you have fininshed the lab
+## Congratulations you have finished the lab
 
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
