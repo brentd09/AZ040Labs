@@ -126,7 +126,7 @@
   ```
 ---
 
- ### Paranthetical Data Passing
+ ### Parenthetical Data Passing
  #### Passes Data Between Command without Pipelines
 
   ```PowerShell
