@@ -124,7 +124,41 @@
   # permitted to pipe data to this -Name parameter. Thus using the parameter on the second command
   # overrides the pipeline's ability to pipe data to that parameter.
   ```
+---
 
+ ### Paranthetical Data Passing
+ #### Passes Data Between Command without Pipelines
+
+  ```PowerShell
+  Get-OpenTCPPortByPN -Name (Get-ADComputer -Filter *).Name 
+
+  # (Get-ADComputer -Filter *).Name This command creates [ADComputer] objects and then extracts the Name property value
+  # as the Name property contains a [string] and the -Name parameter accepts a string the computer Name data will be
+  # acccepted by the -Name parameter.
+
+  # Get-ADComputer -Filter *                 Get-OpenTCPPortByPN
+  # Get-Member shows:                        Get-Help shows:
+  #  Name              [String]     |        -Name [string]  
+  #  DNSHostName       [String]     |         pipeline=True  ByPropertyName
+  #  Enabled           [Boolean]    |  
+  #  DistinguishedName [String]     |        -TcpPort <Int32>
+  #  ObjectClass       [String]     |         Pipeline=False
+  #  ObjectGUID        [Guid]       |
+  #  SamAccountName    [String]     |
+  #  SID               [SID]        |
+  #  UserPrincipalName [String]     |
+
+
+  # This however would not work:
+  # ----------------------------
+
+  # Get-OpenTCPPortByPN -Name (Get-ADComputer -Filter *)
+
+  # This will fail as the (Get-ADComputer -Filter *) command produces an [ADComputer] object and the -Name parameter
+  # only accepts [string] objects. (Square peg, Round hole issue)
+
+  ```
+ 
 
   <br>
 
