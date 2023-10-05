@@ -347,7 +347,7 @@ foreach  ($Computer in $Computers) {
 ```
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
-### Demo: if, do..until, nested loops, function, verbose, Newline Char
+### Demo: if, do..until, nested loops, function, Verbose, Newline Char
 
 ```PowerShell
 # MasterMind Game
@@ -373,11 +373,11 @@ function Start-MasterMind {
   } until ($RightPos -eq 4)
 }
 
-Start-MasterMind -Verbose
+Start-MasterMind -Verbose    # The verbose parameter will show the answer before the game starts
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### Demo: Switch
+### Demo: Switch, Read-Host
 
 ```PowerShell
 # Menu Script
@@ -419,7 +419,7 @@ for ($Count = 1; $Count -le 10; $Count++) {
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### Demo: Do..While, If 
+### Demo: Do..While, If, Read-Host 
 
 ```PowerShell
 # Guessing Game
@@ -437,7 +437,7 @@ do {
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### Demo: Do..While, Switch, Break
+### Demo: Do..While, Switch, Break, Read-Host
 
 ```PowerShell
 # Looping Menu Script
