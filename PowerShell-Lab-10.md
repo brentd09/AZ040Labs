@@ -54,8 +54,8 @@ lab:
     ```
 
 1. In the **Sign in to your account** window, enter your username that is included in the Resources tab of the lab instructions, and then select **Next**.
-1. At the **Enter password** prompt, enter the password provided in the Resource tab of the right hand lab instructions bar, the username will look something like 	admin@LODSA020229.onmicrosoft.com, and then select **Sign in**.
-1. Find and execute a commant to find the users in AzureAD:
+1. At the **Enter password** prompt, enter the password provided in the Resource tab of the right-hand lab instructions bar, the username will look something like 	admin@LODSA020229.onmicrosoft.com, and then select **Sign in**.
+1. Find and execute a command to find the users in AzureAD:
 
     
     ```PowerShell
@@ -249,7 +249,7 @@ lab:
    ```
 
 
-1. Add "Allan Yoo" as a member of Sales Security Group, using the following command:
+1. Add "Allan Yoo" as a member of the Sales Security Group, using the following command:
 
  
     
@@ -259,7 +259,7 @@ lab:
 
 
 
-1. To verify Allan Yoo is a member of Sales Security Group, use the following command:
+1. To verify Allan Yoo is a member of the Sales Security Group, use the following command:
 
 
     
@@ -346,8 +346,8 @@ lab:
    ```
    allan@<Enter Your Tenant Name Here>  
    ```    
-  > The Tenant name is provided in the instructions for the lab under the Resources tab Allan's singin name should be in this format **allan@LODSA682165.onmicrosoft.com**
-  > change your password as instructed. 
+  > The Tenant name is provided in the instructions for the lab under the Resources tab Allan's sing in name should be in this format **allan@LODSA682165.onmicrosoft.com**
+  > Change your password as instructed. 
   >  Be sure to note the password so that you can remember it for later exercises.
 
 1. If prompted to stay signed in, select **No**.
@@ -406,7 +406,7 @@ lab:
 1. To create a new site, in the console, use the following command:
 
     
-   ```powershell
+   ```PowerShell
    $SPODomainForNewSite = $AzureADDomain.Name -Replace '\..*$','.sharepoint.com'
    
    New-SPOSite -Url https://$($SPODomainForNewSite)/sites/Sales -Owner noreen@$($AzureADDomain.Name) -StorageQuota 256 -Template EHS#1 -NoWait
@@ -516,7 +516,7 @@ lab:
    Get-TeamUser -GroupId $team.GroupId
    ```
  
-   > **Note:** Notice that the user that created the team is an owner.
+   > **Note:** Notice that the user who created the team is an owner.
 
 ## Task 3: Verify access to the team
 
