@@ -311,7 +311,7 @@ The main tasks for this exercise are:
       Get-NetNeighbor | Sort-Object -Property State 
     ```
     </Strong></details> 
-1. Display a list of the network neighbors that's grouped by state, displaying only the IP address in as compact a format as possible and letting Windows PowerShell decide how to optimize the layout.
+1. Display a list of the network neighbors that are grouped by state, displaying only the IPAddress values in columns across the screen using as many columns as possible.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
@@ -410,14 +410,21 @@ The main tasks for this exercise are:
     Get-Help Get-ADUser -ShowWindow
     ```
     </Strong></details> 
-4. Display a list of all the users in Active Directory in a format that lets you easily compare properties.
+4. Display a list of all the users in Active Directory in a table format that lets you easily compare properties.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
     Get-ADUser -Filter * | Format-Table
     ```
     </Strong></details> 
-5. Display the same list of all the users in the same format. This time, however, display only those users in the **Users** container of Active Directory. Use a search base of **"cn=Users,dc=adatum,dc=com"** for this task.
+5. Display the same list of all the users in the same format. This time, however, display only those users in the **Users** container of Active Directory. Use a searchbase of **"cn=Users,dc=adatum,dc=com"** for this task.
+
+    <details><summary>Click for hint</summary><Strong> 
+
+    ```PowerShell
+    Get-Help Get-ADUSer
+    ```
+    </Strong></details>
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
@@ -440,6 +447,11 @@ The main tasks for this exercise are:
     (Get-WinEvent -LogName Security | Where-Object {$_.ID -eq 4624}).Count
     # By using ( ) we are telling PowerShell to produce the resulting collection of objects
     # and then to count the nuber of objects
+
+    OR
+
+    $Events = Get-WinEvent -LogName Security | Where-Object {$_.ID -eq 4624}
+    $Events.Count
     ```
     </Strong></details> 
 1. Display the full list of the **Security** event log entries that have the event ID **4624**, and display only the time created, event ID, and message.
@@ -448,7 +460,7 @@ The main tasks for this exercise are:
     ```PowerShell
     Get-WinEvent -LogName Security | 
     Where-Object {$_.ID -eq 4624} | 
-    Select-Object -Property TimeCreated,ID,Message
+    Select-Object -Property TimeCreated, ID, Message
     ```
     </Strong></details> 
 1. Display only the 10 oldest entries in a format that lets you review the message details.
@@ -457,7 +469,7 @@ The main tasks for this exercise are:
     ```PowerShell
     Get-WinEvent -LogName Security | 
       Where-Object {$_.ID -eq 4624} | 
-      Select-Object -Property TimeCreated,ID,Message -Last 10 | 
+      Select-Object -Property TimeCreated, ID, Message -Last 10 | 
       Format-List
     ```
     </Strong></details> 
@@ -484,7 +496,10 @@ The main tasks for this exercise are:
     ```PowerShell
     Get-ChildItem -Path CERT: -Recurse | Get-Member
     # Two properties exist that relate to private keys 
-    # However HasPrivateKey is boolean and therefore easier to test for in a Where-Object command 
+    # However HasPrivateKey is boolean and therefore easier to test for in a Where-Object command
+
+    # It can be useful to also use the following command to see what information is in each property
+    Get-ChildItem -Path CERT: -Recurse | Select-Object -Property *
     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
@@ -492,7 +507,7 @@ The main tasks for this exercise are:
     ```PowerShell
     Get-ChildItem -Path CERT: -Recurse | 
       Where-Object { $_.HasPrivateKey -eq $False } | 
-      Select-Object -Property FriendlyName,Issuer | 
+      Select-Object -Property FriendlyName, Issuer | 
       Format-List
     ```
     </Strong></details>     
@@ -502,7 +517,7 @@ The main tasks for this exercise are:
 
     ```PowerShell
     Get-Help about_Automatic_Variables
-    # In this help about document you can learn about the $True and $False automatic variables
+    # In this help "about" document you can learn about the $True and $False automatic variables
     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
@@ -510,7 +525,7 @@ The main tasks for this exercise are:
     ```PowerShell
     Get-ChildItem -Path CERT: -Recurse | 
       Where-Object { $_.HasPrivateKey -eq $False -and $_.NotAfter -gt (Get-Date) -and $_.NotBefore -lt (Get-Date) } | 
-      Select-Object -Property NotBefore,NotAfter,FriendlyName,Issuer | 
+      Select-Object -Property NotBefore, NotAfter, FriendlyName, Issuer | 
       Format-Table -Wrap
     # $False is a system variable that contains a boolean object of False
     # Using ( ) here tells PowerShell to run the Get-Date command and put the result in place of the ( )
@@ -545,13 +560,16 @@ The main tasks for this exercise are:
     Get-Volume | Where-Object { $_.SizeRemaining -gt 0 } | Format-List
     ```
     </Strong></details> 
-1. Display a list of the volumes that have less than 99 percent free space and more than zero bytes of free space. Display only the drive letter and disk size, in megabytes (MB) to 3 decimal places.
+1. Display a list of the volumes that have less than 99% free space and more than zero bytes of free space. Display only the drive letter and disksize (in megabytes) to 3 decimal places.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
     Get-Command *Volume*
-    Get-Help About_Calculated_Properties # Then look under the heading of Select-Object within this help document
-    ```
+    Get-Help About_Calculated_Properties # Then look under the heading of Select-Object within this help document.
+
+    # Use the [Math]::Round() class to round the calculated value to 3 decimal places
+    # [math]::Round( (Calculated value) , 3 )
+     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
     
@@ -610,7 +628,7 @@ The main tasks for this exercise are:
       Select-Object -Property Name, Category
     ```
     </Strong></details> 
-1. Display the same list, excluding any Control Panel items that exist in more than one category. Make sure the command performance is optimized.
+1. Display the same list, excluding any Control Panel items that exist in more than one category. Make sure the command performance is optimized for speed.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
@@ -702,7 +720,7 @@ The main tasks for this exercise are:
 
     ```PowerShell
     1..10
-    # 1..10 will produce a collect of numbers (Also called an array)
+    # 1..10 will produce a collection of numbers (Also called an array)
     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
@@ -716,7 +734,7 @@ The main tasks for this exercise are:
 
     ```PowerShell
     Get-Help Get-Random -ShowWindow
-    # Look for seed in the help
+    # Look for the keyword "seed" in the help
     ```
     </Strong></details> 
     <details><summary>Click to see the answer</summary><Strong> 
@@ -768,7 +786,7 @@ The main tasks for this exercise are:
     ```PowerShell
     Get-ADUser -Filter * -Properties Department,City | 
       Where-Object {$_.Department -eq ‘IT’ -and $_.City -eq ‘London’} | 
-      Select-Object -Property Name,Department,City| 
+      Select-Object -Property Name, Department, City| 
       Sort-Object -Propperty Name
     ```
     </Strong></details> 
@@ -792,9 +810,9 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Get-ADUser -Filter * -Properties Department,City,Office | 
+    Get-ADUser -Filter * -Properties Department, City, Office | 
       Where-Object {$_.Department -eq ‘IT’ -and $_.City -eq ‘London’} | 
-      Select-Object -Property Name,Department,City,Office | 
+      Select-Object -Property Name, Department, City, Office | 
       Sort-Object -Property Name
     ```
     </Strong></details> 
@@ -812,11 +830,11 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Get-ADUser -Filter * -Properties Department,City,Office | 
+    Get-ADUser -Filter * -Properties Department,City, Office | 
       Where-Object {$_.Department -eq 'IT' -and $_.City -eq 'London'} | 
       Sort-Object -Property Name | 
-      Select-Object -Property Name,Department,City,Office |
-      ConvertTo-Html -Property Name,Department,City -PreContent Users | 
+      Select-Object -Property Name,Department, City, Office |
+      ConvertTo-Html -Property Name,Department, City -PreContent Users | 
       Out-File E:\UserReport.html
     ```
     </Strong></details> 
@@ -852,11 +870,11 @@ The main tasks for this exercise are:
     </style>
     '@
     
-    Get-ADUser -Filter * -Properties Department,City,Office | 
+    Get-ADUser -Filter * -Properties Department, City, Office | 
       Where-Object {$_.Department -eq 'IT' -and $_.City -eq 'London'} | 
       Sort-Object -Property Name | 
-      Select-Object -Property Name,Department,City,Office |
-      ConvertTo-Html -Property Name,Department,City -PreContent Users -Head $CSS | 
+      Select-Object -Property Name, Department, City, Office |
+      ConvertTo-Html -Property Name, Department, City -PreContent Users -Head $CSS | 
       Out-File E:\UserReport.html    
     
     ```
@@ -880,10 +898,10 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Get-ADUser -Filter * -Properties Department,City,Office | 
+    Get-ADUser -Filter * -Properties Department, City, Office | 
       Where-Object {$_.Department -eq 'IT' -and $_.City -eq 'London'} | 
       Sort-Object -Property Name | 
-      Select-Object -Property Name,Department,City,Office |
+      Select-Object -Property Name, Department, City, Office |
       Export-Clixml E:\UserReport.xml
     ```
     </Strong></details> 
@@ -891,7 +909,7 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    # Manually open Edge broweser and navigate to the E:\UserReport.XML
+    # Manually open Edge browser and navigate to the E:\UserReport.XML
     ```
     </Strong></details> 
 1. Display a list of all the properties of all the Active Directory users in a comma-separated value (CSV) file.
@@ -904,10 +922,10 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Get-ADUser -Filter * -Properties Department,City,Office | 
+    Get-ADUser -Filter * -Properties Department, City, Office | 
       Where-Object {$_.Department -eq 'IT' -and $_.City -eq 'London'} | 
       Sort-Object -Property Name | 
-      Select-Object -Property Name,Department,City,Office |
+      Select-Object -Property Name, Department, City, Office |
       Export-Csv E:\UserReport.csv
     ```
     </Strong></details> 
