@@ -72,7 +72,7 @@ The main tasks for this exercise are:
    - The username is the new outlook.com email that you built for your Azure Pass
 4. In the Azure portal choose "Maybe Later" on the "Welcome to Microsoft Azure dialog box"
 5. In the search bar at the top of the portal type "Subscriptions"
-6. Choose Subscriptions from the drop down menu
+6. Choose Subscriptions from the drop-down menu
 7. Check to see if the MOC Subscription has been activated yet (This subscription takes some time to be created and activated)
 
  > Do not wait for this to appear, continue on with the rest of the lab and the subscription will appear later.
@@ -95,7 +95,7 @@ The main tasks for this exercise are:
    ```
 
 7. From the PowerShell Gallery, install the Az module for the current user by using the **Install-Module** command.
-    > This will take some time to install, wait until the installation of all of the AZ modules have fininshed
+    > This will take some time to install, wait until the installation of all of the AZ modules has finished
    
 
     
@@ -107,8 +107,8 @@ The main tasks for this exercise are:
 
     
    ```PowerShell
-   # When you run this command it will show website asking you to sign in
-   # Sign in with your Username you found in the Resourses tab of the lab instructions
+   # When you run this command it will show the website asking you to sign in
+   # Sign in with your Username you found in the Resources tab of the lab instructions
    Connect-AzAccount
    ```
 
@@ -125,7 +125,7 @@ The main task for this exercise is:
 
     > You could use the modules you have downloaded in the previous task <br>
     > However this next exercise give you experience in running the  <br>
-    > PowerShell commands from the Clous Shell, meaning you do not have  <br>
+    > PowerShell commands from the Cloud Shell, meaning you do not have  <br>
     > to install the Az Modules <br>
 
 ### Task 1: Use Azure Cloud Shell to create a resource group
@@ -139,7 +139,7 @@ The main task for this exercise is:
 1. On the Microsoft Azure portal click the hamburger menu on the top left of the portal to find the following:
 2. On the menu choose "Virtual Machines" and ensure that no virtual machines (VMs) are created. 
 3. Again from the menu select "Storage Accounts". Ensure that no storage accounts are created. 
-3. On the Microsoft Azure top blue bar, select the Cloud Shell icon, (hover over each icon with the mounse to find the Cloud Shell Icon >_ )
+3. On the Microsoft Azure top blue bar, select the Cloud Shell icon, (hover over each icon with the mouse to find the Cloud Shell Icon >_ )
 3. In the Welcome to Azure Cloud Shell window, select "PowerShell".
 3. On the You have no storage mounted page, review the note about the missing storage account that's needed for Cloud Shell to run. Verify that in the Subscription field, your MOC subscription is selected, and then select "Create storage". Wait until the storage account is created.
 
@@ -208,7 +208,7 @@ The main task for this exercise is:
    $NewVM1
    ```
    ```PowerShell
-   $newVM1.OSProfile | Select-Object ComputerName,AdminUserName
+   $newVM1.OSProfile | Select-Object ComputerName, AdminUserName
    ```
    ```PowerShell
    $newVM1 | Get-AzNetworkInterface | Select-Object -ExpandProperty IpConfigurations | Select-Object Name,PrivateIpAddress
@@ -239,7 +239,7 @@ The main task for this exercise is:
 5. On the Overview page, check the parameters of the VM you created. Select Disk. Ensure that only one disk is created (Os disk).
 6. To create a data disk for the existing VM, in the Windows PowerShell window, enter the following commands, and select Enter after each:
 
-   ```powershell
+   ```PowerShell
    $VirtualMachine = Get-AzVM -ResourceGroupName "ResourceGroup1" -Name "TestVM1"
 
    Add-AzVMDataDisk -VM $VirtualMachine -Name "disk1" -LUN 0 -Caching ReadOnly -DiskSizeinGB 1 -CreateOption Empty
@@ -248,7 +248,7 @@ The main task for this exercise is:
 
    ```
 > This will take some time to complete and update the Azure virtual machine
-5. Switch to the Azure portal and refresh the Disks page. You should be able to notice a new disk called disk1 in the Data disks section.
+5. Switch to the Azure portal and refresh the Disks page. You should be able to notice a new disk called disk1 in the Data Disks section.
 
 ## You have successfully completed this Lab
 
