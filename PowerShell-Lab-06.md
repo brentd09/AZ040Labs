@@ -97,7 +97,7 @@ The main tasks for this exercise are:
     ```
     </Strong></details> 
 
-5. Update `$logPath` to include the contents of `$logFile`.
+5. Update `$logPath` to include the contents of `$logFile`. Also, consider what would happen if $logPath = 'C:\logs' you see there is \\ at the end of the string, how would you rewrite the code for this step to solve for a trailing \\ or no trailing \\.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
