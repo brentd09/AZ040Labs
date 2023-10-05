@@ -136,17 +136,17 @@
   # value from each computer. As the Name property contains a [string] and the -Name parameter accepts a string
   # the Name property data will be accepted by the -Name parameter.
 
-  # Get-ADComputer -Filter *                 Get-OpenTCPPortByPN
-  # Get-Member shows:                        Get-Help shows:
-  #  Name              [String]     |        -Name [string]  
-  #  DNSHostName       [String]     |         pipeline=True  ByPropertyName
-  #  Enabled           [Boolean]    |  
-  #  DistinguishedName [String]     |        -TcpPort <Int32>
-  #  ObjectClass       [String]     |         Pipeline=False
-  #  ObjectGUID        [Guid]       |
-  #  SamAccountName    [String]     |
-  #  SID               [SID]        |
-  #  UserPrincipalName [String]     |
+  # Get-ADComputer -Filter *        #        Get-OpenTCPPortByPN
+  # Get-Member shows:               #        Get-Help shows:
+  #  Name              [String]     #        -Name [string]  
+  #  DNSHostName       [String]     #         pipeline=True  ByPropertyName
+  #  Enabled           [Boolean]    #  
+  #  DistinguishedName [String]     #        -TcpPort <Int32>
+  #  ObjectClass       [String]     #         Pipeline=False
+  #  ObjectGUID        [Guid]       #
+  #  SamAccountName    [String]     #
+  #  SID               [SID]        #
+  #  UserPrincipalName [String]     #
 
 
   # This however would not work:
