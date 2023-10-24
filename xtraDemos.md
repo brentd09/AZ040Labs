@@ -21,7 +21,8 @@
   Get-ADComputer -Filter *          |        Get-OpenTCPPortByVal
 
   #
-  # Get-Member shows type                    Get-Help shows:   
+  # Get-Member shows type                    Get-Help shows:
+  #--------------------------------------------------------------------
   # of [ADComputer] --------------> |----->  -Computer [ADComputer]
   #                                 |         Pipeline=True (ByValue)
   #                                 |
@@ -49,6 +50,7 @@
   # an [ADComputer] object          |        [ADComputer] objects ByValue
   
   # Get-Member shows type                    Get-Help shows:
+  #-----------------------------------------------------------------------------
   # of [ADComputer] ------------> X | X      -Name [String]
   #                                 |         Pipeline=True (ByPropertyName)
   #                                 |
@@ -72,6 +74,7 @@
   # properties:                     |
   
   # Get-Member shows:                        Get-Help shows:
+  #---------------------------------------------------------------------------
   #  Name              [String] --->|----->  -Name [string]  
   #  DNSHostName       [String]     |         pipeline=True  ByPropertyName
   #  Enabled           [Boolean]    |  
@@ -104,6 +107,7 @@
   # properties:                     |
   
   # Get-Member shows:                        Get-Help shows:
+  #----------------------------------------------------------------------------
   #  Name              [String] --->|  XXXX  -Name [string]  
   #  DNSHostName       [String]     |         pipeline=True  ByPropertyName
   #  Enabled           [Boolean]    |  
@@ -138,6 +142,7 @@
 
   # Get-ADComputer -Filter *        #        Get-OpenTCPPortByPN
   # Get-Member shows:               #        Get-Help shows:
+  #--------------------------------------------------------------------------
   #  Name              [String]     #        -Name [string]  
   #  DNSHostName       [String]     #         pipeline=True  ByPropertyName
   #  Enabled           [Boolean]    #  
