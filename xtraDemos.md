@@ -149,14 +149,6 @@
   #  UserPrincipalName [String]     #
 
 
-  # This however would not work:
-  # ----------------------------
-
-  Get-OpenTCPPortByPN -Name (Get-ADComputer -Filter *)
-
-  # This will fail as the (Get-ADComputer -Filter *) command produces an [ADComputer] object and the -Name parameter
-  # only accepts [string] objects. (Square peg, Round hole issue)
-
   ```
  
 
