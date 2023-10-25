@@ -432,7 +432,6 @@ do {
   if ($Guess -gt $HiddenNumber) {Write-Host 'Your Guess was too high'}
   elseif ($Guess -lt $HiddenNumber) {Write-Host 'Your Guess was too low'}
   else {Write-Host "You Guessed the number correctly, it took you $Turns turns"}
-  }
 } while ($HiddenNumber -ne $Guess)
 ```
 
@@ -500,7 +499,7 @@ function Find-Prime {
   return $Primes
 }
 
-Find-Primes 
+Find-Prime
 ```
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
