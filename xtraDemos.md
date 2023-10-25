@@ -243,10 +243,10 @@ $Person4 = @{
   }
 }
 
-$People.Add($Person1)
-$People.Add($Person2)
-$People.Add($Person3)
-$People.Add($Person4)
+$People.Add($Person1) *> $null
+$People.Add($Person2) *> $null
+$People.Add($Person3) *> $null
+$People.Add($Person4) *> $null
 
 foreach ($Person in $People) {
   Write-Host "$($Person.Name) is $($Person.Age) years old and lives at $($Person.Address.Street), $($Person.Address.City) $($Person.Address.State), $($Person.Address.Country) "
@@ -318,10 +318,10 @@ $Person4 = @{
   }
 }
 
-$People.Add($Person1)
-$People.Add($Person2)
-$People.Add($Person3)
-$People.Add($Person4)
+$People.Add($Person1) *> $null
+$People.Add($Person2) *> $null
+$People.Add($Person3) *> $null
+$People.Add($Person4) *> $null
 
 foreach ($Person in $People) {
   Write-Host "$($Person.Name) is $($Person.Age) years old and lives at $($Person.Address.Street), $($Person.Address.City) $($Person.Address.State), $($Person.Address.Country) "
