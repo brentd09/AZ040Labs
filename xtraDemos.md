@@ -592,6 +592,42 @@ $PrimeData = Get-Prime -MaxNumber 10
 $PrimeData
 ```
 
+### Demo: Class
+
+```PowerShell
+class MyCalculator {
+  [double]$FirstNumber
+  [double]$SecondNumber
+
+  MyCalculator ([double]$NumOne, [double]$NumTwo) {
+    $this.FirstNumber  = $NumOne
+    $this.SecondNumber = $NumTwo
+  }
+
+  [double]Multiply () {
+    return $this.FirstNumber * $this.SecondNumber
+  }
+
+  [double]Divide () {
+    return $this.FirstNumber / $this.SecondNumber
+  }
+
+  [double]Add () {
+    return $this.FirstNumber + $this.SecondNumber
+  }
+
+  [double]Subtract () {
+    return $this.FirstNumber - $this.SecondNumber
+  }
+}
+
+$Calc = [MyCalculator]::New(12227,3421)
+$Calc.Add()
+$Calc.Subtract()
+$Calc.Divide()
+$Calc.Multiply()
+```
+
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
 </Strong></details>
