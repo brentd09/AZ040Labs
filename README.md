@@ -5,6 +5,7 @@
 - Labs 9 and 10 are related to Microsoft 365 and Azure and are best dealt with after all of the non-cloud modules are completed. 
 
 ## Prepare labs before starting
+- A Firewall issue in the lab machines prevents some labs from running correctly
 - Run the fix commands below from the LON-CL1 lab machine, before running the labs.<br> 
    ```PowerShell 
    Invoke-Command -ComputerName LON-SVR1,LON-DC1 -ScriptBlock {Set-NetFirewallProfile -All -Enabled false}
