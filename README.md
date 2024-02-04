@@ -9,7 +9,17 @@
 - Run the fix commands below from the LON-CL1 lab machine, before running the labs.<br> 
    ```PowerShell 
    Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {
-       New-NetFirewallRule -Name 'FixForLab' -DisplayName 'FixForLab' -Enabled True -Direction Inbound -Action Allow -Protocol TCP -LocalPort 49670 -Profile Any
+     $Params = @{
+       Name='FixForLab'
+       DisplayName = 'FixForLab' 
+       Enabled = 'True' 
+       Direction = 'Inbound' 
+       Action = 'Allow' 
+       Protocol = 'TCP' 
+       LocalPort = 49670 
+       Profile = 'Any'
+     }
+     New-NetFirewallRule @Params
    }
    ```
 - if using PowerShell 7.x, **Get-EventLog** command is a now a legacy command
