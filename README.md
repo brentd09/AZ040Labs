@@ -8,8 +8,9 @@
 - A Firewall issue in the lab machines prevents some labs from running correctly
 - Run the fix commands below from the LON-CL1 lab machine, before running the labs.<br> 
    ```PowerShell 
-   Invoke-Command -ComputerName LON-SVR1,LON-DC1 -ScriptBlock {Set-NetFirewallProfile -All -Enabled false}
-   Set-NetFirewallProfile -All -Enabled false
+   Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {
+       New-NetFirewallRule -Name 'FixForLab' -DisplayName 'FixForLab' -Enabled True -Direction Inbound -Action Allow -Protocol TCP -LocalPort 49670 -Profile Any
+   }
    ```
 - if using PowerShell 7.x, **Get-EventLog** command is a now a legacy command
   - use **Get-WinEvent** instead when accessing event log information, especially on remote machines
