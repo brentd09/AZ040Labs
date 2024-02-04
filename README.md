@@ -6,7 +6,7 @@
 
 ## Prepare labs before starting
 - A Firewall issue in the lab machines prevents some labs from running correctly
-- Run the fix commands below from the LON-CL1 lab machine, before running the labs.<br> 
+- Run this fix script below from the LON-CL1 lab machine, before running the labs.<br> 
    ```PowerShell 
    Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {
      $Params = @{
