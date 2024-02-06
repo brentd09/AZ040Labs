@@ -340,7 +340,7 @@ The main tasks for this exercise are:
 
     ```PowerShell
     Get-Command *Event*
-    # Use WinEvent as EventLog fails to access remote logs
+    # Use Get-WinEvent on PowerShell 7.x and Get-EventLog on Windows PowerShell
     ```
     </Strong></details> 
     <details><summary>Click to see the answer (Part 1)</summary><Strong> 
