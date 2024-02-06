@@ -175,7 +175,7 @@ The main tasks for this exercise are:
     Enable-ScheduledTask
     ```
     </Strong></details> 
-  - What command would let you block access to a file share by a particular user?
+  - What command would let you block a particular user's access to a shared directory?
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
@@ -188,7 +188,7 @@ The main tasks for this exercise are:
     Block-SmbShareAccess
     
     # You could use Block-FileShareAccess, however this will set 
-    # the block permission at the share and at the file level permissions
+    # The block permission at both the share and the NTFS file level permissions
     # at the same time. The Block-SmbShareAccess only sets the block at the 
     # share level permissions.
     ```
