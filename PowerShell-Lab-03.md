@@ -578,7 +578,9 @@ The main tasks for this exercise are:
       Where-Object { $_.SizeRemaining -gt 0 -and $_.SizeRemaining / $_.Size -lt .99 }| 
       Select-Object -Property DriveLetter, @{n='Size';e={[Math]::Round($PSItem.Size / 1MB,3)}}
     ```
+    
     <br>
+    
     ```PowerShell
     # This is another option to produce a similar result
     Get-Volume | 
