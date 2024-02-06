@@ -4,7 +4,7 @@
 - Lab 2 has been placed toward the end of the week as it is a much better placement for this module
 - Labs 9 and 10 are related to Microsoft 365 and Azure and are best dealt with after all of the non-cloud modules are completed. 
 
-## Prepare labs before starting (NO LONGER REQUIRED - Skillable has fixed the issue)
+## (NO LONGER REQUIRED - Skillable has fixed the issue) Prepare labs before starting 
 - A Firewall issue in the lab machines prevents some labs from running correctly
 - Run this fix script below from the LON-CL1 lab machine, before running the labs.<br> 
    ```PowerShell 
