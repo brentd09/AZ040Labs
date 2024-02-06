@@ -335,7 +335,7 @@ The main tasks for this exercise are:
     Test-NetConnection -ComputerName LON-DC1 -InformationLevel Quiet
     ```
     </Strong></details> 
-6. Display the 10 entries from the local Security event log.
+6. Display the 10 most recent entries from the local Security event log.
     <details><summary>Click for hint</summary><Strong> 
 
     ```PowerShell
@@ -346,18 +346,30 @@ The main tasks for this exercise are:
     <details><summary>Click to see the answer (Part 1)</summary><Strong> 
     
     ```PowerShell
+    # If you are using PowerShell 7.x
     Get-Help Get-WinEvent -ShowWindow
+    ```
+
+    ```PowerShell
+    # If you are using Windows PowerShell
+    Get-Help Get-EventLog -ShowWindow
     ```
     </Strong></details> 
     
     <details><summary>Click to see the answer (Part 2)</summary><Strong> 
-    
+
     ```PowerShell
+    # If you are using PowerShell 7.x
     Get-WinEvent -Logname Security -MaxEvents 10
     ```
+
+    ```PowerShell
+    # If you are using Windows PowerShell
+    Get-EventLog -Logname Security -Newest 10
+    ```    
     </Strong></details>
 
-7. Find a command that can create a transcript of the input and output of PowerShell commands.
+8. Find a command that can create a transcript of the input and output of PowerShell commands.
 
     - Start a transcript, and then run these commands:
       - Get-Service
