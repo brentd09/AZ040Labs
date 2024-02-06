@@ -143,7 +143,7 @@ In this exercise, you will create a new registry key to store configuration data
 The main tasks for this exercise are as follows:
 
 1. Create the registry key to store script configurations.
-1. Create a new registry value to store the name of the PSDrive.
+1. Create a new registry property to store the name of the PSDrive.
 
 ### Task 1: Create the registry key to store script configurations
 
@@ -162,7 +162,7 @@ The main tasks for this exercise are as follows:
     ```
     </Strong></details> 
 
-### Task 2: Create a new registry setting to store the name of the PSDrive
+### Task 2: Create a new registry property to store the name of the PSDrive
 
 1. In the **Windows PowerShell** console, run a command to set the current working location to the path of the registry key that you created.
     <details><summary>Click to see the answer</summary><Strong> 
@@ -174,12 +174,12 @@ The main tasks for this exercise are as follows:
 1. Create a registry property in the current registry location to store the PSDrive name with the following configuration:
 
    - Name: **PSDriveName**
-   - Value: **ScriptShare**
+   - Value: **Scripts**
 
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    New-ItemProperty -Path HKCU:\Software\Scripts -Name "PSDriveName" -Value "ScriptShare"
+    New-ItemProperty -Path HKCU:\Software\Scripts -Name "PSDriveName" -Value "Scripts"
     ```
     </Strong></details> 
 1. Verify that you can retrieve the **PSDriveName** setting from the **HKey_Current_User\Software\Scripts** key.
