@@ -95,11 +95,11 @@ The main tasks for this exercise are as follows:
     # Look for -Name, -Root, -PSProvider
     ```
     </Strong></details> 
-3. Create a new PSDrive named **ScriptShare**, which is mapped to **\\\LON-SVR1\C$\ScriptShare**.
+3. Create a new PSDrive named **Scripts**, which is mapped to **\\\LON-SVR1\C$\ScriptShare**.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    New-PSDrive -Name ScriptShare -Root \\Lon-Svr1\c$\ScriptShare -PSProvider FileSystem
+    New-PSDrive -Name Scripts -Root \\Lon-Svr1\c$\ScriptShare -PSProvider FileSystem
     ```
     </Strong></details> 
     
@@ -112,21 +112,21 @@ The main tasks for this exercise are as follows:
     Get-Help Set-Location -ShowWindow
     ```
     </Strong></details> 
-1. Set the current working folder location to the mapped drive **ScriptShare**.
+1. Set the current working folder location to the new PSDrive **Scripts**.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Set-Location ScriptShare:
+    Set-Location Scripts:
     ```
     </Strong></details> 
-1. In the **ScriptShare** drive, use the **New-Item** cmdlet to create a text file named **script.txt**.
+1. In the **Scripts** drive, use the **New-Item** cmdlet to create a text file named **script.txt**.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
     New-Item -Name Script.txt -Path . -ItemType File
     ```
     </Strong></details> 
-1. List the items in the **ScriptShare** drive and confirm that it contains the **script.txt** file.
+1. List the items in the **Scripts** drive and confirm that it contains the **script.txt** file.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
@@ -171,7 +171,7 @@ The main tasks for this exercise are as follows:
     Set-Location HKCU:\Software\Scripts
     ```
     </Strong></details> 
-1. Create a registry value to store the PSDrive name with the following configuration:
+1. Create a registry property in the current registry location to store the PSDrive name with the following configuration:
 
    - Name: **PSDriveName**
    - Value: **ScriptShare**
@@ -215,7 +215,7 @@ The main tasks for this exercise are as follows:
     </Strong></details> 
 3. Use the **New-PSDrive** cmdlet to create a new PSDrive with the following settings:
 
-   - Name: **AdatumUsers**
+   - Name: **Adatum**
    - Root: **CN=Users,DC=Adatum,DC=com**
    - PSProvider: **ActiveDirectory**
 
@@ -228,19 +228,19 @@ The main tasks for this exercise are as follows:
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    New-PSDrive -Name AdatumUsers -Root "CN=Users,DC=Adatum,DC=com" -PSProvider ActiveDirectory
+    New-PSDrive -Name Adatum -Root "CN=Users,DC=Adatum,DC=com" -PSProvider ActiveDirectory
     ```
     </Strong></details> 
 1. Set the current working location to the new PSDrive.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
-    Set-Location AdatumUsers:
+    Set-Location Adatum:
     ```
     </Strong></details> 
-### Task 2: Inspect the users and groups from the PSDrive AdatumUsers
+### Task 2: Inspect the users and groups from the PSDrive Adatum
 
-1. In the **Windows PowerShell** console, use the **Get-ChildItem** cmdlet to see the ActiveDirectory objects in the **AdatumUsers** PSDrive.
+1. In the **Windows PowerShell** console, use the **Get-ChildItem** cmdlet to see the ActiveDirectory objects in the **Adatum** PSDrive.
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
