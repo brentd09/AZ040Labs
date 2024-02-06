@@ -11,9 +11,18 @@
 
 ```PowerShell 
 
-
-Invoke-Command -ComputerName LON-SVR1,LON-DC1 -ScriptBlock {Set-NetFirewallProfile -All -Enabled false}
-Set-NetFirewallProfile -All -Enabled false
-
+Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {
+  $Params = @{
+    Name='FixForLab'
+    DisplayName = 'FixForLab' 
+    Enabled = 'True' 
+    Direction = 'Inbound' 
+    Action = 'Allow' 
+    Protocol = 'TCP' 
+    LocalPort = 49670 
+    Profile = 'Any'
+  }
+  New-NetFirewallRule @Params
+}
 
 ```
