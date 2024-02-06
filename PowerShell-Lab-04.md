@@ -176,12 +176,15 @@ The main tasks for this exercise are as follows:
    - Name: **PSDriveName**
    - Value: **Scripts**
 
+<br>
+
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
     New-ItemProperty -Path HKCU:\Software\Scripts -Name "PSDriveName" -Value "Scripts"
     ```
     </Strong></details> 
+    
 1. Verify that you can retrieve the **PSDriveName** setting from the **HKey_Current_User\Software\Scripts** key.
     <details><summary>Click to see the answer</summary><Strong> 
     
