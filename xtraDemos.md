@@ -3,12 +3,7 @@
 
 <h2>Module 02</h2>
 
-<h2>Module 03</h2>   
-
-
-
-
-<details><summary><h2>Module 04</h2></summary><Strong> 
+<details><summary><h2>Module 03</h2></summary><Strong> 
 
   ```PowerShell
   Install-Module -Name PipelineDemo -Force                     # Install this before trying any of these examples
@@ -165,6 +160,8 @@
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
   
 </Strong></details> 
+
+<h2>Module 04</h2> 
 
 <h2>Module 05</h2>
 
