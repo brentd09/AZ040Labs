@@ -133,6 +133,13 @@ The main tasks for this exercise are as follows:
     Get-ChildItem
     ```
     </Strong></details> 
+1. Change the current working directory back to c:\.
+    <details><summary>Click to see the answer</summary><Strong> 
+    
+    ```PowerShell
+    Set-Location -Path C:\
+    ```
+    </Strong></details> 
 
 ## Exercise 2: Creating a registry key from PowerShell
 
@@ -190,7 +197,13 @@ The main tasks for this exercise are as follows:
     Get-ItemProperty -Path . -Name PSDriveName
     ```
     </Strong></details> 
-
+1. Change the current working directory back to c:\.
+    <details><summary>Click to see the answer</summary><Strong> 
+    
+    ```PowerShell
+    Set-Location -Path C:\
+    ```
+    </Strong></details> 
 ## Exercise 3: Listing ActiveDirectory objects from a PSDrive
 
 You want the ability to view and manage AD DS object types through a PSDrive that's mapped to the User organizational unit in Active Directory. This PSDrive will use the ActiveDirectory provider. Once the new PSDrive is mapped you can manage the objects within ActiveDirectory. <br>**WARNING** *You would normally manage ActiveDirectory through the proper AD cmdlets, not through the PSDrive.*  
@@ -248,5 +261,12 @@ The main tasks for this exercise are as follows:
     Get-ChildItem  
     ```
     </Strong></details> 
+1. Change the current working directory back to c:\.
+    <details><summary>Click to see the answer</summary><Strong> 
     
+    ```PowerShell
+    Set-Location -Path C:\
+    ```
+    </Strong></details>
+       
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
