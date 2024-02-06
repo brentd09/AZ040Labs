@@ -176,8 +176,6 @@ The main tasks for this exercise are as follows:
    - Name: **PSDriveName**
    - Value: **Scripts**
 
-<br>
-
     <details><summary>Click to see the answer</summary><Strong> 
     
     ```PowerShell
