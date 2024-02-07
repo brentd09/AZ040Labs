@@ -14,10 +14,8 @@
        DisplayName = 'FixForLab' 
        Enabled = 'True' 
        Direction = 'Inbound' 
-       Action = 'Allow' 
-       Protocol = 'TCP' 
-       LocalPort = 49670 
-       Profile = 'Any'
+       Action = 'Allow'
+       RemoteAddress = '172.16.0.0/16'
      }
      New-NetFirewallRule @Params
    }
