@@ -82,7 +82,7 @@ The main tasks for this exercise are:
 
 1. Go to your favourite search engine in the Edge browser (AS A PRIVATE WINDOW) and search for:
     - installing-powershell-on-windows site:learn.microsoft.com
-2. Click on Installing the MSI Package link
+2. Click on "Installing the MSI Package" link
 3. Click on the link for the 64bit version of PowerShell
     - This will download the latest version of PowerShell 
 4. Install the latest PowerShell version on your LON-CL1 machine (accepting all of the defaults during the install process)
