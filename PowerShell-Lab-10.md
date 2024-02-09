@@ -28,7 +28,7 @@ lab:
 
 ### Task 1: Connect to Azure AD
 
-1. On **LON-CL1**, right click **Start**, and then choose **Windows PowerShell (Admin)**.
+1. On **LON-CL1**, right click **Start**, and then choose **Windows PowerShell (Admin)** or run **PowerShell ISE (As Administrator)**
 1. Install the **AzureAD** module from PowerShell Gallery:
    
     
