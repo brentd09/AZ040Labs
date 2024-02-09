@@ -29,6 +29,7 @@ lab:
 ### Task 1: Connect to Azure AD
 
 1. On **LON-CL1**, right click **Start**, and then choose **Windows PowerShell (Admin)** or run **PowerShell ISE (As Administrator)**
+    - DO NOT USE PowerShell 7 for this lab
 1. Install the **AzureAD** module from PowerShell Gallery:
    
     
