@@ -78,9 +78,17 @@ The main tasks for this exercise are:
  > Do not wait for this to appear, continue on with the rest of the lab and the subscription will appear later.
 
 
-### Task 2: Install the Azure Az module for PowerShell
+### Task 2: Update to the latest PowerShell Version and Install the Azure Az module for PowerShell
 
-1. On **LON-CL1**, start the PowerShell 7.1 environment.
+1. Go to your favourite search engine in the Edge browser (AS A PRIVATE WINDOW) and search for:
+  - installing-powershell-on-windows site:learn.microsoft.com
+2. Click on Installing the MSI Package link
+3. Click on the link for the 64bit version of PowerShell
+  - This will download the latest version of PowerShell 
+2. Install the latest PowerShell version on your LON-CL1 machine (accepting all of the defaults during the install process)
+3. Close the PowerShell installation window
+
+1. On **LON-CL1**, start the PowerShell 7 command prompt.
 
     
    ```PowerShell
