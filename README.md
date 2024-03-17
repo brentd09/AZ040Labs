@@ -10,8 +10,8 @@
    ```PowerShell 
    Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {
      $Params = @{
-       Name='FixForLab'
-       DisplayName = 'FixForLab' 
+       Name='FixForPSLab'
+       DisplayName = 'FixForPSLab' 
        Enabled = 'True' 
        Direction = 'Inbound' 
        Action = 'Allow'
