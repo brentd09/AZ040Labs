@@ -345,6 +345,30 @@ foreach  ($Computer in $Computers) {
 ```
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
+
+### Demo: Foreach 
+
+```PowerShell
+$Weather = "Cloudy"
+
+if ($Weather -eq "Sunny") {
+  Write-Host "It's a beautiful day!"
+} 
+elseif ($Weather -eq "Rainy") {
+  Write-Host "Don't forget your umbrella!"
+} 
+elseif ($Weather -eq "Cloudy") {
+  Write-Host "The sky is overcast."
+} 
+elseif ($Weather -eq "Snowy") {
+  Write-Host "Time for some snowball fights!"
+} 
+else {
+  Write-Host "Hmm, I'm not sure what the weather is like."
+}
+```
+[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
+
 ### Demo: if, do..until, nested loops, function, Verbose, Newline Char
 
 ```PowerShell
