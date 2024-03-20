@@ -346,7 +346,7 @@ foreach  ($Computer in $Computers) {
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
 
-### Demo: Foreach 
+### Demo: if elseif else 
 
 ```PowerShell
 $Weather = "Cloudy"
