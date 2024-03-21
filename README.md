@@ -1,9 +1,4 @@
 # AZ-040Labs
-
-## Rearranged the lab order to help your learning of the topics.
-- Lab 2 has been placed toward the end of the week as it is a much better placement for this module
-- Labs 9 and 10 are related to Microsoft 365 and Azure and are best dealt with after all of the non-cloud modules are completed.
-
 ## PowerShell Labs
 
 - Labs for learning PowerShell  
@@ -24,6 +19,10 @@
 - Extra Demo Code<br>
   [Demos](xtraDemos.md#demo-code) <br>  
 
+
+## Rearranged the lab order to help your learning of the topics.
+- Lab 2 has been placed toward the end of the week as it is a much better placement for this module
+- Labs 9 and 10 are related to Microsoft 365 and Azure and are best dealt with after all of the non-cloud modules are completed.
 
 
 ## Prepare labs before starting 
