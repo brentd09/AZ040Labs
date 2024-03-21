@@ -43,6 +43,7 @@
    }
    ```
 <!-- 
+# Forcing the CA to create a CRL - fix bug in DC1 CA
 # Define the CA server name
 $caServer = "YourCAServerName"
 
