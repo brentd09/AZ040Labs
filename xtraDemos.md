@@ -330,8 +330,8 @@ foreach ($Person in $People) {
 
 </Strong></details>
 
-<h2>Module 07</h2>
-<details><summary>Module7</summary><Strong> 
+
+<details><summary><h3>Module 07</h3></summary><Strong> 
 
 
 ### Demo: Foreach 
