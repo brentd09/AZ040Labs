@@ -28,7 +28,7 @@
 
 ## Prepare labs before starting 
 - A Firewall issue in the lab machines prevents some labs from running correctly
-- Run this fix script below from the LON-CL1 lab machine, before running the labs.<br> 
+- After building a new lab run this fix script below from the LON-CL1 lab machine.<br> 
    ```PowerShell 
    Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {
      $Params = @{
@@ -42,5 +42,21 @@
      New-NetFirewallRule @Params
    }
    ```
+<!-- 
+# Define the CA server name
+$caServer = "YourCAServerName"
+
+# Define the CA name
+$caName = "YourCAName"
+
+# Create the new CRL
+Invoke-Expression -Command "certutil -crl"
+
+# Publish the new CRL
+Invoke-Expression -Command "certutil -dspublish -f `"$env:windir\System32\CertSrv\CertEnroll\$($caServer)_$($caName).crl`""
+
+Write-Host "New CRL has been created and published."
+-->
+   
 - if using PowerShell 7.x, **Get-EventLog** command is a now a legacy command
   - use **Get-WinEvent** instead when accessing event log information, especially on remote machines
