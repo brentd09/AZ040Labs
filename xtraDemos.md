@@ -166,7 +166,7 @@ Module 04
 
 Module 05
 
-<details><summary>>Module 06</summary><Strong> 
+<details><summary>Module 06</summary><Strong> 
 
 ### Demo: Hashtable, Nested Hashtable
 
