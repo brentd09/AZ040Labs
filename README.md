@@ -32,11 +32,11 @@
    ```PowerShell 
    Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {
      $Params = @{
-       Name='FixForPSLab'
-       DisplayName = 'FixForPSLab' 
-       Enabled = 'True' 
-       Direction = 'Inbound' 
-       Action = 'Allow'
+       Name          = 'FixForPSLab'
+       DisplayName   = 'FixForPSLab' 
+       Enabled       = 'True' 
+       Direction     = 'Inbound' 
+       Action        = 'Allow'
        RemoteAddress = '172.16.0.0/16'
      }
      New-NetFirewallRule @Params
