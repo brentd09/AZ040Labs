@@ -441,7 +441,7 @@ for ($Count = 1; $Count -le 10; $Count++) {
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
-### Demo: Do..While, If, Read-Host 
+### Demo: Do..Until, If, Read-Host 
 
 ```PowerShell
 # Guessing Game
@@ -454,7 +454,7 @@ do {
   if ($Guess -gt $HiddenNumber) {Write-Host 'Your Guess was too high'}
   elseif ($Guess -lt $HiddenNumber) {Write-Host 'Your Guess was too low'}
   else {Write-Host "You Guessed the number correctly, it took you $Turns turns"}
-} while ($HiddenNumber -ne $Guess)
+} until ($HiddenNumber -eq $Guess)
 ```
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
