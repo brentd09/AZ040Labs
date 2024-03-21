@@ -1,9 +1,9 @@
 # Demo code
-<h2>Module 01</h2>
+Module 01
 
-<h2>Module 02</h2>
+Module 02
 
-<details><summary><h2>Module 03</h2></summary><Strong> 
+<details><summary>Module 03</summary><Strong> 
 
   ```PowerShell
   Install-Module -Name PipelineDemo -Force
@@ -162,11 +162,11 @@
   
 </Strong></details> 
 
-<h2>Module 04</h2> 
+Module 04
 
-<h2>Module 05</h2>
+Module 05
 
-<details><summary><h2>Module 06</h2> </summary><Strong> 
+<details><summary>>Module 06</summary><Strong> 
 
 ### Demo: Hashtable, Nested Hashtable
 
@@ -331,7 +331,7 @@ foreach ($Person in $People) {
 </Strong></details>
 
 
-<details><summary><h3>Module 07</h3></summary><Strong> 
+<details><summary>Module 07</summary><Strong> 
 
 
 ### Demo: Foreach 
@@ -529,15 +529,15 @@ Find-Prime
 
 </Strong></details> 
 
-<h2>Module 08</h2>
+Module 08
 
-<h2>Module 09</h2>
+Module 09
 
-<h2>Module 10</h2>
+Module 10
 
-<h2>Module 11</h2>
+Module 11
 
-<details><summary><h2>Advanced Concepts</h2></summary><Strong> 
+<details><summary>Advanced Concepts</summary><Strong> 
 ### Demo: Function, Param, PSCustomObject 
  
 ```PowerShell
