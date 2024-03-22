@@ -5,158 +5,156 @@ Module 02
 
 <details><summary>Module 03</summary><Strong> 
 
-  ```PowerShell
-  Install-Module -Name PipelineDemo -Force
-  # Install this before trying any of these examples
-  ```
-  ### Get-OpenTCPPortByVal
-  #### Try ByValue pipeline
-
-  ```PowerShell
-  # ByValue Pipeline
-  Get-ADComputer -Filter *          |        Get-OpenTCPPortByVal
-
-  #
-  # Get-Member shows type                    Get-Help shows:
-  #--------------------------------------------------------------------
-  # of [ADComputer] --------------> |----->  -Computer [ADComputer]
-  #                                 |         Pipeline=True (ByValue)
-  #                                 |
-  #                                 |        -TcpPort [int]
-  #                                 |         Pipeline=False
-
-  # We can pipe the entire [ADComputer] object to Get-OpenTCPPortByVal
-  # because of these two reasons:
-  #   1. The -Computer parameter (from Get-OpenTCPPortByVal) can accept
-  #      pipeline using ByValue {pipeline=True  ByValue}
-  #   2. The type for the parameter -Computer matches the object type produced by
-  #      the "Get-ADComputer -Filter *" command {[ADComputer] = [ADComputer]} 
-  ```
-  #### ByValue pipeline succeeds
+## Pass PipeLine Objects
   
-  
-  ---
-  
-  ### Get-OpenTCPPortByPN
-  #### Always try ByValue pipeline first
-  
-  ```PowerShell
-  Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
+```PowerShell
+# Install this before trying any of these examples
 
-  # This command produces           |        This command does NOT accept 
-  # an [ADComputer] object          |        [ADComputer] objects ByValue
+Install-Module -Name PipelineDemo -Force
+```
+### Get-OpenTCPPortByVal
+#### Try ByValue pipeline
+
+```PowerShell
+# ByValue Pipeline
+Get-ADComputer -Filter *          |        Get-OpenTCPPortByVal
+
+#
+# Get-Member shows type                    Get-Help shows:
+#--------------------------------------------------------------------
+# of [ADComputer] --------------> |----->  -Computer [ADComputer]
+#                                 |         Pipeline=True (ByValue)
+#                                 |
+#                                 |        -TcpPort [int]
+#                                 |         Pipeline=False
+
+# We can pipe the entire [ADComputer] object to Get-OpenTCPPortByVal
+# because of these two reasons:
+#   1. The -Computer parameter (from Get-OpenTCPPortByVal) can accept
+#      pipeline using ByValue {pipeline=True  ByValue}
+#   2. The type for the parameter -Computer matches the object type produced by
+#      the "Get-ADComputer -Filter *" command {[ADComputer] = [ADComputer]} 
+```
+
+#### ByValue pipeline succeeds
+
   
-  # Get-Member shows type                    Get-Help shows:
-  #-----------------------------------------------------------------------------
-  # of [ADComputer] ------------> X | X      -Name [String]
-  #                                 |         Pipeline=True (ByPropertyName)
-  #                                 |
-  #                                 |        -TcpPort [int]
-  #                                 |         Pipeline=False
-
-  # This fails because there are no parameters in the Get-OpenTCPPortByPN command
-  # that:
-  #  1. Accept pipeline using ByValue and
-  #  2. Have their type matching [ADComputer]
-  ```
-  #### ByValue pipeline failed --> PowerShell now tries the ByPropertyName pipeline
-   
-  #### Resorting to ByPropertyName pipeline
+---
   
-  ```PowerShell
-  Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
+### Get-OpenTCPPortByPN
+#### Always try ByValue pipeline first
 
-  # When Unpacking the [ADComputer] |        This command has the following
-  # object we find these            |        parameters:
-  # properties:                     |
-  
-  # Get-Member shows:                        Get-Help shows:
-  #---------------------------------------------------------------------------
-  #  Name              [String] --->|----->  -Name [string]  
-  #  DNSHostName       [String]     |         pipeline=True  ByPropertyName
-  #  Enabled           [Boolean]    |  
-  #  DistinguishedName [String]     |        -TcpPort <Int32>
-  #  ObjectClass       [String]     |         Pipeline=False
-  #  ObjectGUID        [Guid]       |
-  #  SamAccountName    [String]     |
-  #  SID               [SID]        |
-  #  UserPrincipalName [String]     |
+```PowerShell
+Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
+# This command produces           |        This command does NOT accept 
+# an [ADComputer] object          |        [ADComputer] objects ByValue
 
-  # We can pipe the value of the contents of the Name property to Get-OpenTCPPortByPN
-  # because of these three reasons:
-  #   1. The -Name parameter (from Get-OpenTCPPortByPN) can accept pipeline using
-  #      ByPropertyName {pipeline=True  ByPropertyName}
-  #   2. The property and parameter names are spelt exactly the same {Name = Name}
-  #   3. The types for both of the property and parameter are the same {[string] = [string]} 
-  ```
-  #### ByPropertyName succeeds
-
-
- ---
+# Get-Member shows type                    Get-Help shows:
+#-----------------------------------------------------------------------------
+# of [ADComputer] ------------> X | X      -Name [String]
+#                                 |         Pipeline=True (ByPropertyName)
+#                                 |
+#                                 |        -TcpPort [int]
+#                                 |         Pipeline=False
+# This fails because there are no parameters in the Get-OpenTCPPortByPN command
+# that:
+#  1. Accept pipeline using ByValue and
+#  2. Have their type matching [ADComputer]
+```
+#### ByValue pipeline failed --> PowerShell now tries the ByPropertyName pipeline
  
-  ### Parameter Overrides Pipeline
-  #### Prevents PowerShell from Piping Data
-  
-  ```PowerShell
-  Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN -Name 'LON-DC1'
+#### Resorting to ByPropertyName pipeline
 
-  # When Unpacking the [ADComputer] |        This command has the following
-  # object we find these            |        parameters:
-  # properties:                     |
-  
-  # Get-Member shows:                        Get-Help shows:
-  #----------------------------------------------------------------------------
-  #  Name              [String] --->|  XXXX  -Name [string]  
-  #  DNSHostName       [String]     |         pipeline=True  ByPropertyName
-  #  Enabled           [Boolean]    |  
-  #  DistinguishedName [String]     |        -TcpPort <Int32>
-  #  ObjectClass       [String]     |         Pipeline=False
-  #  ObjectGUID        [Guid]       |
-  #  SamAccountName    [String]     |
-  #  SID               [SID]        |
-  #  UserPrincipalName [String]     |
+```PowerShell
+Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN
 
-  # We would normally be able to pipe the value of the contents of the Name property to Get-OpenTCPPortByPN
-  # because of these three reasons:
-  #   1. The -Name parameter (from Get-OpenTCPPortByPN) can accept pipeline using
-  #      ByPropertyName {pipeline=True  ByPropertyName}
-  #   2. The property and parameter names are spelt exactly the same {Name = Name}
-  #   3. The types for both of the property and parameter are the same {[string] = [string]}
+# When Unpacking the [ADComputer] |        This command has the following
+# object we find these            |        parameters:
+# properties:                     |
 
-  # HOWEVER, because the -Name parameter was used on the command line, the pipeline is NOT
-  # permitted to pipe data to this -Name parameter. Thus using the parameter on the second command
-  # overrides the pipeline's ability to pipe data to that parameter.
-  ```
+# Get-Member shows:                        Get-Help shows:
+#---------------------------------------------------------------------------
+#  Name              [String] --->|----->  -Name [string]  
+#  DNSHostName       [String]     |         pipeline=True  ByPropertyName
+#  Enabled           [Boolean]    |  
+#  DistinguishedName [String]     |        -TcpPort <Int32>
+#  ObjectClass       [String]     |         Pipeline=False
+#  ObjectGUID        [Guid]       |
+#  SamAccountName    [String]     |
+#  SID               [SID]        |
+#  UserPrincipalName [String]     |
+
+# We can pipe the value of the contents of the Name property to Get-OpenTCPPortByPN
+# because of these three reasons:
+#   1. The -Name parameter (from Get-OpenTCPPortByPN) can accept pipeline using
+#      ByPropertyName {pipeline=True  ByPropertyName}
+#   2. The property and parameter names are spelt exactly the same {Name = Name}
+#   3. The types for both of the property and parameter are the same {[string] = [string]} 
+```
+
+#### ByPropertyName succeeds
+
+
+---
+ 
+### Parameter Overrides Pipeline
+#### Prevents PowerShell from Piping Data
+
+```PowerShell
+Get-ADComputer -Filter *          |        Get-OpenTCPPortByPN -Name 'LON-DC1'
+# When Unpacking the [ADComputer] |        This command has the following
+# object we find these            |        parameters:
+# properties:                     |
+ 
+# Get-Member shows:                        Get-Help shows:
+#----------------------------------------------------------------------------
+#  Name              [String] --->|  XXXX  -Name [string]  
+#  DNSHostName       [String]     |         pipeline=True  ByPropertyName
+#  Enabled           [Boolean]    |  
+#  DistinguishedName [String]     |        -TcpPort <Int32>
+#  ObjectClass       [String]     |         Pipeline=False
+#  ObjectGUID        [Guid]       |
+#  SamAccountName    [String]     |
+#  SID               [SID]        |
+#  UserPrincipalName [String]     |
+
+# We would normally be able to pipe the value of the contents of the Name property to Get-OpenTCPPortByPN
+# because of these three reasons:
+#   1. The -Name parameter (from Get-OpenTCPPortByPN) can accept pipeline using
+#      ByPropertyName {pipeline=True  ByPropertyName}
+#   2. The property and parameter names are spelt exactly the same {Name = Name}
+#   3. The types for both of the property and parameter are the same {[string] = [string]}
+
+# HOWEVER, because the -Name parameter was used on the command line, the pipeline is NOT
+# permitted to pipe data to this -Name parameter. Thus using the parameter on the second command
+# overrides the pipeline's ability to pipe data to that parameter.
+```
 ---
 
- ### Parenthetical Data Passing
- #### Passes Data Between Command without Pipelines
+### Parenthetical Data Passing
+#### Passes Data Between Command without Pipelines
 
-  ```PowerShell
-  Get-OpenTCPPortByPN -Name (Get-ADComputer -Filter *).Name 
-
-  # (Get-ADComputer -Filter *).Name This command creates [ADComputer] objects and then extracts the Name property
-  # value from each computer. As the Name property contains a [string] and the -Name parameter accepts a [string]
-  # the Name property data will be accepted by the -Name parameter.
-
-  # Get-ADComputer -Filter *        #        Get-OpenTCPPortByPN
-  # Get-Member shows:               #        Get-Help shows:
-  #--------------------------------------------------------------------------
-  #  Name              [String]     #        -Name [string]  
-  #  DNSHostName       [String]     #         pipeline=True  ByPropertyName
-  #  Enabled           [Boolean]    #  
-  #  DistinguishedName [String]     #        -TcpPort <Int32>
-  #  ObjectClass       [String]     #         Pipeline=False
-  #  ObjectGUID        [Guid]       #
-  #  SamAccountName    [String]     #
-  #  SID               [SID]        #
-  #  UserPrincipalName [String]     #
-
-
-  ```
+```PowerShell
+Get-OpenTCPPortByPN -Name (Get-ADComputer -Filter *).Name 
+# (Get-ADComputer -Filter *).Name This command creates [ADComputer] objects and then extracts the Name property
+# value from each computer. As the Name property contains a [string] and the -Name parameter accepts a [string]
+# the Name property data will be accepted by the -Name parameter.
+# Get-ADComputer -Filter *        #        Get-OpenTCPPortByPN
+# Get-Member shows:               #        Get-Help shows:
+#--------------------------------------------------------------------------
+#  Name              [String]     #        -Name [string]  
+#  DNSHostName       [String]     #         pipeline=True  ByPropertyName
+#  Enabled           [Boolean]    #  
+#  DistinguishedName [String]     #        -TcpPort <Int32>
+#  ObjectClass       [String]     #         Pipeline=False
+#  ObjectGUID        [Guid]       #
+#  SamAccountName    [String]     #
+#  SID               [SID]        #
+#  UserPrincipalName [String]     #
+```
  
 
-  <br>
+<br>
 
 [[Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
 
