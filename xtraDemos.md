@@ -1,4 +1,5 @@
-# Demo code
+# Demo scripts that match the modules
+
 Module 01
 
 Module 02
