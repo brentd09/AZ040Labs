@@ -26,37 +26,25 @@
 
 
 ## Prepare labs before starting 
-- A Firewall issue in the lab machines prevents some labs from running correctly
+- A Firewall (SVR1) and Missing CRL (DC1) issues in the lab machines prevents some labs from running correctly
 - After building a new lab run this fix script below from the LON-CL1 lab machine.<br> 
-   ```PowerShell 
-   Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {
-     $Params = @{
-       Name          = 'FixForPSLab'
-       DisplayName   = 'FixForPSLab' 
-       Enabled       = 'True' 
-       Direction     = 'Inbound' 
-       Action        = 'Allow'
-       RemoteAddress = '172.16.0.0/16'
-     }
-     New-NetFirewallRule @Params
-   }
-   ```
-<!-- 
-# Forcing the CA to create a CRL - fix bug in DC1 CA
-# Define the CA server name
-$caServer = "YourCAServerName"
+  ```PowerShell 
+  Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {
+    $Params = @{
+      Name          = 'FixForPSLab'
+      DisplayName   = 'FixForPSLab' 
+      Enabled       = 'True' 
+      Direction     = 'Inbound' 
+      Action        = 'Allow'
+      RemoteAddress = '172.16.0.0/16'
+    }
+    New-NetFirewallRule @Params
+  }
+  Invoke-Command -ComputerName LON-DC1 -ScriptBlock {
+    Invoke-Expression -Command "certutil -crl"
+    Invoke-Expression -Command "certutil -dspublish -f `"$env:windir\System32\CertSrv\CertEnroll\AdatumCA.crl`""
+  }
+  ```
 
-# Define the CA name
-$caName = "YourCAName"
-
-# Create the new CRL
-Invoke-Expression -Command "certutil -crl"
-
-# Publish the new CRL
-Invoke-Expression -Command "certutil -dspublish -f `"$env:windir\System32\CertSrv\CertEnroll\$($caServer)_$($caName).crl`""
-
-Write-Host "New CRL has been created and published."
--->
-   
 - if using PowerShell 7.x, **Get-EventLog** command is a now a legacy command
   - use **Get-WinEvent** instead when accessing event log information, especially on remote machines
