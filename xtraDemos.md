@@ -538,6 +538,7 @@ Module 10
 Module 11
 
 <details><summary>Advanced Concepts</summary><Strong> 
+
 ### Demo: Function, Param, PSCustomObject 
  
 ```PowerShell
