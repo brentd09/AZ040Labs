@@ -367,6 +367,10 @@ The main task for this exercise is:
 1. Create a **ForEach** loop that processes the data in the variable to create user accounts:
 1. Use Splatting to create each user's set of information for use with the New-ADUser command.
 
+```
+To learn more about Splatting see the Get-Help About_Splatting help page
+```
+
   - The Splat Hash Table should include
     - the given name
     - the surname
