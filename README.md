@@ -26,7 +26,7 @@
 
 
 ## Prepare labs before starting 
-- A Firewall (SVR1) and Missing CRL (DC1) issues in the lab machines prevents some labs from running correctly
+- Firewall (on LON-SVR1) and Missing CRL (on LON-DC1) issues in the lab machines prevents some labs from running correctly
 - After building a new lab run this fix script below from the LON-CL1 lab machine.<br> 
   ```PowerShell 
   Invoke-Command -ComputerName LON-SVR1 -ScriptBlock {
