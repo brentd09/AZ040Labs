@@ -24,7 +24,8 @@ lab:
 
 # Lab: Managing Microsoft 365 with PowerShell
 
-# USE THE LABS PROVIDED BY SKILLABLE (They have been updated to use MicrosoftGraph)
+# USE THE LABS PROVIDED BY SKILLABLE 
+## (They have been updated to use MicrosoftGraph)
 <!--
 ## Exercise 1: Managing users and groups in Azure AD
 
