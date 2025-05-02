@@ -24,6 +24,8 @@ lab:
 
 # Lab: Managing Microsoft 365 with PowerShell
 
+# USE THE LABS PROVIDED BY SKILLABLE (They have been updated to use MicrosoftGraph)
+<!--
 ## Exercise 1: Managing users and groups in Azure AD
 
 ### Task 1: Connect to Azure AD
@@ -533,6 +535,6 @@ lab:
 1. Close Microsoft Edge.
 
 ## Congratulations you have finished this lab    
-
+-->
 
 [Back to labs](https://github.com/brentd09/AZ040Labs/blob/main/README.md#powershell-labs)
