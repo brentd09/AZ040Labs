@@ -21,7 +21,7 @@ lab:
 
 ###### _
 
-# Lab: Performing local system administration with PowerShell
+# Lab: Performing local system administration with PowerShell (OPTIONAL)
 
 ## Scenario
 
@@ -200,7 +200,7 @@ The main tasks for this exercise are:
 
 After completing this exercise, you'll have successfully identified and used commands for managing Active Directory objects in the Windows PowerShell command-line interface.
 
-## Exercise 2: Configuring network settings on Windows Server
+## Exercise 2: Configuring network settings on Windows Server (OPTIONAL)
 
 ### Exercise scenario 2
 
@@ -322,7 +322,7 @@ The main tasks for this exercise are:
 
 After completing this exercise, you'll have successfully identified and used Windows PowerShell commands for managing network configuration.
 
-## Exercise 3: Creating a website
+## Exercise 3: Creating a website (OPTIONAL)
 
 ### Exercise scenario 3
 
